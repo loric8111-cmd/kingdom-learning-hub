@@ -1,4 +1,3 @@
-# Kingdom Learning Hub
 <!DOCTYPE html>
 <html lang="en">
 <head>

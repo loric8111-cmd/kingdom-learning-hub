@@ -1,2 +1,743 @@
 # Kingdom Learning Hub
-index.html k.l.h
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kingdom Learning Hub | By Richard</title>
+
+    <meta name="description"
+          content="Kingdom Learning Hub by Richard — Grow in Faith. Grow in Knowledge. Grow in Life.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+
+        header {
+            background: #151515;
+            color: white;
+            padding: 15px 7%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #d4a017;
+        }
+
+        .menu {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .menu a:hover {
+            color: #d4a017;
+        }
+
+        .menu-button {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 7%;
+            background: linear-gradient(135deg, #151515, #292929);
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 7vw, 75px);
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span {
+            color: #d4a017;
+        }
+
+        .hero h2 {
+            font-size: 22px;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            color: #ddd;
+            font-size: 17px;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            margin: 5px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .primary {
+            background: #d4a017;
+            color: #111;
+        }
+
+        .secondary {
+            border: 1px solid white;
+            color: white;
+        }
+
+        /* GENERAL SECTIONS */
+
+        section {
+            padding: 75px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        /* CARDS */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px 22px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+        }
+
+        .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #666;
+            margin-bottom: 18px;
+        }
+
+        .card a {
+            color: #a47700;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* WORSHIP */
+
+        .worship {
+            background: #fff;
+        }
+
+        /* LEARNING */
+
+        .learning {
+            background: #eeeeee;
+        }
+
+        /* VERSE */
+
+        .verse {
+            background: #171717;
+            color: white;
+            text-align: center;
+        }
+
+        .verse blockquote {
+            max-width: 750px;
+            margin: auto;
+            font-size: 24px;
+            font-style: italic;
+        }
+
+        .verse cite {
+            display: block;
+            margin-top: 15px;
+            color: #d4a017;
+            font-style: normal;
+            font-weight: bold;
+        }
+
+        /* ABOUT */
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .mission {
+            background: #151515;
+            color: white;
+            padding: 35px;
+            border-radius: 10px;
+        }
+
+        .mission h3 {
+            color: #d4a017;
+            margin-bottom: 12px;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            background: #eeeeee;
+        }
+
+        form {
+            max-width: 650px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        textarea {
+            height: 140px;
+            resize: vertical;
+        }
+
+        button {
+            background: #d4a017;
+            border: none;
+            padding: 13px 25px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #111;
+            color: #bbb;
+            text-align: center;
+            padding: 30px 7%;
+        }
+
+        footer strong {
+            color: #d4a017;
+        }
+
+        .social {
+            margin: 15px 0;
+        }
+
+        .social a {
+            color: white;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 768px) {
+
+            .menu-button {
+                display: block;
+            }
+
+            .menu {
+                display: none;
+                position: absolute;
+                top: 65px;
+                left: 0;
+                width: 100%;
+                background: #151515;
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 80vh;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header>
+    <nav>
+        <div class="logo">
+            Kingdom <span>Learning Hub</span>
+        </div>
+
+        <div class="menu-button" onclick="toggleMenu()">
+            ☰
+        </div>
+
+        <ul class="menu" id="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#worship">Worship</a></li>
+            <li><a href="#learning">Learning</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>
+            Kingdom <span>Learning Hub</span>
+        </h1>
+
+        <h2>By Richard</h2>
+
+        <p>
+            A platform for spiritual growth, education,
+            practical skills and personal development.
+        </p>
+
+        <p>
+            <strong>Grow in Faith. Grow in Knowledge. Grow in Life.</strong>
+        </p>
+
+        <div class="buttons">
+            <a href="#worship" class="btn primary">
+                Start Bible Study
+            </a>
+
+            <a href="#learning" class="btn secondary">
+                Start Learning
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WORSHIP -->
+
+<section class="worship" id="worship">
+
+    <div class="section-title">
+
+        <h2>🙏 Worship & Bible Study</h2>
+
+        <p>
+            Discover God's Word and grow spiritually.
+        </p>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">📖</div>
+            <h3>Bible Study</h3>
+            <p>
+                Study Scripture and understand biblical
+                principles for everyday life.
+            </p>
+            <a href="#">Explore Bible Studies →</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🙏</div>
+            <h3>Prayer</h3>
+            <p>
+                Build a consistent prayer life and
+                deepen your relationship with God.
+            </p>
+            <a href="#">Prayer Resources →</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌅</div>
+            <h3>Daily Devotional</h3>
+            <p>
+                Receive encouragement and biblical
+                wisdom for each day.
+            </p>
+            <a href="#">Read Devotional →</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">✝️</div>
+            <h3>Christian Teachings</h3>
+            <p>
+                Learn about faith, character,
+                forgiveness, love and Christian living.
+            </p>
+            <a href="#">Learn More →</a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- LEARNING -->
+
+<section class="learning" id="learning">
+
+    <div class="section-title">
+
+        <h2>🎓 Learning Center</h2>
+
+        <p>
+            Gain knowledge and practical skills for life.
+        </p>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">📈</div>
+            <h3>Forex Academy</h3>
+            <p>
+                Learn forex terminology, market analysis,
+                risk management and trading discipline.
+            </p>
+            <a href="#">Enter Forex Academy →</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">📚</div>
+            <h3>Basic Education</h3>
+            <p>
+                Improve your mathematics, English,
+                general knowledge and study skills.
+            </p>
+            <a href="#">Start Learning →</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">💻</div>
+            <h3>Digital Skills</h3>
+            <p>
+                Learn computers, internet skills,
+                websites and modern digital tools.
+            </p>
+            <a href="#">Learn Digital Skills →</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">💰</div>
+            <h3>Financial Education</h3>
+            <p>
+                Understand budgeting, saving,
+                financial planning and money management.
+            </p>
+            <a href="#">Learn Finance →</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌱</div>
+            <h3>Personal Development</h3>
+            <p>
+                Develop discipline, confidence,
+                purpose and practical life skills.
+            </p>
+            <a href="#">Grow Yourself →</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🚀</div>
+            <h3>Entrepreneurship</h3>
+            <p>
+                Learn business fundamentals,
+                entrepreneurship and opportunities.
+            </p>
+            <a href="#">Explore Business →</a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- BIBLE VERSE -->
+
+<section class="verse">
+
+    <blockquote>
+        "The fear of the LORD is the beginning of wisdom:
+        and the knowledge of the holy is understanding."
+    </blockquote>
+
+    <cite>
+        Proverbs 9:10
+    </cite>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="about-container">
+
+        <div class="about-text">
+
+            <h2>About Kingdom Learning Hub</h2>
+
+            <p>
+                Kingdom Learning Hub is a Christian-centered
+                learning platform created to help people grow
+                spiritually, intellectually and practically.
+            </p>
+
+            <p>
+                We believe education should not only give people
+                information. It should help them develop wisdom,
+                discipline, character and useful skills.
+            </p>
+
+            <p>
+                Through Bible study and practical education,
+                Kingdom Learning Hub seeks to encourage people
+                to become better servants, learners and members
+                of their communities.
+            </p>
+
+        </div>
+
+        <div class="mission">
+
+            <h3>Our Mission</h3>
+
+            <p>
+                To make faith-based learning and practical
+                education accessible to everyone, regardless
+                of their background.
+            </p>
+
+            <br>
+
+            <h3>Our Vision</h3>
+
+            <p>
+                To build a community of people who pursue God,
+                knowledge, wisdom and meaningful growth.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <div class="section-title">
+
+        <h2>📩 Contact Us</h2>
+
+        <p>
+            Have a question, suggestion or prayer request?
+        </p>
+
+    </div>
+
+    <form onsubmit="sendMessage(event)">
+
+        <input
+            type="text"
+            id="name"
+            placeholder="Your Name"
+            required
+        >
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Your Email"
+            required
+        >
+
+        <textarea
+            id="message"
+            placeholder="Write your message..."
+            required
+        ></textarea>
+
+        <button type="submit">
+            Send Message
+        </button>
+
+    </form>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © <span id="year"></span>
+        <strong>Kingdom Learning Hub</strong>
+        by Richard.
+    </p>
+
+    <div class="social">
+
+        <a href="#">Facebook</a>
+        <a href="#">TikTok</a>
+        <a href="#">YouTube</a>
+
+    </div>
+
+    <p>
+        Grow in Faith. Grow in Knowledge. Grow in Life.
+    </p>
+
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+    function toggleMenu() {
+        const menu = document.getElementById("menu");
+        menu.classList.toggle("active");
+    }
+
+
+    function sendMessage(event) {
+
+        event.preventDefault();
+
+        const name =
+            document.getElementById("name").value;
+
+        alert(
+            "Thank you, " +
+            name +
+            "! Your message has been received."
+        );
+
+    }
+
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+</script>
+
+</body>
+</html>

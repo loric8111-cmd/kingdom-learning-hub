@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Worship | Kingdom Learning Hub</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gold: #d4a017;
+    --gold-light: #f3c85b;
+    --dark: #070a10;
+    --dark2: #101521;
+    --card: rgba(255,255,255,0.06);
+    --border: rgba(255,255,255,0.12);
+    --text: #f4f5f7;
+    --muted: #9da5b5;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+/* HEADER */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(7,10,16,0.92);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+nav {
+    min-height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--gold-light);
+}
+
+.logo small {
+    display: block;
+    color: #777;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+/* BACK BUTTON */
+
+.back {
+    color: var(--gold-light);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+/* HERO */
+
+.hero {
+    text-align: center;
+
+    padding: 90px 20px 70px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(212,160,23,0.13),
+            transparent 55%
+        );
+}
+
+.hero-icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.hero span {
+    color: var(--gold-light);
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: clamp(38px,7vw,65px);
+    margin: 12px 0;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: auto;
+    color: var(--muted);
+}
+
+/* CONTENT */
+
+.content {
+    padding: 30px 0 100px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+}
+
+.section-title p {
+    color: var(--muted);
+}
+
+/* CARDS */
+
+.grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(240px,1fr));
+
+    gap: 22px;
+}
+
+.card {
+    padding: 32px;
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.025)
+        );
+
+    border: 1px solid var(--border);
+
+    transition: .35s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(212,160,23,.45);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.25);
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.card a {
+    display: inline-block;
+
+    padding: 11px 18px;
+
+    border-radius: 8px;
+
+    background: var(--gold);
+
+    color: #111;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+.card a:hover {
+    background: var(--gold-light);
+}
+
+/* VERSE */
+
+.verse {
+    padding: 80px 20px;
+
+    text-align: center;
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(212,160,23,.10),
+            transparent 60%
+        );
+}
+
+.verse blockquote {
+    max-width: 750px;
+    margin: auto;
+
+    font-size: 23px;
+    font-style: italic;
+}
+
+.verse cite {
+    display: block;
+
+    margin-top: 15px;
+
+    color: var(--gold-light);
+
+    font-style: normal;
+    font-weight: bold;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 40px 20px;
+
+    text-align: center;
+
+    background: #05070b;
+
+    border-top: 1px solid var(--border);
+}
+
+footer strong {
+    color: var(--gold-light);
+}
+
+footer p {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 6px;
+}
+
+/* MOBILE */
+
+@media(max-width:700px) {
+
+    nav {
+        min-height: 70px;
+    }
+
+    .back {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 70px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">
+
+Kingdom <span>Learning Hub</span>
+
+<small>BY RICHARD</small>
+
+</div>
+
+<a href="index.html" class="back">
+← Home
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container">
+
+<div class="hero-icon">
+🙏
+</div>
+
+<span>WORSHIP & SPIRITUAL GROWTH</span>
+
+<h1>
+Grow in Faith
+</h1>
+
+<p>
+Explore God's Word, develop your prayer life,
+and discover biblical principles for everyday living.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- WORSHIP OPTIONS -->
+
+<section class="content">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+Choose Your Journey
+</h2>
+
+<p>
+Select an area below to continue.
+</p>
+
+</div>
+
+
+<div class="grid">
+
+
+<!-- BIBLE STUDY -->
+
+<div class="card">
+
+<div class="card-icon">
+📖
+</div>
+
+<h3>
+Bible Study
+</h3>
+
+<p>
+Study Scripture through structured lessons
+designed to help you understand God's Word.
+</p>
+
+<a href="bible-study.html">
+Enter Bible Study →
+</a>
+
+</div>
+
+
+<!-- PRAYER -->
+
+<div class="card">
+
+<div class="card-icon">
+🙏
+</div>
+
+<h3>
+Prayer
+</h3>
+
+<p>
+Explore biblical principles of prayer and
+develop a consistent prayer life.
+</p>
+
+<a href="prayer.html">
+Prayer Resources →
+</a>
+
+</div>
+
+
+<!-- DEVOTIONAL -->
+
+<div class="card">
+
+<div class="card-icon">
+🌅
+</div>
+
+<h3>
+Daily Devotional
+</h3>
+
+<p>
+Receive daily encouragement, Scripture
+and reflections for your spiritual journey.
+</p>
+
+<a href="devotional.html">
+Read Devotional →
+</a>
+
+</div>
+
+
+<!-- CHRISTIAN LIVING -->
+
+<div class="card">
+
+<div class="card-icon">
+✝️
+</div>
+
+<h3>
+Christian Living
+</h3>
+
+<p>
+Learn about faith, love, forgiveness,
+character and living according to biblical principles.
+</p>
+
+<a href="christian-living.html">
+Explore →
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- VERSE -->
+
+<section class="verse">
+
+<blockquote>
+"Your word is a lamp for my feet,
+a light on my path."
+</blockquote>
+
+<cite>
+Psalm 119:105
+</cite>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+<strong>Kingdom Learning Hub</strong>
+</p>
+
+<p>
+By Richard
+</p>
+
+<p>
+Grow in Faith. Grow in Knowledge. Grow in Life.
+</p>
+
+<p>
+© <span id="year"></span>
+Kingdom Learning Hub
+</p>
+
+</footer>
+
+
+<script>
+
+document.getElementById("year")
+.textContent = new Date().getFullYear();
+
+</script>
+
+</body>
+
+</html>

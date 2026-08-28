@@ -6,15 +6,7 @@
 
 <title>Kingdom Learning Hub | By Richard</title>
 
-<meta name="description"
-content="Kingdom Learning Hub by Richard — Grow in Faith. Grow in Knowledge. Grow in Life.">
-
 <style>
-
-/* =========================
-   RESET
-========================= */
-
 * {
     margin: 0;
     padding: 0;
@@ -23,50 +15,40 @@ content="Kingdom Learning Hub by Richard — Grow in Faith. Grow in Knowledge. G
 }
 
 :root {
-    --bg: #080b12;
-    --bg-light: #101522;
-    --card: rgba(255,255,255,0.06);
     --gold: #d4a017;
-    --gold-light: #f1c75b;
-    --white: #ffffff;
-    --text: #e8eaf0;
+    --gold-light: #f3c85b;
+    --dark: #070a10;
+    --dark2: #101521;
+    --card: rgba(255,255,255,0.06);
+    --border: rgba(255,255,255,0.12);
+    --text: #f4f5f7;
     --muted: #9da5b5;
-    --border: rgba(255,255,255,0.10);
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: var(--bg);
+    background: var(--dark);
     color: var(--text);
-    line-height: 1.7;
-    overflow-x: hidden;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
+    line-height: 1.6;
 }
 
 .container {
     width: 90%;
-    max-width: 1200px;
+    max-width: 1150px;
     margin: auto;
 }
 
-
-/* =========================
-   NAVBAR
-========================= */
+/* NAVIGATION */
 
 header {
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
     z-index: 1000;
 
-    background: rgba(8,11,18,0.82);
+    background: rgba(7,10,16,0.88);
     backdrop-filter: blur(18px);
+
     border-bottom: 1px solid var(--border);
 }
 
@@ -74,14 +56,13 @@ nav {
     height: 75px;
 
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
-    font-size: 20px;
-    font-weight: 800;
-    letter-spacing: -0.5px;
+    font-size: 19px;
+    font-weight: bold;
 }
 
 .logo span {
@@ -90,22 +71,22 @@ nav {
 
 .logo small {
     display: block;
-    font-size: 10px;
-    color: var(--muted);
+    color: #777;
+    font-size: 9px;
     letter-spacing: 2px;
-    text-transform: uppercase;
 }
 
 .menu {
     display: flex;
-    list-style: none;
     gap: 28px;
+    list-style: none;
 }
 
 .menu a {
-    color: #d9dce5;
+    color: #ddd;
+    text-decoration: none;
     font-size: 14px;
-    transition: 0.3s;
+    transition: .3s;
 }
 
 .menu a:hover {
@@ -118,10 +99,7 @@ nav {
     cursor: pointer;
 }
 
-
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero {
     min-height: 100vh;
@@ -130,37 +108,16 @@ nav {
     align-items: center;
     text-align: center;
 
-    position: relative;
-    overflow: hidden;
-
     background:
-        radial-gradient(circle at 50% 20%, rgba(212,160,23,0.15), transparent 35%),
-        linear-gradient(135deg,#080b12,#111827);
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-
-    width: 500px;
-    height: 500px;
-
-    border-radius: 50%;
-
-    background: rgba(212,160,23,0.08);
-
-    filter: blur(80px);
-
-    top: 10%;
-    left: 50%;
-
-    transform: translateX(-50%);
+        radial-gradient(
+            circle at center,
+            rgba(212,160,23,0.15),
+            transparent 50%
+        ),
+        linear-gradient(135deg,#070a10,#121927);
 }
 
 .hero-content {
-    position: relative;
-    z-index: 2;
-
     max-width: 850px;
     margin: auto;
     padding-top: 70px;
@@ -169,28 +126,23 @@ nav {
 .badge {
     display: inline-block;
 
-    padding: 8px 15px;
+    padding: 8px 16px;
 
-    border: 1px solid rgba(212,160,23,0.35);
+    border: 1px solid rgba(212,160,23,.35);
     border-radius: 50px;
 
     color: var(--gold-light);
 
-    background: rgba(212,160,23,0.08);
-
-    font-size: 12px;
-    letter-spacing: 1px;
+    font-size: 11px;
+    letter-spacing: 2px;
 
     margin-bottom: 25px;
 }
 
 .hero h1 {
-    font-size: clamp(42px,7vw,78px);
-
+    font-size: clamp(42px,7vw,76px);
     line-height: 1.05;
-
     letter-spacing: -3px;
-
     margin-bottom: 18px;
 }
 
@@ -199,27 +151,24 @@ nav {
 }
 
 .hero h2 {
-    color: #cbd0dc;
     font-size: 20px;
-    font-weight: 400;
-    margin-bottom: 22px;
+    font-weight: normal;
+    color: #ccc;
+    margin-bottom: 20px;
 }
 
 .hero p {
-    color: var(--muted);
-    font-size: 17px;
     max-width: 680px;
     margin: auto;
+    color: var(--muted);
+    font-size: 17px;
 }
 
 .hero strong {
     color: var(--gold-light);
 }
 
-
-/* =========================
-   BUTTONS
-========================= */
+/* BUTTONS */
 
 .buttons {
     margin-top: 35px;
@@ -227,210 +176,184 @@ nav {
     display: flex;
     justify-content: center;
     gap: 15px;
-
     flex-wrap: wrap;
 }
 
 .btn {
-    min-width: 180px;
+    min-width: 200px;
 
-    padding: 14px 25px;
+    padding: 15px 25px;
 
-    border-radius: 8px;
+    border-radius: 9px;
 
     font-size: 14px;
-    font-weight: 700;
+    font-weight: bold;
+
+    text-decoration: none;
 
     display: inline-flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
-    transition: 0.3s;
+    transition: .3s;
 }
 
 .primary {
-    background: linear-gradient(135deg,var(--gold),var(--gold-light));
+    background: linear-gradient(
+        135deg,
+        var(--gold),
+        var(--gold-light)
+    );
+
     color: #111;
 
-    box-shadow: 0 10px 30px rgba(212,160,23,0.18);
+    box-shadow:
+        0 10px 30px rgba(212,160,23,.18);
 }
 
 .primary:hover {
     transform: translateY(-4px);
-    box-shadow: 0 15px 35px rgba(212,160,23,0.28);
+    box-shadow:
+        0 15px 35px rgba(212,160,23,.3);
 }
 
 .secondary {
-    border: 1px solid var(--border);
-    background: rgba(255,255,255,0.04);
+    background: rgba(255,255,255,.04);
+
     color: white;
+
+    border: 1px solid var(--border);
 }
 
 .secondary:hover {
-    border-color: var(--gold);
-    color: var(--gold-light);
     transform: translateY(-4px);
+
+    border-color: var(--gold);
+
+    color: var(--gold-light);
 }
 
+/* INTRO */
 
-/* =========================
-   SECTIONS
-========================= */
+.intro {
+    padding: 100px 0;
+    background: #0b0f17;
+    text-align: center;
+}
 
-section {
+.intro h2 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.intro p {
+    max-width: 700px;
+    margin: auto;
+    color: var(--muted);
+}
+
+/* TWO MAIN WORLDS */
+
+.worlds {
     padding: 100px 0;
 }
 
 .section-title {
     text-align: center;
-    max-width: 700px;
-    margin: 0 auto 55px;
+    margin-bottom: 50px;
 }
 
 .section-title span {
     color: var(--gold-light);
-    font-size: 12px;
-    font-weight: bold;
+    font-size: 11px;
     letter-spacing: 2px;
-    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .section-title h2 {
-    font-size: clamp(30px,5vw,45px);
-    margin: 10px 0 12px;
+    font-size: 40px;
+    margin: 10px 0;
 }
 
 .section-title p {
     color: var(--muted);
 }
 
+/* WORLD CARDS */
 
-/* =========================
-   FEATURE CARDS
-========================= */
-
-.cards {
+.world-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit,minmax(250px,1fr));
-
-    gap: 22px;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
 }
 
-.card {
-    background: linear-gradient(
-        145deg,
-        rgba(255,255,255,0.07),
-        rgba(255,255,255,0.025)
-    );
+.world {
+    padding: 45px 35px;
+
+    border-radius: 20px;
 
     border: 1px solid var(--border);
 
-    border-radius: 16px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.025)
+        );
 
-    padding: 30px;
-
-    transition: 0.35s;
-
-    position: relative;
-    overflow: hidden;
+    transition: .35s;
 }
 
-.card::before {
-    content: "";
-
-    position: absolute;
-
-    width: 120px;
-    height: 120px;
-
-    background: rgba(212,160,23,0.08);
-
-    border-radius: 50%;
-
-    top: -60px;
-    right: -60px;
-}
-
-.card:hover {
+.world:hover {
     transform: translateY(-8px);
 
-    border-color: rgba(212,160,23,0.4);
+    border-color: rgba(212,160,23,.45);
 
     box-shadow:
-        0 20px 50px rgba(0,0,0,0.25);
+        0 25px 60px rgba(0,0,0,.25);
 }
 
-.icon {
-    width: 55px;
-    height: 55px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 12px;
-
-    background: rgba(212,160,23,0.10);
-
-    font-size: 27px;
-
+.world-icon {
+    font-size: 48px;
     margin-bottom: 20px;
 }
 
-.card h3 {
-    margin-bottom: 10px;
-    font-size: 20px;
+.world h3 {
+    font-size: 28px;
+    margin-bottom: 12px;
 }
 
-.card p {
+.world p {
     color: var(--muted);
-    font-size: 14px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
-.card-link {
-    color: var(--gold-light);
+.world-link {
+    display: inline-block;
+
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    background: var(--gold);
+
+    color: #111;
+
     font-size: 13px;
     font-weight: bold;
 }
 
-
-/* =========================
-   WORSHIP
-========================= */
-
-.worship {
-    background:
-        linear-gradient(
-            180deg,
-            #080b12,
-            #0d111b
-        );
-}
-
-
-/* =========================
-   LEARNING
-========================= */
-
-.learning {
-    background: #0b0f18;
-}
-
-
-/* =========================
-   VERSE
-========================= */
+/* VERSE */
 
 .verse {
+    padding: 100px 20px;
+
     text-align: center;
 
     background:
         radial-gradient(
             circle at center,
-            rgba(212,160,23,0.10),
+            rgba(212,160,23,.12),
             transparent 55%
         );
 
@@ -440,14 +363,11 @@ section {
 
 .verse blockquote {
     max-width: 800px;
-
     margin: auto;
 
-    font-size: clamp(20px,4vw,30px);
+    font-size: clamp(21px,4vw,30px);
 
     font-style: italic;
-
-    line-height: 1.6;
 }
 
 .verse cite {
@@ -457,259 +377,71 @@ section {
 
     color: var(--gold-light);
 
-    font-size: 14px;
-
-    font-style: normal;
     font-weight: bold;
 }
 
-
-/* =========================
-   STATS
-========================= */
-
-.stats {
-    display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit,minmax(180px,1fr));
-
-    gap: 20px;
-
-    margin-top: 50px;
-}
-
-.stat {
-    text-align: center;
-
-    padding: 30px;
-
-    background: var(--card);
-
-    border: 1px solid var(--border);
-
-    border-radius: 14px;
-}
-
-.stat h3 {
-    color: var(--gold-light);
-
-    font-size: 32px;
-}
-
-.stat p {
-    color: var(--muted);
-    font-size: 13px;
-}
-
-
-/* =========================
-   ABOUT
-========================= */
+/* ABOUT */
 
 .about {
-    background: #0d111b;
+    padding: 100px 0;
+    background: #0b0f17;
 }
 
 .about-grid {
     display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
+    grid-template-columns: 1fr 1fr;
     gap: 60px;
-
     align-items: center;
 }
 
-.about-text span {
-    color: var(--gold-light);
-
-    font-size: 12px;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
+.about h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
 }
 
-.about-text h2 {
-    font-size: 42px;
-
-    margin: 12px 0 20px;
-}
-
-.about-text p {
+.about p {
     color: var(--muted);
-
     margin-bottom: 18px;
 }
 
 .mission {
-    padding: 40px;
+    padding: 35px;
 
     border-radius: 18px;
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(212,160,23,0.12),
-            rgba(255,255,255,0.03)
-        );
+    background: rgba(212,160,23,.08);
 
-    border: 1px solid rgba(212,160,23,0.2);
+    border: 1px solid rgba(212,160,23,.2);
 }
 
 .mission h3 {
     color: var(--gold-light);
-
     margin-bottom: 10px;
 }
 
-.mission p {
-    color: #c6cad3;
-}
-
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact {
-    background: #080b12;
-}
-
-.contact-box {
-    max-width: 700px;
-
-    margin: auto;
-
-    padding: 35px;
-
-    background: var(--card);
-
-    border: 1px solid var(--border);
-
-    border-radius: 18px;
-}
-
-input,
-textarea {
-    width: 100%;
-
-    background: rgba(255,255,255,0.04);
-
-    border: 1px solid var(--border);
-
-    color: white;
-
-    padding: 14px;
-
-    margin-bottom: 15px;
-
-    border-radius: 8px;
-
-    outline: none;
-
-    font-size: 14px;
-}
-
-input:focus,
-textarea:focus {
-    border-color: var(--gold);
-}
-
-textarea {
-    min-height: 150px;
-
-    resize: vertical;
-}
-
-button {
-    width: 100%;
-
-    padding: 14px;
-
-    border: none;
-
-    border-radius: 8px;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--gold),
-            var(--gold-light)
-        );
-
-    color: #111;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-button:hover {
-    transform: translateY(-2px);
-}
-
-
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer {
+    padding: 45px 20px;
+
+    text-align: center;
+
     background: #05070b;
 
     border-top: 1px solid var(--border);
-
-    padding: 50px 0 25px;
-
-    text-align: center;
 }
 
-.footer-logo {
-    font-size: 22px;
-
-    font-weight: bold;
-
-    margin-bottom: 12px;
-}
-
-.footer-logo span {
+footer strong {
     color: var(--gold-light);
 }
 
 footer p {
     color: var(--muted);
-
     font-size: 13px;
+    margin: 7px;
 }
 
-.social {
-    margin: 20px 0;
-}
-
-.social a {
-    display: inline-block;
-
-    margin: 5px 8px;
-
-    color: #ddd;
-
-    font-size: 13px;
-
-    transition: 0.3s;
-}
-
-.social a:hover {
-    color: var(--gold-light);
-}
-
-
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:800px) {
 
@@ -727,11 +459,11 @@ footer p {
 
         width: 100%;
 
+        background: #080b12;
+
         flex-direction: column;
 
         gap: 0;
-
-        background: rgba(8,11,18,0.98);
 
         border-bottom: 1px solid var(--border);
     }
@@ -742,20 +474,16 @@ footer p {
 
     .menu li {
         text-align: center;
-
         padding: 15px;
     }
 
+    .world-grid,
     .about-grid {
         grid-template-columns: 1fr;
     }
 
     .hero h1 {
         letter-spacing: -2px;
-    }
-
-    section {
-        padding: 75px 0;
     }
 
     .btn {
@@ -765,39 +493,12 @@ footer p {
 
 }
 
-
-/* =========================
-   ANIMATION
-========================= */
-
-@keyframes fadeUp {
-
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-}
-
-.hero-content {
-    animation: fadeUp 1s ease;
-}
-
 </style>
 </head>
 
-
 <body>
 
-
-<!-- =========================
-     NAVIGATION
-========================= -->
+<!-- NAVIGATION -->
 
 <header>
 
@@ -807,7 +508,7 @@ footer p {
 
 <div class="logo">
 Kingdom <span>Learning Hub</span>
-<small>By Richard</small>
+<small>BY RICHARD</small>
 </div>
 
 <div class="menu-button"
@@ -819,13 +520,11 @@ onclick="toggleMenu()">
 
 <li><a href="#home">Home</a></li>
 
-<li><a href="#worship">Worship</a></li>
+<li><a href="worship.html">Worship</a></li>
 
-<li><a href="#learning">Learning</a></li>
+<li><a href="learning.html">Learning</a></li>
 
 <li><a href="#about">About</a></li>
-
-<li><a href="#contact">Contact</a></li>
 
 </ul>
 
@@ -836,9 +535,7 @@ onclick="toggleMenu()">
 </header>
 
 
-<!-- =========================
-     HERO
-========================= -->
+<!-- HERO -->
 
 <section class="hero" id="home">
 
@@ -851,8 +548,7 @@ FAITH • KNOWLEDGE • PURPOSE
 </div>
 
 <h1>
-Kingdom
-<span>Learning Hub</span>
+Kingdom <span>Learning Hub</span>
 </h1>
 
 <h2>
@@ -860,19 +556,19 @@ By Richard
 </h2>
 
 <p>
-A Christian-centered platform where faith,
-knowledge and practical skills come together
-to help people grow spiritually and intellectually.
+A Christian-centered platform where
+spiritual growth, education and practical
+skills come together.
 </p>
 
 <div class="buttons">
 
-<a href="#worship"
+<a href="worship.html"
 class="btn primary">
 📖 Start Bible Study
 </a>
 
-<a href="#learning"
+<a href="learning.html"
 class="btn secondary">
 🎓 Start Learning
 </a>
@@ -892,100 +588,99 @@ Grow in Faith. Grow in Knowledge. Grow in Life.
 </section>
 
 
-<!-- =========================
-     WORSHIP
-========================= -->
+<!-- INTRO -->
 
-<section class="worship" id="worship">
+<section class="intro">
+
+<div class="container">
+
+<h2>
+One Platform. Two Paths.
+</h2>
+
+<p>
+Whether you are seeking to understand God's Word
+or develop practical knowledge and skills,
+Kingdom Learning Hub gives you a place to learn,
+grow and move forward.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- WORSHIP & LEARNING -->
+
+<section class="worlds">
 
 <div class="container">
 
 <div class="section-title">
 
-<span>WORSHIP</span>
+<span>CHOOSE YOUR PATH</span>
 
 <h2>
-Grow Spiritually
+Where Would You Like To Begin?
 </h2>
 
 <p>
-Explore God's Word, strengthen your faith
-and develop a deeper relationship with God.
+Choose a path below and explore the resources available.
 </p>
 
 </div>
 
 
-<div class="cards">
+<div class="world-grid">
 
 
-<div class="card">
+<!-- WORSHIP -->
 
-<div class="icon">📖</div>
+<div class="world">
 
-<h3>Bible Study</h3>
+<div class="world-icon">
+🙏
+</div>
+
+<h3>
+Worship & Bible Study
+</h3>
 
 <p>
-Study Scripture and discover biblical
-principles that can guide everyday life.
+Explore Scripture, prayer, devotionals,
+Christian living and biblical teachings
+designed to encourage spiritual growth.
 </p>
 
-<a class="card-link" href="#">
-Explore Bible Studies →
+<a href="worship.html"
+class="world-link">
+Enter Worship →
 </a>
 
 </div>
 
 
-<div class="card">
+<!-- LEARNING -->
 
-<div class="icon">🙏</div>
+<div class="world">
 
-<h3>Prayer</h3>
-
-<p>
-Develop a consistent prayer life and
-grow in your relationship with God.
-</p>
-
-<a class="card-link" href="#">
-Prayer Resources →
-</a>
-
+<div class="world-icon">
+🎓
 </div>
 
-
-<div class="card">
-
-<div class="icon">🌅</div>
-
-<h3>Daily Devotional</h3>
+<h3>
+Learning Center
+</h3>
 
 <p>
-Start each day with Scripture,
-reflection and spiritual encouragement.
+Develop practical knowledge through
+Forex education, basic education,
+digital skills, finance and entrepreneurship.
 </p>
 
-<a class="card-link" href="#">
-Read Devotional →
-</a>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">✝️</div>
-
-<h3>Christian Living</h3>
-
-<p>
-Learn about faith, love, forgiveness,
-character and Christian living.
-</p>
-
-<a class="card-link" href="#">
-Learn More →
+<a href="learning.html"
+class="world-link">
+Enter Learning Center →
 </a>
 
 </div>
@@ -998,229 +693,24 @@ Learn More →
 </section>
 
 
-<!-- =========================
-     LEARNING
-========================= -->
-
-<section class="learning" id="learning">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>LEARNING CENTER</span>
-
-<h2>
-Build Knowledge & Skills
-</h2>
-
-<p>
-Practical education designed to help
-you develop useful skills for life.
-</p>
-
-</div>
-
-
-<div class="cards">
-
-
-<div class="card">
-
-<div class="icon">📈</div>
-
-<h3>Forex Academy</h3>
-
-<p>
-Learn forex terminology, market analysis,
-risk management and trading discipline.
-</p>
-
-<a class="card-link" href="#">
-Enter Forex Academy →
-</a>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">📚</div>
-
-<h3>Basic Education</h3>
-
-<p>
-Improve mathematics, English,
-general knowledge and study skills.
-</p>
-
-<a class="card-link" href="#">
-Start Learning →
-</a>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">💻</div>
-
-<h3>Digital Skills</h3>
-
-<p>
-Learn computers, internet skills,
-web development and digital tools.
-</p>
-
-<a class="card-link" href="#">
-Learn Digital Skills →
-</a>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">💰</div>
-
-<h3>Financial Education</h3>
-
-<p>
-Understand budgeting, saving,
-money management and financial planning.
-</p>
-
-<a class="card-link" href="#">
-Learn Finance →
-</a>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">🌱</div>
-
-<h3>Personal Growth</h3>
-
-<p>
-Develop discipline, confidence,
-purpose and useful life skills.
-</p>
-
-<a class="card-link" href="#">
-Start Growing →
-</a>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">🚀</div>
-
-<h3>Entrepreneurship</h3>
-
-<p>
-Learn business fundamentals,
-entrepreneurship and practical opportunities.
-</p>
-
-<a class="card-link" href="#">
-Explore Business →
-</a>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     VERSE
-========================= -->
+<!-- VERSE -->
 
 <section class="verse">
 
-<div class="container">
-
 <blockquote>
-
 "The fear of the LORD is the beginning
 of wisdom: and the knowledge of the holy
 is understanding."
-
 </blockquote>
 
 <cite>
 Proverbs 9:10
 </cite>
 
-</div>
-
 </section>
 
 
-<!-- =========================
-     STATS
-========================= -->
-
-<section>
-
-<div class="container">
-
-<div class="section-title">
-
-<span>OUR PURPOSE</span>
-
-<h2>
-Learning That Creates Impact
-</h2>
-
-<p>
-Kingdom Learning Hub is built around
-spiritual growth, knowledge and practical development.
-</p>
-
-</div>
-
-
-<div class="stats">
-
-<div class="stat">
-<h3>01</h3>
-<p>Faith First</p>
-</div>
-
-<div class="stat">
-<h3>02</h3>
-<p>Learn Continuously</p>
-</div>
-
-<div class="stat">
-<h3>03</h3>
-<p>Develop Skills</p>
-</div>
-
-<div class="stat">
-<h3>04</h3>
-<p>Serve Others</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     ABOUT
-========================= -->
+<!-- ABOUT -->
 
 <section class="about" id="about">
 
@@ -1228,30 +718,23 @@ spiritual growth, knowledge and practical development.
 
 <div class="about-grid">
 
-<div class="about-text">
-
-<span>ABOUT THE HUB</span>
+<div>
 
 <h2>
-Faith + Knowledge + Purpose
+Faith. Knowledge. Purpose.
 </h2>
 
 <p>
 Kingdom Learning Hub is a Christian-centered
-learning platform created to help people grow
-spiritually, intellectually and practically.
+learning platform created by Richard to bring
+spiritual learning and practical education together.
 </p>
 
 <p>
-We believe education should develop more than
-knowledge. It should encourage wisdom,
-discipline, character and meaningful action.
-</p>
-
-<p>
-Our goal is to create a community where people
-can study God's Word while also developing
-skills that can help them navigate life.
+Our goal is to help people discover God's Word,
+develop useful skills, gain knowledge and become
+people who can make a positive impact in their
+communities.
 </p>
 
 </div>
@@ -1265,13 +748,10 @@ Our Mission
 
 <p>
 To make faith-based learning and practical
-education accessible to people from different
-backgrounds.
+education accessible to everyone.
 </p>
 
-<br>
-
-<h3>
+<h3 style="margin-top:25px;">
 Our Vision
 </h3>
 
@@ -1289,124 +769,42 @@ knowledge, wisdom, purpose and positive impact.
 </section>
 
 
-<!-- =========================
-     CONTACT
-========================= -->
-
-<section class="contact" id="contact">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>GET IN TOUCH</span>
-
-<h2>
-Contact Kingdom Learning Hub
-</h2>
-
-<p>
-Questions, suggestions, ideas or prayer requests?
-Send us a message.
-</p>
-
-</div>
-
-
-<div class="contact-box">
-
-<form onsubmit="sendMessage(event)">
-
-<input
-type="text"
-id="name"
-placeholder="Your Name"
-required
->
-
-<input
-type="email"
-id="email"
-placeholder="Your Email"
-required
->
-
-<textarea
-id="message"
-placeholder="Your message..."
-required
-></textarea>
-
-<button type="submit">
-Send Message
-</button>
-
-</form>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- FOOTER -->
 
 <footer>
 
-<div class="container">
-
-<div class="footer-logo">
-Kingdom <span>Learning Hub</span>
-</div>
+<p>
+<strong>Kingdom Learning Hub</strong>
+</p>
 
 <p>
 By Richard
 </p>
 
-<div class="social">
-
-<a href="#">Facebook</a>
-
-<a href="#">TikTok</a>
-
-<a href="#">YouTube</a>
-
-</div>
-
 <p>
 Grow in Faith. Grow in Knowledge. Grow in Life.
 </p>
 
-<p style="margin-top:20px;">
+<p>
 © <span id="year"></span>
-Kingdom Learning Hub. All Rights Reserved.
+Kingdom Learning Hub
 </p>
-
-</div>
 
 </footer>
 
 
 <script>
 
-/* MOBILE MENU */
-
 function toggleMenu() {
 
-    const menu =
-        document.getElementById("menu");
-
-    menu.classList.toggle("active");
+    document
+    .getElementById("menu")
+    .classList.toggle("active");
 
 }
 
-
-/* CLOSE MOBILE MENU AFTER CLICK */
-
-document.querySelectorAll(".menu a")
+document
+.querySelectorAll(".menu a")
 .forEach(function(link) {
 
     link.addEventListener("click", function() {
@@ -1419,28 +817,8 @@ document.querySelectorAll(".menu a")
 
 });
 
-
-/* CONTACT FORM */
-
-function sendMessage(event) {
-
-    event.preventDefault();
-
-    const name =
-        document.getElementById("name").value;
-
-    alert(
-        "Thank you, " +
-        name +
-        "! Your message has been received."
-    );
-
-}
-
-
-/* COPYRIGHT YEAR */
-
-document.getElementById("year")
+document
+.getElementById("year")
 .textContent = new Date().getFullYear();
 
 </script>

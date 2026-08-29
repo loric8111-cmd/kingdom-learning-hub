@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Candlesticks & Charts | Kingdom Learning Hub</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gold: #d4a017;
+    --gold-light: #f3c85b;
+    --dark: #070a10;
+    --card: rgba(255,255,255,0.055);
+    --border: rgba(255,255,255,0.12);
+    --text: #f4f5f7;
+    --muted: #a2a9b7;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    line-height: 1.8;
+}
+
+.container {
+    width: 90%;
+    max-width: 850px;
+    margin: auto;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(7,10,16,.95);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    min-height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--gold-light);
+}
+
+.logo small {
+    display: block;
+    color: #777;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.back {
+    color: var(--gold-light);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.lesson-header {
+    text-align: center;
+    padding: 80px 20px 55px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(212,160,23,.13),
+            transparent 60%
+        );
+}
+
+.lesson-number {
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.lesson-header h1 {
+    font-size: clamp(36px,7vw,58px);
+    line-height: 1.1;
+    margin: 15px 0;
+}
+
+.lesson-header p {
+    color: var(--muted);
+    max-width: 650px;
+    margin: auto;
+}
+
+.lesson-content {
+    padding: 30px 0 80px;
+}
+
+.lesson-content h2 {
+    font-size: 27px;
+    margin: 40px 0 15px;
+    color: var(--gold-light);
+}
+
+.lesson-content p {
+    color: #c7cbd4;
+    margin-bottom: 18px;
+}
+
+.lesson-content ul {
+    margin: 15px 0 25px 25px;
+    color: #c7cbd4;
+}
+
+.lesson-content li {
+    margin-bottom: 10px;
+}
+
+.key-point {
+    margin: 30px 0;
+    padding: 25px;
+    background: rgba(212,160,23,.07);
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+}
+
+.key-point strong {
+    color: var(--gold-light);
+}
+
+.example {
+    margin: 30px 0;
+    padding: 25px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.example h3 {
+    color: var(--gold-light);
+    margin-bottom: 10px;
+}
+
+/* CANDLE DIAGRAM */
+
+.candle-box {
+    margin: 35px 0;
+    padding: 35px 20px;
+
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+
+    text-align: center;
+}
+
+.candle {
+    position: relative;
+    width: 55px;
+    height: 170px;
+    margin: 20px auto;
+}
+
+.wick {
+    position: absolute;
+    width: 3px;
+    height: 170px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #aaa;
+}
+
+.body {
+    position: absolute;
+    width: 45px;
+    height: 75px;
+    left: 5px;
+    top: 45px;
+
+    background: var(--gold);
+    border: 2px solid var(--gold-light);
+    border-radius: 3px;
+}
+
+.candle-label {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.ohlc {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.ohlc div {
+    padding: 15px 8px;
+    background: rgba(255,255,255,.04);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.ohlc strong {
+    display: block;
+    color: var(--gold-light);
+}
+
+.ohlc span {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+/* TABLE */
+
+.table-wrapper {
+    overflow-x: auto;
+    margin: 25px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 520px;
+}
+
+th,
+td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    color: var(--gold-light);
+    background: rgba(212,160,23,.07);
+}
+
+td {
+    color: #c7cbd4;
+}
+
+.reflection {
+    margin-top: 45px;
+    padding: 30px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
+
+.reflection h2 {
+    margin-top: 0;
+}
+
+.lesson-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 50px;
+}
+
+.nav-button {
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: var(--gold);
+    color: #111;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.nav-button:hover {
+    background: var(--gold-light);
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: #05070b;
+    border-top: 1px solid var(--border);
+}
+
+footer strong {
+    color: var(--gold-light);
+}
+
+footer p {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 6px;
+}
+
+@media(max-width:600px) {
+
+    .lesson-navigation {
+        flex-direction: column;
+    }
+
+    .nav-button {
+        text-align: center;
+    }
+
+    .ohlc {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">
+
+Kingdom <span>Learning Hub</span>
+
+<small>BY RICHARD</small>
+
+</div>
+
+<a href="../trading.html" class="back">
+← Trading Academy
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<section class="lesson-header">
+
+<div class="container">
+
+<div class="lesson-number">
+TRADING ACADEMY • LESSON 04
+</div>
+
+<h1>
+Candlesticks & Charts
+</h1>
+
+<p>
+Learn how traders visualize price movement,
+understand OHLC data and read basic candlestick
+charts.
+</p>
+
+</div>
+
+</section>
+
+
+<main class="lesson-content">
+
+<div class="container">
+
+
+<h2>
+1. What Is a Price Chart?
+</h2>
+
+<p>
+A price chart is a visual representation of how
+the price of a financial instrument changes over
+time.
+</p>
+
+<p>
+Instead of looking at thousands of individual
+prices, a trader can use a chart to identify
+patterns, trends, levels and changes in market
+behavior.
+</p>
+
+<div class="key-point">
+
+<strong>Key idea:</strong>
+
+<p>
+A chart does not tell you with certainty what
+will happen next. It shows what price has done
+and helps traders analyze possible scenarios.
+</p>
+
+</div>
+
+
+<h2>
+2. What Is a Candlestick?
+</h2>
+
+<p>
+A candlestick is a way of displaying price
+information for a specific period of time.
+</p>
+
+<p>
+Each candle contains four important prices:
+</p>
+
+<div class="candle-box">
+
+<div class="candle">
+
+<div class="wick"></div>
+
+<div class="body"></div>
+
+</div>
+
+<div class="candle-label">
+Example candlestick
+</div>
+
+</div>
+
+
+<div class="ohlc">
+
+<div>
+<strong>O</strong>
+<span>Open</span>
+</div>
+
+<div>
+<strong>H</strong>
+<span>High</span>
+</div>
+
+<div>
+<strong>L</strong>
+<span>Low</span>
+</div>
+
+<div>
+<strong>C</strong>
+<span>Close</span>
+</div>
+
+</div>
+
+
+<h2>
+3. Open, High, Low and Close
+</h2>
+
+<p>
+The four OHLC values describe what happened
+during the selected time period.
+</p>
+
+<ul>
+
+<li>
+<strong>Open:</strong> The price at which the
+period began.
+</li>
+
+<li>
+<strong>High:</strong> The highest price reached
+during the period.
+</li>
+
+<li>
+<strong>Low:</strong> The lowest price reached
+during the period.
+</li>
+
+<li>
+<strong>Close:</strong> The price at which the
+period ended.
+</li>
+
+</ul>
+
+
+<div class="example">
+
+<h3>
+Example</h3>
+
+<p>
+Imagine a 1-hour candle has:
+</p>
+
+<p>
+Open = 1.1000
+</p>
+
+<p>
+High = 1.1050
+</p>
+
+<p>
+Low = 1.0980
+</p>
+
+<p>
+Close = 1.1030
+</p>
+
+<p>
+This tells us the range of prices traded during
+that one-hour period.
+</p>
+
+</div>
+
+
+<h2>
+4. Candle Body</h2>
+
+<p>
+The candle body represents the distance between
+the opening price and closing price.
+</p>
+
+<p>
+If the closing price is above the opening price,
+the candle represents an upward price movement
+for that period.
+</p>
+
+<p>
+If the closing price is below the opening price,
+the candle represents a downward price movement
+for that period.
+</p>
+
+
+<h2>
+5. Wicks</h2>
+
+<p>
+The thin lines extending above or below the
+candle body are commonly called wicks, shadows
+or tails.
+</p>
+
+<p>
+They show prices that were reached during the
+period but were not the opening or closing price.
+</p>
+
+<div class="key-point">
+
+<strong>Think of it this way:</strong>
+
+<p>
+The body shows the relationship between open and
+close. The wicks show the additional price range
+visited during that period.
+</p>
+
+</div>
+
+
+<h2>
+6. Bullish and Bearish Candles
+</h2>
+
+<div class="table-wrapper">
+
+<table>
+
+<tr>
+<th>Type</th>
+<th>Meaning</th>
+</tr>
+
+<tr>
+<td>Bullish</td>
+<td>Close is above the open.</td>
+</tr>
+
+<tr>
+<td>Bearish</td>
+<td>Close is below the open.</td>
+</tr>
+
+</table>
+
+</div>
+
+<p>
+Charting platforms may use different colors to
+represent bullish and bearish candles. Always
+check the chart settings rather than assuming a
+specific color.
+</p>
+
+
+<h2>
+7. Candle Size</h2>
+
+<p>
+The size of a candle can provide information
+about the amount of price movement during its
+period.
+</p>
+
+<p>
+A relatively large body can indicate substantial
+movement between the open and close. A small body
+indicates that the opening and closing prices
+were relatively close together.
+</p>
+
+<p>
+However, candle size should always be considered
+in context. One candle alone does not provide a
+complete trading signal.
+</p>
+
+
+<h2>
+8. Timeframes</h2>
+
+<p>
+A timeframe determines the amount of time
+represented by each candle.
+</p>
+
+<div class="table-wrapper">
+
+<table>
+
+<tr>
+<th>Timeframe</th>
+<th>Each Candle Represents</th>
+</tr>
+
+<tr>
+<td>1 Minute</td>
+<td>1 minute</td>
+</tr>
+
+<tr>
+<td>5 Minutes</td>
+<td>5 minutes</td>
+</tr>
+
+<tr>
+<td>15 Minutes</td>
+<td>15 minutes</td>
+</tr>
+
+<tr>
+<td>1 Hour</td>
+<td>1 hour</td>
+</tr>
+
+<tr>
+<td>4 Hours</td>
+<td>4 hours</td>
+</tr>
+
+<tr>
+<td>Daily</td>
+<td>1 day</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<h2>
+9. Why Timeframes Matter</h2>
+
+<p>
+The same market can look completely different
+depending on the timeframe you use.
+</p>
+
+<p>
+For example, a market may appear to be rising
+on a 5-minute chart while simultaneously being
+in a broader downward movement on a daily chart.
+</p>
+
+<div class="key-point">
+
+<strong>Remember:</strong>
+
+<p>
+A lower timeframe shows more detailed price
+movement. A higher timeframe provides a broader
+view of the market.
+</p>
+
+</div>
+
+
+<h2>
+10. Reading a Simple Candle</h2>
+
+<div class="example">
+
+<h3>
+Example Scenario</h3>
+
+<p>
+EUR/USD opens at 1.1000.
+</p>
+
+<p>
+During the period it reaches 1.1040.
+</p>
+
+<p>
+It falls to 1.0990.
+</p>
+
+<p>
+It finally closes at 1.1030.
+</p>
+
+<p>
+The candle is bullish because the close
+(1.1030) is above the open (1.1000).
+</p>
+
+<p>
+The candle also tells us that price traded both
+above and below the opening level during the
+period.
+</p>
+
+</div>
+
+
+<h2>
+11. Candles Are Not Guaranteed Signals</h2>
+
+<p>
+A common beginner mistake is believing that one
+candlestick automatically predicts what the
+market will do next.
+</p>
+
+<p>
+Candlestick analysis becomes more useful when
+combined with broader context such as market
+structure, important price levels, volatility
+and risk management.
+</p>
+
+<p>
+We will study these concepts in later lessons.
+</p>
+
+
+<h2>
+12. Basic Chart Reading Process</h2>
+
+<p>
+When opening a chart, you can begin with a simple
+process:
+</p>
+
+<ul>
+
+<li>
+Identify the instrument.
+</li>
+
+<li>
+Choose an appropriate timeframe.
+</li>
+
+<li>
+Observe recent price movement.
+</li>
+
+<li>
+Look at the relationship between highs and lows.
+</li>
+
+<li>
+Identify important price areas.
+</li>
+
+<li>
+Avoid making a trade simply because one candle
+looks interesting.
+</li>
+
+</ul>
+
+
+<h2>
+13. Common Beginner Mistakes</h2>
+
+<ul>
+
+<li>
+Looking at only one candle.
+</li>
+
+<li>
+Ignoring the timeframe.
+</li>
+
+<li>
+Assuming every large candle will continue in
+the same direction.
+</li>
+
+<li>
+Entering trades without considering risk.
+</li>
+
+<li>
+Using complicated indicators before understanding
+basic price movement.
+</li>
+
+</ul>
+
+
+<div class="reflection">
+
+<h2>
+🧠 Lesson 04 Checkpoint
+</h2>
+
+<ul>
+
+<li>
+What are the four OHLC values?
+</li>
+
+<li>
+What does the candle body represent?
+</li>
+
+<li>
+What do candle wicks represent?
+</li>
+
+<li>
+What is the difference between a bullish and
+bearish candle?
+</li>
+
+<li>
+What does a 1-hour candle represent?
+</li>
+
+<li>
+Why can the same market look different on
+different timeframes?
+</li>
+
+<li>
+Why should you avoid treating one candle as a
+guaranteed trading signal?
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="lesson-navigation">
+
+<a href="currency-pairs.html"
+class="nav-button">
+← Previous Lesson
+</a>
+
+<a href="../trading.html"
+class="nav-button">
+Trading Academy
+</a>
+
+<a href="market-structure.html"
+class="nav-button">
+Next Lesson →
+</a>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer>
+
+<p>
+<strong>Kingdom Learning Hub</strong>
+</p>
+
+<p>
+By Richard
+</p>
+
+<p>
+Faith • Knowledge • Skills • Growth
+</p>
+
+<p>
+© 2026 Kingdom Learning Hub
+</p>
+
+</footer>
+
+
+</body>
+
+</html>

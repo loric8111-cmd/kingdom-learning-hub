@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Currency Pairs | Kingdom Learning Hub</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gold: #d4a017;
+    --gold-light: #f3c85b;
+    --dark: #070a10;
+    --card: rgba(255,255,255,0.055);
+    --border: rgba(255,255,255,0.12);
+    --text: #f4f5f7;
+    --muted: #a2a9b7;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    line-height: 1.8;
+}
+
+.container {
+    width: 90%;
+    max-width: 850px;
+    margin: auto;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(7,10,16,.95);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    min-height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--gold-light);
+}
+
+.logo small {
+    display: block;
+    color: #777;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.back {
+    color: var(--gold-light);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.lesson-header {
+    text-align: center;
+    padding: 80px 20px 55px;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(212,160,23,.13),
+            transparent 60%
+        );
+}
+
+.lesson-number {
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.lesson-header h1 {
+    font-size: clamp(36px,7vw,58px);
+    line-height: 1.1;
+    margin: 15px 0;
+}
+
+.lesson-header p {
+    color: var(--muted);
+    max-width: 650px;
+    margin: auto;
+}
+
+.lesson-content {
+    padding: 30px 0 80px;
+}
+
+.lesson-content h2 {
+    font-size: 27px;
+    margin: 40px 0 15px;
+    color: var(--gold-light);
+}
+
+.lesson-content p {
+    color: #c7cbd4;
+    margin-bottom: 18px;
+}
+
+.lesson-content ul {
+    margin: 15px 0 25px 25px;
+    color: #c7cbd4;
+}
+
+.lesson-content li {
+    margin-bottom: 10px;
+}
+
+.key-point {
+    margin: 30px 0;
+    padding: 25px;
+    background: rgba(212,160,23,.07);
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+}
+
+.key-point strong {
+    color: var(--gold-light);
+}
+
+.example {
+    margin: 30px 0;
+    padding: 25px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.example h3 {
+    color: var(--gold-light);
+    margin-bottom: 10px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    margin: 25px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 520px;
+}
+
+th,
+td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    color: var(--gold-light);
+    background: rgba(212,160,23,.07);
+}
+
+td {
+    color: #c7cbd4;
+}
+
+.reflection {
+    margin-top: 45px;
+    padding: 30px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
+
+.reflection h2 {
+    margin-top: 0;
+}
+
+.lesson-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 50px;
+}
+
+.nav-button {
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: var(--gold);
+    color: #111;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.nav-button:hover {
+    background: var(--gold-light);
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: #05070b;
+    border-top: 1px solid var(--border);
+}
+
+footer strong {
+    color: var(--gold-light);
+}
+
+footer p {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 6px;
+}
+
+@media(max-width:600px) {
+
+    .lesson-navigation {
+        flex-direction: column;
+    }
+
+    .nav-button {
+        text-align: center;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">
+
+Kingdom <span>Learning Hub</span>
+
+<small>BY RICHARD</small>
+
+</div>
+
+<a href="../trading.html" class="back">
+← Trading Academy
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<section class="lesson-header">
+
+<div class="container">
+
+<div class="lesson-number">
+TRADING ACADEMY • LESSON 03
+</div>
+
+<h1>
+Currency Pairs
+</h1>
+
+<p>
+Learn how forex currencies are paired, how to
+read a currency quote and how price movement
+is interpreted in the foreign exchange market.
+</p>
+
+</div>
+
+</section>
+
+
+<main class="lesson-content">
+
+<div class="container">
+
+
+<h2>
+1. What Is a Currency Pair?
+</h2>
+
+<p>
+In forex, currencies are normally quoted as
+pairs because the value of one currency is
+expressed relative to another currency.
+</p>
+
+<p>
+For example, EUR/USD compares the euro with
+the US dollar.
+</p>
+
+<div class="key-point">
+
+<strong>Remember:</strong>
+
+<p>
+The first currency is the <strong>base currency</strong>.
+The second currency is the <strong>quote currency</strong>.
+</p>
+
+</div>
+
+
+<h2>
+2. Understanding EUR/USD
+</h2>
+
+<div class="example">
+
+<h3>
+EUR/USD = 1.1000
+</h3>
+
+<p>
+EUR = Base currency
+</p>
+
+<p>
+USD = Quote currency
+</p>
+
+<p>
+The quotation means that one euro is valued at
+1.1000 US dollars at that quoted exchange rate.
+</p>
+
+</div>
+
+
+<h2>
+3. Base Currency</h2>
+
+<p>
+The base currency is the first currency written
+in a forex pair.
+</p>
+
+<p>
+When you see:
+</p>
+
+<p>
+<strong>GBP/USD</strong>
+</p>
+
+<p>
+GBP is the base currency.
+</p>
+
+<p>
+The price tells you how many units of the quote
+currency are needed to express one unit of the
+base currency.
+</p>
+
+
+<h2>
+4. Quote Currency</h2>
+
+<p>
+The quote currency is the second currency in
+the pair.
+</p>
+
+<p>
+For USD/JPY, USD is the base currency and JPY
+is the quote currency.
+</p>
+
+<div class="example">
+
+<h3>
+USD/JPY = 150.00
+</h3>
+
+<p>
+A simplified interpretation is that one US dollar
+is being quoted at 150 Japanese yen.
+</p>
+
+</div>
+
+
+<h2>
+5. Major Currency Pairs</h2>
+
+<p>
+Major pairs commonly involve the US dollar and
+another major global currency.
+</p>
+
+<div class="table-wrapper">
+
+<table>
+
+<tr>
+<th>Pair</th>
+<th>Base</th>
+<th>Quote</th>
+</tr>
+
+<tr>
+<td>EUR/USD</td>
+<td>EUR</td>
+<td>USD</td>
+</tr>
+
+<tr>
+<td>GBP/USD</td>
+<td>GBP</td>
+<td>USD</td>
+</tr>
+
+<tr>
+<td>USD/JPY</td>
+<td>USD</td>
+<td>JPY</td>
+</tr>
+
+<tr>
+<td>USD/CHF</td>
+<td>USD</td>
+<td>CHF</td>
+</tr>
+
+<tr>
+<td>AUD/USD</td>
+<td>AUD</td>
+<td>USD</td>
+</tr>
+
+<tr>
+<td>USD/CAD</td>
+<td>USD</td>
+<td>CAD</td>
+</tr>
+
+<tr>
+<td>NZD/USD</td>
+<td>NZD</td>
+<td>USD</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<h2>
+6. Minor Currency Pairs</h2>
+
+<p>
+Minor pairs generally involve major currencies
+but do not include the US dollar.
+</p>
+
+<p>
+Examples include:
+</p>
+
+<ul>
+
+<li>EUR/GBP</li>
+<li>EUR/JPY</li>
+<li>GBP/JPY</li>
+<li>AUD/JPY</li>
+
+</ul>
+
+<p>
+Their liquidity and trading costs can differ
+from those of major pairs.
+</p>
+
+
+<h2>
+7. Exotic Currency Pairs</h2>
+
+<p>
+Exotic pairs generally combine a major currency
+with the currency of an emerging or smaller
+economy.
+</p>
+
+<p>
+Examples can include USD/TRY and USD/ZAR.
+</p>
+
+<p>
+Exotic pairs may have wider spreads and can
+experience significant volatility, depending
+on market conditions.
+</p>
+
+
+<h2>
+8. What Happens When a Pair Rises?</h2>
+
+<p>
+Suppose EUR/USD moves from:
+</p>
+
+<div class="example">
+
+<h3>
+1.1000 → 1.1050
+</h3>
+
+<p>
+The quoted value of the euro relative to the
+US dollar has increased.
+</p>
+
+<p>
+A trader holding a long EUR/USD position would
+generally benefit from this price movement,
+before considering trading costs.
+</p>
+
+</div>
+
+
+<h2>
+9. What Happens When a Pair Falls?</h2>
+
+<p>
+Suppose EUR/USD moves from:
+</p>
+
+<div class="example">
+
+<h3>
+1.1000 → 1.0950
+</h3>
+
+<p>
+The quoted value of the euro relative to the
+US dollar has decreased.
+</p>
+
+<p>
+A trader holding a long EUR/USD position would
+generally experience a loss from that price
+movement, before costs.
+</p>
+
+</div>
+
+
+<h2>
+10. Long and Short</h2>
+
+<p>
+A trader can take a position based on an
+expectation of rising or falling prices.
+</p>
+
+<ul>
+
+<li>
+<strong>Long:</strong> You generally seek to benefit
+from an increase in the pair's price.
+</li>
+
+<li>
+<strong>Short:</strong> You generally seek to benefit
+from a decrease in the pair's price.
+</li>
+
+</ul>
+
+<p>
+Whether a trade is profitable depends on the
+entry price, exit price, position size, costs
+and other factors.
+</p>
+
+
+<h2>
+11. What Is a Pip?</h2>
+
+<p>
+A pip is a conventional unit used to describe
+small changes in many forex exchange rates.
+</p>
+
+<p>
+For many non-JPY currency pairs, one pip is
+0.0001. For many JPY pairs, one pip is 0.01.
+</p>
+
+<div class="example">
+
+<h3>
+EUR/USD Example</h3>
+
+<p>
+1.1000 → 1.1010
+</p>
+
+<p>
+This is a movement of 10 pips under the
+four-decimal convention.
+</p>
+
+</div>
+
+
+<h2>
+12. Spread</h2>
+
+<p>
+The spread is the difference between the bid
+and ask prices.
+</p>
+
+<div class="example">
+
+<h3>
+Example</h3>
+
+<p>
+Bid: 1.1000
+</p>
+
+<p>
+Ask: 1.1002
+</p>
+
+<p>
+Spread: 2 pips
+</p>
+
+</div>
+
+<p>
+Trading costs can affect the outcome of a trade,
+so traders should understand spreads and other
+fees before trading.
+</p>
+
+
+<h2>
+13. Currency Pair Selection</h2>
+
+<p>
+Beginners should avoid choosing a currency pair
+simply because it moves quickly.
+</p>
+
+<p>
+Before trading a pair, consider:
+</p>
+
+<ul>
+
+<li>
+Liquidity
+</li>
+
+<li>
+Spread
+</li>
+
+<li>
+Volatility
+</li>
+
+<li>
+Trading session
+</li>
+
+<li>
+Economic news
+</li>
+
+<li>
+Your trading plan
+</li>
+
+</ul>
+
+
+<div class="key-point">
+
+<strong>Professional mindset:</strong>
+
+<p>
+The goal is not to trade as many currency pairs
+as possible. The goal is to understand the
+instruments you choose to trade.
+</p>
+
+</div>
+
+
+<h2>
+14. Common Mistakes</h2>
+
+<ul>
+
+<li>
+Confusing the base and quote currencies.
+</li>
+
+<li>
+Assuming a rising pair always means both
+currencies are becoming stronger.
+</li>
+
+<li>
+Ignoring the spread.
+</li>
+
+<li>
+Trading highly volatile pairs without
+understanding the risks.
+</li>
+
+<li>
+Opening positions simply because a pair
+"looks cheap."
+</li>
+
+<li>
+Using excessive leverage.
+</li>
+
+</ul>
+
+
+<div class="reflection">
+
+<h2>
+🧠 Lesson 03 Checkpoint
+</h2>
+
+<ul>
+
+<li>
+In GBP/USD, which currency is the base currency?
+</li>
+
+<li>
+In USD/JPY, which currency is the quote currency?
+</li>
+
+<li>
+What does EUR/USD = 1.1000 mean?
+</li>
+
+<li>
+What is the difference between a major and
+minor currency pair?
+</li>
+
+<li>
+What is a pip?
+</li>
+
+<li>
+What is the spread?
+</li>
+
+<li>
+Why shouldn't beginners choose a pair simply
+because it moves quickly?
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="lesson-navigation">
+
+<a href="forex-basics.html"
+class="nav-button">
+← Previous Lesson
+</a>
+
+<a href="../trading.html"
+class="nav-button">
+Trading Academy
+</a>
+
+<a href="candlesticks.html"
+class="nav-button">
+Next Lesson →
+</a>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer>
+
+<p>
+<strong>Kingdom Learning Hub</strong>
+</p>
+
+<p>
+By Richard
+</p>
+
+<p>
+Faith • Knowledge • Skills • Growth
+</p>
+
+<p>
+© 2026 Kingdom Learning Hub
+</p>
+
+</footer>
+
+
+</body>
+
+</html>

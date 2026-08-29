@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Trading Fundamentals | Kingdom Learning Hub</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gold: #d4a017;
+    --gold-light: #f3c85b;
+    --dark: #070a10;
+    --card: rgba(255,255,255,0.055);
+    --border: rgba(255,255,255,0.12);
+    --text: #f4f5f7;
+    --muted: #a2a9b7;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    line-height: 1.8;
+}
+
+.container {
+    width: 90%;
+    max-width: 850px;
+    margin: auto;
+}
+
+/* HEADER */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: rgba(7,10,16,.95);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    min-height: 72px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--gold-light);
+}
+
+.logo small {
+    display: block;
+    color: #777;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.back {
+    color: var(--gold-light);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+/* HERO */
+
+.lesson-header {
+    text-align: center;
+    padding: 80px 20px 55px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(212,160,23,.13),
+            transparent 60%
+        );
+}
+
+.lesson-number {
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.lesson-header h1 {
+    font-size: clamp(36px,7vw,58px);
+    line-height: 1.1;
+    margin: 15px 0;
+}
+
+.lesson-header p {
+    color: var(--muted);
+    max-width: 650px;
+    margin: auto;
+}
+
+/* CONTENT */
+
+.lesson-content {
+    padding: 30px 0 80px;
+}
+
+.lesson-content h2 {
+    font-size: 27px;
+    margin: 40px 0 15px;
+    color: var(--gold-light);
+}
+
+.lesson-content p {
+    color: #c7cbd4;
+    margin-bottom: 18px;
+}
+
+.lesson-content ul {
+    margin: 15px 0 25px 25px;
+    color: #c7cbd4;
+}
+
+.lesson-content li {
+    margin-bottom: 10px;
+}
+
+/* KEY POINT */
+
+.key-point {
+    margin: 30px 0;
+    padding: 25px;
+
+    background: rgba(212,160,23,.07);
+
+    border-left: 4px solid var(--gold);
+
+    border-radius: 8px;
+}
+
+.key-point strong {
+    color: var(--gold-light);
+}
+
+/* EXAMPLE */
+
+.example {
+    margin: 30px 0;
+    padding: 25px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+}
+
+.example h3 {
+    color: var(--gold-light);
+    margin-bottom: 10px;
+}
+
+/* REFLECTION */
+
+.reflection {
+    margin-top: 45px;
+    padding: 30px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+}
+
+.reflection h2 {
+    margin-top: 0;
+}
+
+/* NAVIGATION */
+
+.lesson-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+    margin-top: 50px;
+}
+
+.nav-button {
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    background: var(--gold);
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+.nav-button:hover {
+    background: var(--gold-light);
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+
+    padding: 40px 20px;
+
+    background: #05070b;
+
+    border-top: 1px solid var(--border);
+}
+
+footer strong {
+    color: var(--gold-light);
+}
+
+footer p {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin: 6px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+    .lesson-navigation {
+        flex-direction: column;
+    }
+
+    .nav-button {
+        text-align: center;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">
+
+Kingdom <span>Learning Hub</span>
+
+<small>BY RICHARD</small>
+
+</div>
+
+<a href="../trading.html" class="back">
+← Trading Academy
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- LESSON HEADER -->
+
+<section class="lesson-header">
+
+<div class="container">
+
+<div class="lesson-number">
+TRADING ACADEMY • LESSON 01
+</div>
+
+<h1>
+Trading Fundamentals
+</h1>
+
+<p>
+Before learning strategies, indicators or advanced
+analysis, understand what trading actually is and
+how financial markets work.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- CONTENT -->
+
+<main class="lesson-content">
+
+<div class="container">
+
+
+<h2>
+1. What Is Trading?
+</h2>
+
+<p>
+Trading is the process of buying and selling
+financial instruments with the objective of
+potentially benefiting from changes in their
+prices.
+</p>
+
+<p>
+Financial markets include instruments such as
+currencies, stocks, commodities, indices and
+other financial products.
+</p>
+
+<div class="key-point">
+
+<strong>Key idea:</strong>
+
+<p>
+Trading is not simply about predicting whether
+a price will go up or down. A trader must also
+consider risk, position size, timing, costs and
+the possibility of being wrong.
+</p>
+
+</div>
+
+
+<h2>
+2. Trading vs Investing
+</h2>
+
+<p>
+Trading and investing both involve financial
+markets, but they can differ in time horizon
+and approach.
+</p>
+
+<ul>
+
+<li>
+<strong>Trading:</strong> Often focuses on
+shorter-term price movements.
+</li>
+
+<li>
+<strong>Investing:</strong> Often focuses on
+holding assets for longer periods based on
+long-term expectations.
+</li>
+
+</ul>
+
+<p>
+Neither approach automatically guarantees
+profit. Both involve risk and require informed
+decision-making.
+</p>
+
+
+<h2>
+3. What Is a Financial Market?
+</h2>
+
+<p>
+A financial market is a system where participants
+buy and sell financial assets or contracts.
+Prices change as market participants place
+orders and react to information, expectations,
+supply and demand.
+</p>
+
+
+<h2>
+4. Major Markets
+</h2>
+
+<p>
+Traders can participate in different types
+of markets.
+</p>
+
+<ul>
+
+<li>
+<strong>Forex:</strong> The market for exchanging
+currencies.
+</li>
+
+<li>
+<strong>Stocks:</strong> Shares representing
+ownership in companies.
+</li>
+
+<li>
+<strong>Commodities:</strong> Markets involving
+resources such as gold, oil and agricultural
+products.
+</li>
+
+<li>
+<strong>Indices:</strong> Instruments representing
+the performance of a group of stocks.
+</li>
+
+</ul>
+
+
+<h2>
+5. Buyers and Sellers
+</h2>
+
+<p>
+Markets involve participants willing to buy
+and participants willing to sell.
+</p>
+
+<p>
+When you enter a trade, your position exists
+within a market where other participants may
+have different expectations about price.
+</p>
+
+
+<div class="example">
+
+<h3>
+Simple Example
+</h3>
+
+<p>
+Imagine EUR/USD is trading at 1.1000.
+A trader believes the price may rise and opens
+a position. If the trader later closes the
+position at a higher price, the trade may produce
+a gain before costs.
+</p>
+
+<p>
+However, if price moves in the opposite direction,
+the trade may produce a loss.
+</p>
+
+</div>
+
+
+<h2>
+6. Long and Short Positions
+</h2>
+
+<p>
+Two basic concepts you'll encounter in trading
+are long and short positions.
+</p>
+
+<ul>
+
+<li>
+<strong>Long:</strong> A trader generally benefits
+if the instrument's price rises after entering
+the position.
+</li>
+
+<li>
+<strong>Short:</strong> A trader generally benefits
+if the instrument's price falls after entering
+the position.
+</li>
+
+</ul>
+
+<p>
+The exact mechanics depend on the financial
+instrument and trading platform.
+</p>
+
+
+<h2>
+7. Risk Comes Before Profit
+</h2>
+
+<p>
+One of the most important principles in trading
+education is understanding risk before thinking
+about potential returns.
+</p>
+
+<p>
+A trader can be correct about market direction
+and still lose money because of excessive
+position size, poor risk management, costs,
+leverage or an unfavorable price movement.
+</p>
+
+<div class="key-point">
+
+<strong>Remember:</strong>
+
+<p>
+There is no guaranteed trading strategy.
+Every trade carries uncertainty.
+</p>
+
+</div>
+
+
+<h2>
+8. What Is Leverage?
+</h2>
+
+<p>
+Leverage allows a trader to control a position
+larger than the amount of capital deposited,
+subject to the broker's terms and margin
+requirements.
+</p>
+
+<p>
+Leverage can increase exposure to both gains
+and losses. It does not make a trade safer.
+</p>
+
+
+<h2>
+9. Why Beginners Should Practice
+</h2>
+
+<p>
+Before risking real money, beginners can use
+demo accounts to learn how orders, charts,
+spreads, stop-losses and trading platforms work.
+</p>
+
+<p>
+Demo practice does not completely reproduce
+the psychological experience of risking real
+money, but it can help develop technical
+familiarity and a basic process.
+</p>
+
+
+<h2>
+10. Your First Trading Principles
+</h2>
+
+<ul>
+
+<li>
+Never assume a trade is guaranteed to win.
+</li>
+
+<li>
+Understand the instrument before trading it.
+</li>
+
+<li>
+Learn risk management before increasing position
+size.
+</li>
+
+<li>
+Keep records of your trades and decisions.
+</li>
+
+<li>
+Avoid trading based purely on emotion.
+</li>
+
+<li>
+Practice on a demo account while learning.
+</li>
+
+<li>
+Do not risk money you cannot afford to lose.
+</li>
+
+</ul>
+
+
+<!-- REFLECTION -->
+
+<div class="reflection">
+
+<h2>
+🧠 Lesson 01 Checkpoint
+</h2>
+
+<ul>
+
+<li>
+What is trading?
+</li>
+
+<li>
+What is the difference between trading and
+investing?
+</li>
+
+<li>
+Name four major financial markets.
+</li>
+
+<li>
+What is the difference between a long and
+short position?
+</li>
+
+<li>
+Why can leverage increase risk?
+</li>
+
+<li>
+Why is risk management important?
+</li>
+
+</ul>
+
+</div>
+
+
+<!-- NAVIGATION -->
+
+<div class="lesson-navigation">
+
+<a href="../trading.html"
+class="nav-button">
+← Trading Academy
+</a>
+
+<a href="forex-basics.html"
+class="nav-button">
+Next Lesson →
+</a>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+<strong>Kingdom Learning Hub</strong>
+</p>
+
+<p>
+By Richard
+</p>
+
+<p>
+Faith • Knowledge • Skills • Growth
+</p>
+
+<p>
+© 2026 Kingdom Learning Hub
+</p>
+
+</footer>
+
+
+</body>
+
+</html>

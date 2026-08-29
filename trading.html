@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Trading Academy | Kingdom Learning Hub</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gold: #d4a017;
+    --gold-light: #f3c85b;
+    --dark: #070a10;
+    --dark-2: #0d111a;
+    --card: rgba(255,255,255,0.055);
+    --border: rgba(255,255,255,0.12);
+    --text: #f4f5f7;
+    --muted: #a2a9b7;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* HEADER */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: rgba(7,10,16,.94);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    min-height: 72px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--gold-light);
+}
+
+.logo small {
+    display: block;
+    color: #777;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.back {
+    color: var(--gold-light);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+/* HERO */
+
+.hero {
+    padding: 90px 20px 70px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(212,160,23,.15),
+            transparent 58%
+        );
+}
+
+.badge {
+    display: inline-block;
+
+    padding: 7px 14px;
+
+    border: 1px solid rgba(243,200,91,.35);
+
+    border-radius: 30px;
+
+    color: var(--gold-light);
+
+    font-size: 11px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 8vw, 72px);
+
+    line-height: 1.05;
+
+    margin: 22px 0;
+}
+
+.hero h1 span {
+    color: var(--gold-light);
+}
+
+.hero p {
+    max-width: 700px;
+
+    margin: auto;
+
+    color: var(--muted);
+
+    font-size: 16px;
+}
+
+/* COURSE INFO */
+
+.course-info {
+    padding: 35px 0;
+}
+
+.info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(180px, 1fr));
+
+    gap: 15px;
+}
+
+.info-box {
+    padding: 22px;
+
+    text-align: center;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+}
+
+.info-box strong {
+    display: block;
+
+    color: var(--gold-light);
+
+    font-size: 22px;
+
+    margin-bottom: 4px;
+}
+
+.info-box span {
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+/* LESSONS */
+
+.lessons {
+    padding: 55px 0 80px;
+}
+
+.section-title {
+    text-align: center;
+
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 34px;
+
+    margin-bottom: 8px;
+}
+
+.section-title p {
+    color: var(--muted);
+}
+
+/* LESSON CARD */
+
+.lesson-list {
+    display: grid;
+
+    gap: 15px;
+}
+
+.lesson-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 22px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    transition: .3s;
+}
+
+.lesson-card:hover {
+    transform: translateX(5px);
+
+    border-color:
+        rgba(243,200,91,.45);
+}
+
+.lesson-number {
+    min-width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        rgba(212,160,23,.12);
+
+    color: var(--gold-light);
+
+    font-weight: bold;
+}
+
+.lesson-info {
+    flex: 1;
+}
+
+.lesson-info h3 {
+    font-size: 18px;
+
+    margin-bottom: 3px;
+}
+
+.lesson-info p {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+.lesson-button {
+    padding: 10px 16px;
+
+    border-radius: 8px;
+
+    background: var(--gold);
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+}
+
+.lesson-button:hover {
+    background: var(--gold-light);
+}
+
+/* ROADMAP */
+
+.roadmap {
+    margin-top: 55px;
+
+    padding: 35px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(212,160,23,.12),
+            rgba(255,255,255,.03)
+        );
+
+    border: 1px solid rgba(243,200,91,.2);
+
+    border-radius: 20px;
+}
+
+.roadmap h2 {
+    margin-bottom: 12px;
+
+    font-size: 27px;
+}
+
+.roadmap p {
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+/* WARNING */
+
+.warning {
+    margin-top: 30px;
+
+    padding: 22px;
+
+    background: rgba(255,255,255,.035);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+}
+
+.warning strong {
+    color: var(--gold-light);
+}
+
+.warning p {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin-top: 5px;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+
+    padding: 45px 20px;
+
+    background: #05070b;
+
+    border-top: 1px solid var(--border);
+}
+
+footer strong {
+    color: var(--gold-light);
+}
+
+footer p {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin: 6px;
+}
+
+/* MOBILE */
+
+@media(max-width:650px) {
+
+    .lesson-card {
+        align-items: flex-start;
+    }
+
+    .lesson-button {
+        align-self: center;
+    }
+
+}
+
+@media(max-width:500px) {
+
+    .lesson-card {
+        flex-wrap: wrap;
+    }
+
+    .lesson-info {
+        min-width: 70%;
+    }
+
+    .lesson-button {
+        margin-left: 68px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">
+
+Kingdom <span>Learning Hub</span>
+
+<small>BY RICHARD</small>
+
+</div>
+
+<a href="learning.html" class="back">
+← Learning Center
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container">
+
+<div class="badge">
+KINGDOM LEARNING HUB • TRADING
+</div>
+
+<h1>
+Trading <span>Academy</span>
+</h1>
+
+<p>
+Build your understanding of financial markets
+from the ground up. Learn market fundamentals,
+forex, technical analysis, risk management and
+trading psychology through structured lessons.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- COURSE INFO -->
+
+<section class="course-info">
+
+<div class="container">
+
+<div class="info-grid">
+
+<div class="info-box">
+
+<strong>10</strong>
+
+<span>Core Lessons</span>
+
+</div>
+
+<div class="info-box">
+
+<strong>Beginner</strong>
+
+<span>Starting Level</span>
+
+</div>
+
+<div class="info-box">
+
+<strong>Forex</strong>
+
+<span>Primary Market</span>
+
+</div>
+
+<div class="info-box">
+
+<strong>Risk First</strong>
+
+<span>Learning Approach</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- LESSONS -->
+
+<section class="lessons">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+Trading Roadmap
+</h2>
+
+<p>
+Follow the lessons in order and build your knowledge step by step.
+</p>
+
+</div>
+
+
+<div class="lesson-list">
+
+
+<!-- LESSON 01 -->
+
+<div class="lesson-card">
+
+<div class="lesson-number">
+01
+</div>
+
+<div class="lesson-info">
+
+<h3>
+Trading Fundamentals
+</h3>
+
+<p>
+Understand what trading is, how markets work
+and the difference between trading and investing.
+</p>
+
+</div>
+
+<a href="trading/fundamentals.html"
+class="lesson-button">
+START →
+</a>
+
+</div>
+
+
+<!-- LESSON 02 -->
+
+<div class="lesson-card">
+
+<div class="lesson-number">
+02
+</div>
+
+<div class="lesson-info">
+
+<h3>
+What Is Forex?
+</h3>
+
+<p>
+Learn what the foreign exchange market is,
+who participates in it and how currencies are traded.
+</p>
+
+</div>
+
+<a href="trading/forex-basics.html"
+class="lesson-button">
+START →
+</a>
+
+</div>
+
+
+<!-- LESSON 03 -->
+
+<div class="lesson-card">
+
+<div class="lesson-number">
+03
+</div>
+
+<div class="lesson-info">
+
+<h3>
+Currency Pairs
+</h3>
+
+<p>
+Understand base currency, quote currency,
+major pairs, minor pairs and exotic pairs.
+</p>
+
+</div>
+
+<a href="trading/currency-pairs.html"
+class="lesson-button">
+START →
+</a>
+
+</div>
+
+
+<!-- LESSON 04 -->
+
+<div class="lesson-card">
+
+<div class="lesson-number">
+04
+</div>
+
+<div class="lesson-info">
+
+<h3>
+Candlesticks & Charts
+</h3>
+
+<p>
+Learn how price charts work and how candlesticks
+represent market price movement.
+</p>
+
+</div>
+
+<a href="trading/candlesticks.html"
+class="lesson-button">
+START →
+</a>
+
+</div>
+
+
+<!-- LESSON 05 -->
+
+<div class="lesson-card">
+
+<div class="lesson-number">
+05
+</div>
+
+<div class="lesson-info">
+
+<h3>
+Market Structure
+</h3>
+
+<p>
+Learn higher highs, higher lows, lower highs,
+lower lows and basic trend identification.
+</p>
+
+</div>
+
+<a href="trading/market-structure.html"
+class="lesson-button">
+START →
+</a>
+
+</div>
+
+
+<!-- LESSON 06 -->
+
+<div class="lesson-card">
+
+<div class="lesson-number">
+06
+</div>
+
+<div class="lesson-info">
+
+<h3>
+Support & Resistance
+</h3>
+
+<p>
+Understand important price areas and how traders
+use them when analyzing markets.
+</p>
+
+</div>
+
+<a href="trading/support-resistance.html"
+class="lesson-button">
+START →
+</a>
+
+</div>
+
+
+<!-- LESSON 07 -->
+
+<div class="lesson-card">
+
+<div class="lesson-number">
+07
+</div>
+
+<div class="lesson-info">
+
+<h3>
+Liquidity
+</h3>
+
+<p>
+Learn the basic concept of liquidity and why
+market participants pay attention to areas
+where orders may accumulate.
+</p>
+
+</div>
+
+<a href="trading/liquidity.html"
+class="lesson-button">
+START →
+</a>
+
+</div>
+
+
+<!-- LESSON 08 -->
+
+<div class="lesson-card">
+
+<div class="lesson-number">
+08
+</div>
+
+<div class="lesson-info">
+
+<h3>
+Risk Management
+</h3>
+
+<p>
+Learn position sizing, stop-loss concepts,
+risk-to-reward and why capital preservation matters.
+</p>
+
+</div>
+
+<a href="trading/risk-management.html"
+class="lesson-button">
+START →
+</a>
+
+</div>
+
+
+<!-- LESSON 09 -->
+
+<div class="lesson-card">
+
+<div class="lesson-number">
+09
+</div>
+
+<div class="lesson-info">
+
+<h3>
+Trading Psychology
+</h3>
+
+<p>
+Understand discipline, patience, emotional control,
+losses and the dangers of revenge trading.
+</p>
+
+</div>
+
+<a href="trading/psychology.html"
+class="lesson-button">
+START →
+</a>
+
+</div>
+
+
+<!-- LESSON 10 -->
+
+<div class="lesson-card">
+
+<div class="lesson-number">
+10
+</div>
+
+<div class="lesson-info">
+
+<h3>
+Demo Trading & Building a Plan
+</h3>
+
+<p>
+Bring everything together by developing a
+structured trading plan and practicing before
+risking real money.
+</p>
+
+</div>
+
+<a href="trading/demo-trading.html"
+class="lesson-button">
+START →
+</a>
+
+</div>
+
+
+</div>
+
+
+<!-- ROADMAP -->
+
+<div class="roadmap">
+
+<h2>
+📈 The Goal
+</h2>
+
+<p>
+The goal of this academy is not to promise quick
+profits. It is to help learners understand markets,
+manage risk, develop discipline and make informed
+decisions. Knowledge comes before execution.
+</p>
+
+</div>
+
+
+<!-- WARNING -->
+
+<div class="warning">
+
+<strong>
+⚠️ Important
+</strong>
+
+<p>
+Trading financial markets involves substantial risk
+and can result in loss of capital. These lessons are
+educational and are not financial advice. Never risk
+money you cannot afford to lose.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+<strong>Kingdom Learning Hub</strong>
+</p>
+
+<p>
+By Richard
+</p>
+
+<p>
+Faith • Knowledge • Skills • Growth
+</p>
+
+<p>
+© 2026 Kingdom Learning Hub
+</p>
+
+</footer>
+
+
+</body>
+
+</html>

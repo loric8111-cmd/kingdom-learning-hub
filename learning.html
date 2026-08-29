@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Learning Center | Kingdom Learning Hub</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gold: #d4a017;
+    --gold-light: #f3c85b;
+    --dark: #070a10;
+    --dark-2: #0d111a;
+    --card: rgba(255,255,255,0.055);
+    --border: rgba(255,255,255,0.12);
+    --text: #f4f5f7;
+    --muted: #a2a9b7;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* HEADER */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: rgba(7,10,16,.94);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    min-height: 72px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--gold-light);
+}
+
+.logo small {
+    display: block;
+    color: #777;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.back {
+    color: var(--gold-light);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 480px;
+
+    display: flex;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(212,160,23,.14),
+            transparent 55%
+        );
+}
+
+.hero-content {
+    width: 100%;
+}
+
+.badge {
+    display: inline-block;
+
+    padding: 7px 14px;
+
+    border: 1px solid rgba(243,200,91,.35);
+    border-radius: 30px;
+
+    color: var(--gold-light);
+
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 8vw, 76px);
+    line-height: 1.05;
+
+    margin: 22px 0;
+}
+
+.hero h1 span {
+    color: var(--gold-light);
+}
+
+.hero p {
+    max-width: 680px;
+    margin: auto;
+
+    color: var(--muted);
+    font-size: 17px;
+}
+
+/* SECTION */
+
+.learning {
+    padding: 70px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: var(--muted);
+}
+
+/* CARDS */
+
+.learning-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 22px;
+}
+
+.card {
+    position: relative;
+
+    padding: 30px;
+
+    min-height: 280px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(243,200,91,.45);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.25);
+}
+
+.icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background:
+        rgba(212,160,23,.12);
+
+    font-size: 25px;
+
+    margin-bottom: 22px;
+}
+
+.card h3 {
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+.card-link {
+    display: inline-block;
+
+    padding: 11px 18px;
+
+    border-radius: 8px;
+
+    background: var(--gold);
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    transition: .2s;
+}
+
+.card-link:hover {
+    background: var(--gold-light);
+}
+
+/* FEATURED TRADING */
+
+.trading-feature {
+    margin-top: 50px;
+
+    padding: 45px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(212,160,23,.13),
+            rgba(255,255,255,.03)
+        );
+
+    border: 1px solid rgba(243,200,91,.2);
+}
+
+.trading-feature h2 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.trading-feature p {
+    max-width: 700px;
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+/* NOTICE */
+
+.notice {
+    margin-top: 45px;
+
+    padding: 25px;
+
+    border-radius: 14px;
+
+    background: rgba(255,255,255,.035);
+
+    border: 1px solid var(--border);
+}
+
+.notice strong {
+    color: var(--gold-light);
+}
+
+.notice p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+
+    padding: 45px 20px;
+
+    background: #05070b;
+
+    border-top: 1px solid var(--border);
+}
+
+footer strong {
+    color: var(--gold-light);
+}
+
+footer p {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 6px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+    .hero {
+        min-height: 420px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .trading-feature {
+        padding: 30px 22px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">
+
+Kingdom <span>Learning Hub</span>
+
+<small>BY RICHARD</small>
+
+</div>
+
+<a href="index.html" class="back">
+← Home
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container hero-content">
+
+<div class="badge">
+LEARN • BUILD • GROW
+</div>
+
+<h1>
+Kingdom <span>Learning Center</span>
+</h1>
+
+<p>
+A practical learning space for developing
+knowledge, financial understanding, digital
+skills, education and entrepreneurship.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- LEARNING AREAS -->
+
+<section class="learning">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+Explore Learning
+</h2>
+
+<p>
+Choose an area and start building your knowledge.
+</p>
+
+</div>
+
+
+<div class="learning-grid">
+
+
+<!-- TRADING -->
+
+<div class="card">
+
+<div class="icon">
+📈
+</div>
+
+<h3>
+Trading Academy
+</h3>
+
+<p>
+Learn the foundations of financial markets,
+forex, charts, risk management, trading
+psychology and disciplined practice.
+</p>
+
+<a href="trading.html" class="card-link">
+Enter Trading Academy →
+</a>
+
+</div>
+
+
+<!-- FINANCIAL -->
+
+<div class="card">
+
+<div class="icon">
+💰
+</div>
+
+<h3>
+Financial Literacy
+</h3>
+
+<p>
+Learn practical principles of saving,
+budgeting, money management, investing
+and responsible financial decision-making.
+</p>
+
+<a href="#" class="card-link">
+Coming Soon →
+</a>
+
+</div>
+
+
+<!-- DIGITAL -->
+
+<div class="card">
+
+<div class="icon">
+💻
+</div>
+
+<h3>
+Digital Skills
+</h3>
+
+<p>
+Build useful digital skills including
+web development, online research,
+content creation and technology.
+</p>
+
+<a href="#" class="card-link">
+Coming Soon →
+</a>
+
+</div>
+
+
+<!-- EDUCATION -->
+
+<div class="card">
+
+<div class="icon">
+📚
+</div>
+
+<h3>
+Basic Education
+</h3>
+
+<p>
+Strengthen essential knowledge and
+learning skills across important areas
+of everyday education.
+</p>
+
+<a href="#" class="card-link">
+Coming Soon →
+</a>
+
+</div>
+
+
+<!-- ENTREPRENEURSHIP -->
+
+<div class="card">
+
+<div class="icon">
+🚀
+</div>
+
+<h3>
+Entrepreneurship
+</h3>
+
+<p>
+Learn about business ideas, planning,
+customer service, marketing and building
+sustainable income opportunities.
+</p>
+
+<a href="#" class="card-link">
+Coming Soon →
+</a>
+
+</div>
+
+
+<!-- PERSONAL DEVELOPMENT -->
+
+<div class="card">
+
+<div class="icon">
+🧠
+</div>
+
+<h3>
+Personal Development
+</h3>
+
+<p>
+Develop discipline, critical thinking,
+goal setting, communication and
+lifelong learning habits.
+</p>
+
+<a href="#" class="card-link">
+Coming Soon →
+</a>
+
+</div>
+
+
+</div>
+
+
+<!-- TRADING FEATURE -->
+
+<div class="trading-feature">
+
+<h2>
+📈 Start With Trading
+</h2>
+
+<p>
+The Trading Academy will take you from
+the fundamentals of financial markets to
+structured forex education, risk management,
+market analysis and disciplined demo practice.
+</p>
+
+<a href="trading.html" class="card-link">
+Start Trading Academy →
+</a>
+
+</div>
+
+
+<!-- EDUCATIONAL NOTICE -->
+
+<div class="notice">
+
+<strong>
+⚠️ Learning First
+</strong>
+
+<p>
+Trading education on Kingdom Learning Hub is
+for educational purposes. Trading involves
+risk, and learning risk management is more
+important than chasing quick profits.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+<strong>Kingdom Learning Hub</strong>
+</p>
+
+<p>
+By Richard
+</p>
+
+<p>
+Faith • Knowledge • Skills • Growth
+</p>
+
+<p>
+© 2026 Kingdom Learning Hub
+</p>
+
+</footer>
+
+
+</body>
+
+</html>

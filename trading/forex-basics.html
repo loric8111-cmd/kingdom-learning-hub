@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>What Is Forex? | Kingdom Learning Hub</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gold: #d4a017;
+    --gold-light: #f3c85b;
+    --dark: #070a10;
+    --card: rgba(255,255,255,0.055);
+    --border: rgba(255,255,255,0.12);
+    --text: #f4f5f7;
+    --muted: #a2a9b7;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    line-height: 1.8;
+}
+
+.container {
+    width: 90%;
+    max-width: 850px;
+    margin: auto;
+}
+
+/* HEADER */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: rgba(7,10,16,.95);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    min-height: 72px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--gold-light);
+}
+
+.logo small {
+    display: block;
+    color: #777;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.back {
+    color: var(--gold-light);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+/* HERO */
+
+.lesson-header {
+    text-align: center;
+    padding: 80px 20px 55px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(212,160,23,.13),
+            transparent 60%
+        );
+}
+
+.lesson-number {
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.lesson-header h1 {
+    font-size: clamp(36px,7vw,58px);
+    line-height: 1.1;
+    margin: 15px 0;
+}
+
+.lesson-header p {
+    color: var(--muted);
+    max-width: 650px;
+    margin: auto;
+}
+
+/* CONTENT */
+
+.lesson-content {
+    padding: 30px 0 80px;
+}
+
+.lesson-content h2 {
+    font-size: 27px;
+    margin: 40px 0 15px;
+    color: var(--gold-light);
+}
+
+.lesson-content p {
+    color: #c7cbd4;
+    margin-bottom: 18px;
+}
+
+.lesson-content ul {
+    margin: 15px 0 25px 25px;
+    color: #c7cbd4;
+}
+
+.lesson-content li {
+    margin-bottom: 10px;
+}
+
+/* KEY POINT */
+
+.key-point {
+    margin: 30px 0;
+    padding: 25px;
+
+    background: rgba(212,160,23,.07);
+
+    border-left: 4px solid var(--gold);
+
+    border-radius: 8px;
+}
+
+.key-point strong {
+    color: var(--gold-light);
+}
+
+/* EXAMPLE */
+
+.example {
+    margin: 30px 0;
+    padding: 25px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+}
+
+.example h3 {
+    color: var(--gold-light);
+    margin-bottom: 10px;
+}
+
+/* TABLE */
+
+.table-wrapper {
+    overflow-x: auto;
+    margin: 25px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 500px;
+}
+
+th,
+td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    color: var(--gold-light);
+    background: rgba(212,160,23,.07);
+}
+
+td {
+    color: #c7cbd4;
+}
+
+/* REFLECTION */
+
+.reflection {
+    margin-top: 45px;
+    padding: 30px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+}
+
+.reflection h2 {
+    margin-top: 0;
+}
+
+/* NAVIGATION */
+
+.lesson-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+    margin-top: 50px;
+}
+
+.nav-button {
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    background: var(--gold);
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+.nav-button:hover {
+    background: var(--gold-light);
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+
+    padding: 40px 20px;
+
+    background: #05070b;
+
+    border-top: 1px solid var(--border);
+}
+
+footer strong {
+    color: var(--gold-light);
+}
+
+footer p {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin: 6px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+    .lesson-navigation {
+        flex-direction: column;
+    }
+
+    .nav-button {
+        text-align: center;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">
+
+Kingdom <span>Learning Hub</span>
+
+<small>BY RICHARD</small>
+
+</div>
+
+<a href="../trading.html" class="back">
+← Trading Academy
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- LESSON HEADER -->
+
+<section class="lesson-header">
+
+<div class="container">
+
+<div class="lesson-number">
+TRADING ACADEMY • LESSON 02
+</div>
+
+<h1>
+What Is Forex?
+</h1>
+
+<p>
+Understand the foreign exchange market,
+currency pairs, participants, pricing and
+the basic language used by forex traders.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- CONTENT -->
+
+<main class="lesson-content">
+
+<div class="container">
+
+
+<h2>
+1. What Does Forex Mean?
+</h2>
+
+<p>
+Forex is short for "foreign exchange." It refers
+to the global marketplace where currencies are
+exchanged against one another.
+</p>
+
+<p>
+Whenever one currency is exchanged for another,
+a foreign-exchange transaction takes place.
+Banks, businesses, governments, investors and
+other market participants may need to exchange
+currencies for different reasons.
+</p>
+
+
+<div class="key-point">
+
+<strong>Key idea:</strong>
+
+<p>
+Forex trading involves one currency relative to
+another. You are not simply buying "EUR" or
+"USD" in isolation—you are dealing with an
+exchange rate between currencies.
+</p>
+
+</div>
+
+
+<h2>
+2. How Is Forex Quoted?
+</h2>
+
+<p>
+Forex is normally quoted in currency pairs.
+For example:
+</p>
+
+<div class="example">
+
+<h3>
+EUR/USD = 1.1000
+</h3>
+
+<p>
+EUR is the <strong>base currency</strong>.
+USD is the <strong>quote currency</strong>.
+</p>
+
+<p>
+A simplified interpretation is that 1 euro
+is being valued at 1.1000 US dollars at that
+quoted exchange rate.
+</p>
+
+</div>
+
+
+<h2>
+3. Base Currency and Quote Currency
+</h2>
+
+<p>
+Every forex pair contains two currencies.
+The first currency is the base currency and
+the second is the quote currency.
+</p>
+
+<div class="table-wrapper">
+
+<table>
+
+<tr>
+<th>Pair</th>
+<th>Base Currency</th>
+<th>Quote Currency</th>
+</tr>
+
+<tr>
+<td>EUR/USD</td>
+<td>EUR</td>
+<td>USD</td>
+</tr>
+
+<tr>
+<td>GBP/USD</td>
+<td>GBP</td>
+<td>USD</td>
+</tr>
+
+<tr>
+<td>USD/JPY</td>
+<td>USD</td>
+<td>JPY</td>
+</tr>
+
+<tr>
+<td>USD/CAD</td>
+<td>USD</td>
+<td>CAD</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<h2>
+4. Major Currency Pairs
+</h2>
+
+<p>
+Major currency pairs are among the most widely
+traded forex pairs and generally involve the
+US dollar paired with another major currency.
+</p>
+
+<p>
+Examples include:
+</p>
+
+<ul>
+
+<li>EUR/USD</li>
+<li>GBP/USD</li>
+<li>USD/JPY</li>
+<li>USD/CHF</li>
+<li>AUD/USD</li>
+<li>USD/CAD</li>
+<li>NZD/USD</li>
+
+</ul>
+
+<p>
+The exact characteristics of a pair can vary
+with market conditions, liquidity and trading
+session.
+</p>
+
+
+<h2>
+5. Minor and Exotic Pairs
+</h2>
+
+<p>
+Not every currency pair includes the US dollar.
+</p>
+
+<ul>
+
+<li>
+<strong>Minor pairs:</strong> Often refer to
+pairs involving major currencies but excluding
+the US dollar, such as EUR/GBP.
+</li>
+
+<li>
+<strong>Exotic pairs:</strong> Generally involve
+a major currency and the currency of an emerging
+or smaller economy.
+</li>
+
+</ul>
+
+<p>
+These pairs can have different liquidity,
+spreads and volatility characteristics.
+</p>
+
+
+<h2>
+6. What Moves Forex Prices?
+</h2>
+
+<p>
+Currency prices can change because of many
+factors. These include economic conditions,
+interest-rate expectations, monetary policy,
+political developments, market sentiment and
+changes in supply and demand.
+</p>
+
+<p>
+Economic announcements can sometimes produce
+rapid price movements. This is one reason traders
+need to understand the risks associated with
+market volatility.
+</p>
+
+
+<h2>
+7. Who Participates in Forex?
+</h2>
+
+<p>
+The forex market includes many different types
+of participants.
+</p>
+
+<ul>
+
+<li>
+Central banks
+</li>
+
+<li>
+Commercial and investment banks
+</li>
+
+<li>
+Corporations conducting international business
+</li>
+
+<li>
+Institutional investors
+</li>
+
+<li>
+Hedge funds and other financial institutions
+</li>
+
+<li>
+Retail traders
+</li>
+
+</ul>
+
+
+<h2>
+8. What Are Bid and Ask Prices?
+</h2>
+
+<p>
+A trading platform may display two prices for
+a forex pair: a bid price and an ask price.
+</p>
+
+<ul>
+
+<li>
+<strong>Bid:</strong> The price at which a market
+participant can generally sell to the market.
+</li>
+
+<li>
+<strong>Ask:</strong> The price at which a market
+participant can generally buy from the market.
+</li>
+
+</ul>
+
+<p>
+The difference between these prices is called
+the <strong>spread</strong>.
+</p>
+
+
+<div class="example">
+
+<h3>
+Simple Spread Example
+</h3>
+
+<p>
+Suppose EUR/USD is displayed as:
+</p>
+
+<p>
+<strong>Bid: 1.1000</strong>
+</p>
+
+<p>
+<strong>Ask: 1.1002</strong>
+</p>
+
+<p>
+The difference is 0.0002, or 2 pips under
+the conventional four-decimal representation
+for this example.
+</p>
+
+</div>
+
+
+<h2>
+9. What Is a Pip?
+</h2>
+
+<p>
+A pip is a commonly used unit for expressing
+small changes in the exchange rate of a currency
+pair.
+</p>
+
+<p>
+For many major currency pairs, one pip is
+0.0001. For many yen pairs, one pip is
+0.01.
+</p>
+
+<p>
+However, modern platforms may display additional
+decimal places, so you should understand the
+quotation convention being used by your broker.
+</p>
+
+
+<h2>
+10. Forex Sessions
+</h2>
+
+<p>
+Forex trading activity is commonly discussed
+in terms of major financial centers and their
+trading sessions.
+</p>
+
+<p>
+Commonly referenced sessions include:
+</p>
+
+<ul>
+
+<li>
+Sydney
+</li>
+
+<li>
+Tokyo
+</li>
+
+<li>
+London
+</li>
+
+<li>
+New York
+</li>
+
+</ul>
+
+<p>
+Market activity can vary throughout the day.
+Periods when major financial centers overlap
+can sometimes have greater trading activity.
+</p>
+
+
+<h2>
+11. Forex Is Not Easy Money
+</h2>
+
+<p>
+The accessibility of forex trading can create
+the false impression that making money is easy.
+It is not.
+</p>
+
+<p>
+Prices can move unpredictably, and leverage can
+magnify both gains and losses. A trader can lose
+money even after conducting an analysis that
+appears reasonable.
+</p>
+
+<div class="key-point">
+
+<strong>Important:</strong>
+
+<p>
+Never treat a forex trade as guaranteed income.
+Learn the market, understand the risks and
+practice before putting real capital at risk.
+</p>
+
+</div>
+
+
+<h2>
+12. What You Should Know Before Lesson 03
+</h2>
+
+<p>
+Before moving forward, make sure you understand:
+</p>
+
+<ul>
+
+<li>
+What forex means.
+</li>
+
+<li>
+What a currency pair represents.
+</li>
+
+<li>
+The difference between base and quote currency.
+</li>
+
+<li>
+The difference between major, minor and exotic
+pairs.
+</li>
+
+<li>
+What bid, ask and spread mean.
+</li>
+
+<li>
+The basic meaning of a pip.
+</li>
+
+<li>
+Why forex prices can move.
+</li>
+
+</ul>
+
+
+<!-- CHECKPOINT -->
+
+<div class="reflection">
+
+<h2>
+🧠 Lesson 02 Checkpoint
+</h2>
+
+<ul>
+
+<li>
+In EUR/USD, which currency is the base currency?
+</li>
+
+<li>
+What does the exchange rate represent?
+</li>
+
+<li>
+What is the difference between a bid and an ask?
+</li>
+
+<li>
+What is a spread?
+</li>
+
+<li>
+What is a pip?
+</li>
+
+<li>
+Name three factors that can influence forex prices.
+</li>
+
+<li>
+Why can leverage make trading more risky?
+</li>
+
+</ul>
+
+</div>
+
+
+<!-- NAVIGATION -->
+
+<div class="lesson-navigation">
+
+<a href="fundamentals.html"
+class="nav-button">
+← Previous Lesson
+</a>
+
+<a href="../trading.html"
+class="nav-button">
+Trading Academy
+</a>
+
+<a href="currency-pairs.html"
+class="nav-button">
+Next Lesson →
+</a>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+<strong>Kingdom Learning Hub</strong>
+</p>
+
+<p>
+By Richard
+</p>
+
+<p>
+Faith • Knowledge • Skills • Growth
+</p>
+
+<p>
+© 2026 Kingdom Learning Hub
+</p>
+
+</footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Serving Others | Kingdom Learning Hub</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gold: #d4a017;
+    --gold-light: #f3c85b;
+    --dark: #070a10;
+    --card: rgba(255,255,255,0.055);
+    --border: rgba(255,255,255,0.12);
+    --text: #f4f5f7;
+    --muted: #a2a9b7;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    line-height: 1.8;
+}
+
+.container {
+    width: 90%;
+    max-width: 850px;
+    margin: auto;
+}
+
+/* HEADER */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(7,10,16,.95);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    min-height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--gold-light);
+}
+
+.logo small {
+    display: block;
+    color: #777;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.back {
+    color: var(--gold-light);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+/* HERO */
+
+.lesson-header {
+    text-align: center;
+    padding: 80px 20px 55px;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(212,160,23,.13),
+            transparent 60%
+        );
+}
+
+.lesson-number {
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.lesson-header h1 {
+    font-size: clamp(36px,7vw,58px);
+    line-height: 1.1;
+    margin: 15px 0;
+}
+
+.lesson-header p {
+    color: var(--muted);
+    max-width: 680px;
+    margin: auto;
+}
+
+/* CONTENT */
+
+.lesson-content {
+    padding: 30px 0 80px;
+}
+
+.lesson-content h2 {
+    font-size: 27px;
+    margin: 40px 0 15px;
+    color: var(--gold-light);
+}
+
+.lesson-content p {
+    color: #c7cbd4;
+    margin-bottom: 18px;
+}
+
+.lesson-content ul {
+    margin: 15px 0 25px 25px;
+    color: #c7cbd4;
+}
+
+.lesson-content li {
+    margin-bottom: 10px;
+}
+
+/* BOXES */
+
+.key-point {
+    margin: 30px 0;
+    padding: 25px;
+    background: rgba(212,160,23,.07);
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+}
+
+.key-point strong {
+    color: var(--gold-light);
+}
+
+.scripture {
+    margin: 25px 0;
+    padding: 24px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.scripture strong {
+    color: var(--gold-light);
+}
+
+.example {
+    margin: 30px 0;
+    padding: 25px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.example h3 {
+    color: var(--gold-light);
+    margin-bottom: 10px;
+}
+
+/* SERVICE GRID */
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.service-card {
+    padding: 24px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.service-card .icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.service-card h3 {
+    color: var(--gold-light);
+    margin-bottom: 8px;
+}
+
+.service-card p {
+    font-size: 13px;
+    margin: 0;
+}
+
+/* STEPS */
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.step {
+    padding: 22px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.step-number {
+    color: var(--gold-light);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.step h3 {
+    margin: 7px 0;
+}
+
+.step p {
+    font-size: 13px;
+    margin: 0;
+}
+
+/* REFLECTION */
+
+.reflection {
+    margin-top: 45px;
+    padding: 30px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
+
+.reflection h2 {
+    margin-top: 0;
+}
+
+/* NAVIGATION */
+
+.lesson-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 50px;
+}
+
+.nav-button {
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: var(--gold);
+    color: #111;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.nav-button:hover {
+    background: var(--gold-light);
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: #05070b;
+    border-top: 1px solid var(--border);
+}
+
+footer strong {
+    color: var(--gold-light);
+}
+
+footer p {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 6px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+    .service-grid,
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .lesson-navigation {
+        flex-direction: column;
+    }
+
+    .nav-button {
+        text-align: center;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">
+
+Kingdom <span>Learning Hub</span>
+
+<small>BY RICHARD</small>
+
+</div>
+
+<a href="../bible-study.html" class="back">
+← Bible Studies
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<section class="lesson-header">
+
+<div class="container">
+
+<div class="lesson-number">
+BIBLE STUDIES • LESSON 09
+</div>
+
+<h1>
+Serving Others
+</h1>
+
+<p>
+Discover how following God can be expressed through
+love, humility, generosity, compassion and practical
+service to other people.
+</p>
+
+</div>
+
+</section>
+
+
+<main class="lesson-content">
+
+<div class="container">
+
+
+<h2>
+1. What Does It Mean to Serve?
+</h2>
+
+<p>
+Serving means using what we have—our time,
+abilities, resources and opportunities—to help
+others and contribute to something greater than
+ourselves.
+</p>
+
+<p>
+Christian service is not simply about performing
+religious activities. It can also involve practical
+acts of love, kindness, responsibility and
+compassion.
+</p>
+
+<div class="key-point">
+
+<strong>Key idea:</strong>
+
+<p>
+True service focuses on helping others rather than
+making ourselves the center of attention.
+</p>
+
+</div>
+
+
+<h2>
+2. Jesus' Example of Service
+</h2>
+
+<p>
+Jesus taught and demonstrated servant leadership.
+He showed that greatness in God's Kingdom is not
+defined simply by status or power.
+</p>
+
+<div class="scripture">
+
+<strong>Mark 10:45</strong>
+
+<p>
+Jesus explained that He came not to be served,
+but to serve and to give His life for others.
+</p>
+
+</div>
+
+<p>
+His example challenges Christians to think beyond
+personal recognition and ask how their lives can
+benefit other people.
+</p>
+
+
+<h2>
+3. Serving With Humility
+</h2>
+
+<p>
+Service can lose its meaning when the primary
+motivation becomes praise, recognition or social
+status.
+</p>
+
+<p>
+Humility means recognizing that serving others
+does not make us superior to them.
+</p>
+
+<div class="scripture">
+
+<strong>Philippians 2:3–4</strong>
+
+<p>
+Paul encourages believers to act with humility
+and to consider the interests of others.
+</p>
+
+</div>
+
+
+<h2>
+4. Different Ways to Serve
+</h2>
+
+<div class="service-grid">
+
+<div class="service-card">
+
+<div class="icon">🤝</div>
+
+<h3>
+Helping People
+</h3>
+
+<p>
+Support someone who is struggling through
+practical help, encouragement or companionship.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="icon">❤️</div>
+
+<h3>
+Showing Compassion
+</h3>
+
+<p>
+Pay attention to people who may be overlooked,
+isolated or vulnerable.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="icon">🎓</div>
+
+<h3>
+Teaching
+</h3>
+
+<p>
+Use knowledge and skills to help another person
+learn and develop.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="icon">🎁</div>
+
+<h3>
+Giving
+</h3>
+
+<p>
+Share resources responsibly when you have an
+opportunity to meet a genuine need.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="icon">🙏</div>
+
+<h3>
+Prayer
+</h3>
+
+<p>
+Pray for people and bring their needs before God.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="icon">🛠️</div>
+
+<h3>
+Practical Work
+</h3>
+
+<p>
+Use your abilities, time and effort to solve
+problems and support others.
+</p>
+
+</div>
+
+</div>
+
+
+<h2>
+5. Serving the Vulnerable
+</h2>
+
+<p>
+Scripture repeatedly emphasizes compassion toward
+people who are vulnerable or in need.
+</p>
+
+<p>
+This can include people experiencing poverty,
+widows, orphans, strangers, the sick and others
+who may need support.
+</p>
+
+<div class="scripture">
+
+<strong>James 1:27</strong>
+
+<p>
+James connects sincere religious devotion with
+caring for orphans and widows in their distress
+and maintaining a life of moral integrity.
+</p>
+
+</div>
+
+<div class="key-point">
+
+<strong>Look beyond yourself.</strong>
+
+<p>
+Sometimes service begins simply by noticing a need
+that other people have ignored.
+</p>
+
+</div>
+
+
+<h2>
+6. Serving Without Seeking Attention
+</h2>
+
+<p>
+Not every good action needs to become public.
+Jesus warned against performing acts of
+righteousness simply to receive recognition from
+other people.
+</p>
+
+<div class="scripture">
+
+<strong>Matthew 6:1–4</strong>
+
+<p>
+Jesus taught His followers to avoid turning their
+acts of generosity into performances for public
+approval.
+</p>
+
+</div>
+
+<p>
+The goal is not to hide every good action.
+Rather, the lesson is to examine the motivation
+behind the action.
+</p>
+
+
+<h2>
+7. Your Abilities Can Serve Others
+</h2>
+
+<p>
+People have different skills, experiences,
+resources and opportunities.
+</p>
+
+<p>
+One person may be good at teaching. Another may
+be good at organizing, building, listening,
+encouraging, creating, managing or solving
+problems.
+</p>
+
+<div class="example">
+
+<h3>
+Ask Yourself</h3>
+
+<ul>
+
+<li>
+What am I naturally good at?
+</li>
+
+<li>
+What have I learned that could help someone else?
+</li>
+
+<li>
+What resources do I have available?
+</li>
+
+<li>
+What needs do I see around me?
+</li>
+
+<li>
+How can I use my abilities responsibly?
+</li>
+
+</ul>
+
+</div>
+
+
+<h2>
+8. Serving in Ordinary Life
+</h2>
+
+<p>
+Service does not always require a large platform,
+organization or public ministry.
+</p>
+
+<p>
+It can happen in ordinary situations:
+</p>
+
+<ul>
+
+<li>
+Helping someone understand something.
+</li>
+
+<li>
+Listening to someone who needs encouragement.
+</li>
+
+<li>
+Helping with practical work.
+</li>
+
+<li>
+Sharing useful knowledge.
+</li>
+
+<li>
+Supporting your family responsibly.
+</li>
+
+<li>
+Helping someone who is struggling.
+</li>
+
+<li>
+Encouraging someone who has lost hope.
+</li>
+
+</ul>
+
+
+<h2>
+9. Serving Your Community
+</h2>
+
+<p>
+A Christian can look at their community and ask
+what positive contribution they can make.
+</p>
+
+<div class="steps">
+
+<div class="step">
+
+<div class="step-number">
+STEP 01
+</div>
+
+<h3>
+Observe
+</h3>
+
+<p>
+Pay attention to real needs around you instead of
+assuming someone else will solve everything.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+STEP 02
+</div>
+
+<h3>
+Understand
+</h3>
+
+<p>
+Learn what people actually need before deciding
+how to help.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+STEP 03
+</div>
+
+<h3>
+Act
+</h3>
+
+<p>
+Take a practical step that is within your ability
+and resources.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+STEP 04
+</div>
+
+<h3>
+Follow Through
+</h3>
+
+<p>
+Responsible service means keeping commitments
+and learning from experience.
+</p>
+
+</div>
+
+</div>
+
+
+<h2>
+10. Generosity
+</h2>
+
+<p>
+Generosity involves willingly sharing what we have
+with others when there is a genuine opportunity
+to help.
+</p>
+
+<div class="scripture">
+
+<strong>2 Corinthians 9:7</strong>
+
+<p>
+Paul teaches that giving should not be done
+reluctantly or under compulsion, but willingly.
+</p>
+
+</div>
+
+<p>
+Generosity is not measured only by the amount
+given. Motivation, wisdom and the genuine needs
+of others also matter.
+</p>
+
+
+<h2>
+11. Serving With Wisdom
+</h2>
+
+<p>
+Serving others does not mean saying yes to every
+request or ignoring wisdom and personal
+responsibilities.
+</p>
+
+<p>
+Good service should be responsible, sustainable
+and directed toward genuine needs.
+</p>
+
+<div class="key-point">
+
+<strong>Compassion needs wisdom.</strong>
+
+<p>
+Before helping, understand the situation, consider
+what is actually needed and choose a responsible
+way to contribute.
+</p>
+
+</div>
+
+
+<h2>
+12. Do Not Become Proud of Service
+</h2>
+
+<p>
+Doing good things can sometimes create pride.
+A person may begin comparing their service with
+other people's service.
+</p>
+
+<p>
+Christian service should produce humility rather
+than superiority.
+</p>
+
+<div class="scripture">
+
+<strong>Luke 17:10</strong>
+
+<p>
+Jesus teaches His followers to maintain humility
+about their obedience and service.
+</p>
+
+</div>
+
+
+<h2>
+13. Serving When Nobody Applauds
+</h2>
+
+<p>
+One of the strongest tests of character is whether
+we continue doing what is right when there is no
+public recognition.
+</p>
+
+<p>
+A person who serves only when people are watching
+may be seeking attention rather than genuinely
+serving.
+</p>
+
+<div class="example">
+
+<h3>
+A Quiet Act of Service</h3>
+
+<p>
+Imagine noticing someone struggling with a task.
+You help them, but nobody records it, posts about
+it or praises you.
+</p>
+
+<p>
+You still helped.
+</p>
+
+<p>
+That is an opportunity to practice service without
+depending on applause.
+</p>
+
+</div>
+
+
+<h2>
+14. Service and Leadership
+</h2>
+
+<p>
+Leadership and service are not opposites.
+Healthy leadership often means taking
+responsibility for the wellbeing and progress of
+others.
+</p>
+
+<div class="scripture">
+
+<strong>John 13:12–15</strong>
+
+<p>
+Jesus used the washing of His disciples' feet as
+an example of humble service.
+</p>
+
+</div>
+
+
+<h2>
+15. Avoiding Burnout
+</h2>
+
+<p>
+Serving others is important, but wisdom also
+requires recognizing personal limits.
+</p>
+
+<p>
+A person who constantly gives without rest,
+planning or boundaries may eventually become
+exhausted and unable to serve effectively.
+</p>
+
+<ul>
+
+<li>
+Rest when necessary.
+</li>
+
+<li>
+Share responsibilities.
+</li>
+
+<li>
+Plan your time.
+</li>
+
+<li>
+Do not promise what you cannot realistically do.
+</li>
+
+<li>
+Ask for help when needed.
+</li>
+
+</ul>
+
+
+<h2>
+16. A Simple Service Plan
+</h2>
+
+<div class="example">
+
+<h3>
+Create Your Personal Service Plan</h3>
+
+<p>
+Write down:
+</p>
+
+<ul>
+
+<li>
+One skill you can use.
+</li>
+
+<li>
+One person or group you can encourage.
+</li>
+
+<li>
+One practical need you can help with.
+</li>
+
+<li>
+One resource you can share responsibly.
+</li>
+
+<li>
+One way you can serve without seeking recognition.
+</li>
+
+</ul>
+
+</div>
+
+
+<h2>
+17. Seven-Day Service Challenge
+</h2>
+
+<p>
+For the next seven days, intentionally look for
+one opportunity each day to serve another person.
+</p>
+
+<div class="steps">
+
+<div class="step">
+
+<div class="step-number">
+DAY 01
+</div>
+
+<h3>
+Encourage
+</h3>
+
+<p>
+Give someone genuine encouragement.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+DAY 02
+</div>
+
+<h3>
+Help
+</h3>
+
+<p>
+Offer practical assistance to someone.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+DAY 03
+</div>
+
+<h3>
+Listen
+</h3>
+
+<p>
+Give someone your attention without rushing them.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+DAY 04
+</div>
+
+<h3>
+Teach
+</h3>
+
+<p>
+Share something useful that you know.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+DAY 05
+</div>
+
+<h3>
+Give
+</h3>
+
+<p>
+Share a resource responsibly where there is a
+genuine need.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+DAY 06
+</div>
+
+<h3>
+Pray
+</h3>
+
+<p>
+Pray specifically for another person's needs.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+DAY 07
+</div>
+
+<h3>
+Reflect
+</h3>
+
+<p>
+Consider what you learned about service and
+your own character.
+</p>
+
+</div>
+
+</div>
+
+
+<h2>
+18. Key Scriptures
+</h2>
+
+<ul>
+
+<li>
+Mark 10:45 — Jesus' example of service
+</li>
+
+<li>
+Philippians 2:3–4 — Humility and considering others
+</li>
+
+<li>
+Matthew 6:1–4 — Giving without seeking attention
+</li>
+
+<li>
+James 1:27 — Caring for people in distress
+</li>
+
+<li>
+2 Corinthians 9:7 — Willing generosity
+</li>
+
+<li>
+John 13:12–15 — Jesus demonstrates humble service
+</li>
+
+<li>
+Galatians 5:13 — Serving one another through love
+</li>
+
+</ul>
+
+
+<div class="reflection">
+
+<h2>
+📖 Lesson 09 Reflection
+</h2>
+
+<ul>
+
+<li>
+What does serving others mean to you?
+</li>
+
+<li>
+Why did Jesus emphasize serving rather than
+being served?
+</li>
+
+<li>
+What is the relationship between humility and
+service?
+</li>
+
+<li>
+What abilities do you have that could benefit
+other people?
+</li>
+
+<li>
+How can you serve people without seeking
+recognition?
+</li>
+
+<li>
+Why is wisdom important when helping others?
+</li>
+
+<li>
+What needs do you see in your community?
+</li>
+
+<li>
+How can you practice generosity responsibly?
+</li>
+
+<li>
+What does Jesus' example of washing His
+disciples' feet teach about leadership?
+</li>
+
+<li>
+What is one practical way you can serve someone
+this week?
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="lesson-navigation">
+
+<a href="wisdom-proverbs.html"
+class="nav-button">
+← Previous Lesson
+</a>
+
+<a href="../bible-study.html"
+class="nav-button">
+Bible Studies
+</a>
+
+<a href="growing-in-christ.html"
+class="nav-button">
+Next Lesson →
+</a>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer>
+
+<p>
+<strong>Kingdom Learning Hub</strong>
+</p>
+
+<p>
+By Richard
+</p>
+
+<p>
+Faith • Knowledge • Skills • Growth
+</p>
+
+<p>
+© 2026 Kingdom Learning Hub
+</p>
+
+</footer>
+
+
+</body>
+
+</html>

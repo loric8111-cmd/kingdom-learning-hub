@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Trendlines & Channels | Kingdom Learning Hub</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gold: #d4a017;
+    --gold-light: #f3c85b;
+    --dark: #070a10;
+    --card: rgba(255,255,255,0.055);
+    --border: rgba(255,255,255,0.12);
+    --text: #f4f5f7;
+    --muted: #a2a9b7;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    line-height: 1.8;
+}
+
+.container {
+    width: 90%;
+    max-width: 850px;
+    margin: auto;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(7,10,16,.95);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    min-height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--gold-light);
+}
+
+.logo small {
+    display: block;
+    color: #777;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.back {
+    color: var(--gold-light);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.lesson-header {
+    text-align: center;
+    padding: 80px 20px 55px;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(212,160,23,.13),
+            transparent 60%
+        );
+}
+
+.lesson-number {
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.lesson-header h1 {
+    font-size: clamp(36px,7vw,58px);
+    line-height: 1.1;
+    margin: 15px 0;
+}
+
+.lesson-header p {
+    color: var(--muted);
+    max-width: 650px;
+    margin: auto;
+}
+
+.lesson-content {
+    padding: 30px 0 80px;
+}
+
+.lesson-content h2 {
+    font-size: 27px;
+    margin: 40px 0 15px;
+    color: var(--gold-light);
+}
+
+.lesson-content p {
+    color: #c7cbd4;
+    margin-bottom: 18px;
+}
+
+.lesson-content ul {
+    margin: 15px 0 25px 25px;
+    color: #c7cbd4;
+}
+
+.lesson-content li {
+    margin-bottom: 10px;
+}
+
+.key-point {
+    margin: 30px 0;
+    padding: 25px;
+    background: rgba(212,160,23,.07);
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+}
+
+.key-point strong {
+    color: var(--gold-light);
+}
+
+.example {
+    margin: 30px 0;
+    padding: 25px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.example h3 {
+    color: var(--gold-light);
+    margin-bottom: 10px;
+}
+
+/* VISUAL DIAGRAMS */
+
+.chart-box {
+    margin: 35px 0;
+    padding: 25px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.chart {
+    position: relative;
+    height: 230px;
+    border-left: 1px solid #555;
+    border-bottom: 1px solid #555;
+    margin: 20px 10px;
+}
+
+.trend-line {
+    position: absolute;
+    height: 2px;
+    background: var(--gold);
+    transform-origin: left center;
+}
+
+.uptrend {
+    width: 80%;
+    left: 8%;
+    bottom: 35%;
+    transform: rotate(-18deg);
+}
+
+.downtrend {
+    width: 80%;
+    left: 8%;
+    top: 35%;
+    transform: rotate(18deg);
+}
+
+.price-path {
+    position: absolute;
+    width: 75%;
+    height: 100px;
+    left: 10%;
+    bottom: 28%;
+
+    border-top: 2px dashed var(--gold-light);
+    transform: rotate(-12deg);
+}
+
+.channel {
+    position: absolute;
+    width: 78%;
+    height: 90px;
+    left: 8%;
+    bottom: 28%;
+    border-top: 2px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
+    transform: rotate(-15deg);
+}
+
+.diagram-label {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* TABLE */
+
+.table-wrapper {
+    overflow-x: auto;
+    margin: 25px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 500px;
+}
+
+th,
+td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    color: var(--gold-light);
+    background: rgba(212,160,23,.07);
+}
+
+td {
+    color: #c7cbd4;
+}
+
+/* REFLECTION */
+
+.reflection {
+    margin-top: 45px;
+    padding: 30px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
+
+.reflection h2 {
+    margin-top: 0;
+}
+
+/* NAVIGATION */
+
+.lesson-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 50px;
+}
+
+.nav-button {
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: var(--gold);
+    color: #111;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.nav-button:hover {
+    background: var(--gold-light);
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: #05070b;
+    border-top: 1px solid var(--border);
+}
+
+footer strong {
+    color: var(--gold-light);
+}
+
+footer p {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 6px;
+}
+
+@media(max-width:600px) {
+
+    .lesson-navigation {
+        flex-direction: column;
+    }
+
+    .nav-button {
+        text-align: center;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">
+
+Kingdom <span>Learning Hub</span>
+
+<small>BY RICHARD</small>
+
+</div>
+
+<a href="../trading.html" class="back">
+← Trading Academy
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<section class="lesson-header">
+
+<div class="container">
+
+<div class="lesson-number">
+TRADING ACADEMY • LESSON 07
+</div>
+
+<h1>
+Trendlines & Channels
+</h1>
+
+<p>
+Learn how traders use trendlines and channels
+to organize price movement and identify the
+direction and boundaries of a market.
+</p>
+
+</div>
+
+</section>
+
+
+<main class="lesson-content">
+
+<div class="container">
+
+
+<h2>
+1. What Is a Trendline?
+</h2>
+
+<p>
+A trendline is a line drawn on a price chart to
+help visualize the general direction of price
+movement.
+</p>
+
+<p>
+Trendlines are normally drawn using significant
+swing points rather than random individual candles.
+</p>
+
+<div class="key-point">
+
+<strong>Important:</strong>
+
+<p>
+A trendline is an analytical tool. It is not a
+guarantee that price will continue in the same
+direction.
+</p>
+
+</div>
+
+
+<h2>
+2. Upward Trendline
+</h2>
+
+<p>
+During an upward-moving market, traders may draw
+a trendline through important swing lows.
+</p>
+
+<p>
+The line helps visualize whether successive
+pullbacks are generally forming at higher levels.
+</p>
+
+
+<div class="chart-box">
+
+<div class="chart">
+
+<div class="trend-line uptrend"></div>
+
+</div>
+
+<div class="diagram-label">
+Illustration of an upward-sloping trendline
+</div>
+
+</div>
+
+
+<h2>
+3. Downward Trendline
+</h2>
+
+<p>
+During a downward-moving market, traders may draw
+a trendline through important swing highs.
+</p>
+
+<p>
+This can help visualize whether successive rallies
+are generally forming at lower levels.
+</p>
+
+
+<div class="chart-box">
+
+<div class="chart">
+
+<div class="trend-line downtrend"></div>
+
+</div>
+
+<div class="diagram-label">
+Illustration of a downward-sloping trendline
+</div>
+
+</div>
+
+
+<h2>
+4. How to Draw an Uptrend Line
+</h2>
+
+<ul>
+
+<li>
+Identify a clear upward structure.
+</li>
+
+<li>
+Find meaningful swing lows.
+</li>
+
+<li>
+Connect the relevant lows with a straight line.
+</li>
+
+<li>
+Extend the line forward to observe future price
+behavior.
+</li>
+
+<li>
+Avoid forcing the line through insignificant
+price movements.
+</li>
+
+</ul>
+
+
+<h2>
+5. How to Draw a Downtrend Line
+</h2>
+
+<ul>
+
+<li>
+Identify a clear downward structure.
+</li>
+
+<li>
+Find meaningful swing highs.
+</li>
+
+<li>
+Connect the relevant highs with a straight line.
+</li>
+
+<li>
+Extend the line forward.
+</li>
+
+<li>
+Observe how price behaves around the line.
+</li>
+
+</ul>
+
+
+<h2>
+6. How Many Touches Are Needed?
+</h2>
+
+<p>
+There is no universal rule that guarantees a
+trendline becomes valid after an exact number of
+touches.
+</p>
+
+<p>
+Traders often look for multiple meaningful
+interactions with a trendline because repeated
+reactions can provide more context.
+</p>
+
+<div class="key-point">
+
+<strong>Don't chase perfection.</strong>
+
+<p>
+Markets are not perfectly geometric. A trendline
+is a visual approximation of price structure.
+</p>
+
+</div>
+
+
+<h2>
+7. Trendline Breaks
+</h2>
+
+<p>
+A trendline break occurs when price moves through
+a trendline that traders have been watching.
+</p>
+
+<p>
+A break may indicate that the previous pattern
+is changing, but the break itself does not
+guarantee a reversal.
+</p>
+
+<p>
+Price can break a trendline and continue in the
+same general direction after a temporary move.
+</p>
+
+
+<h2>
+8. False Trendline Breaks
+</h2>
+
+<p>
+Price can temporarily move through a trendline
+and then return to the previous side.
+</p>
+
+<p>
+This is sometimes called a false break.
+</p>
+
+<div class="example">
+
+<h3>
+Example</h3>
+
+<p>
+Imagine price has been making higher lows and
+respecting an upward trendline.
+</p>
+
+<p>
+Price briefly moves below the line but then
+recovers and continues upward.
+</p>
+
+<p>
+The temporary break alone would not prove that
+the entire trend has reversed.
+</p>
+
+</div>
+
+
+<h2>
+9. Trendlines and Market Structure
+</h2>
+
+<p>
+Trendlines work best when combined with the
+structure concepts from Lesson 05.
+</p>
+
+<p>
+For example, an upward trendline may support a
+market structure that is producing Higher Highs
+and Higher Lows.
+</p>
+
+<p>
+A downward trendline may accompany a structure
+containing Lower Highs and Lower Lows.
+</p>
+
+
+<div class="table-wrapper">
+
+<table>
+
+<tr>
+<th>Structure</th>
+<th>Possible Trendline</th>
+</tr>
+
+<tr>
+<td>HH + HL</td>
+<td>Upward trendline through swing lows</td>
+</tr>
+
+<tr>
+<td>LH + LL</td>
+<td>Downward trendline through swing highs</td>
+</tr>
+
+<tr>
+<td>Mixed structure</td>
+<td>Trendline may be less reliable or unclear</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<h2>
+10. What Is a Channel?
+</h2>
+
+<p>
+A channel consists of two roughly parallel lines
+that help describe the boundaries of price movement.
+</p>
+
+<p>
+One line can represent the main trendline while
+the other provides a parallel boundary.
+</p>
+
+
+<div class="chart-box">
+
+<div class="chart">
+
+<div class="channel"></div>
+
+</div>
+
+<div class="diagram-label">
+Illustration of a price channel
+</div>
+
+</div>
+
+
+<h2>
+11. Ascending Channel
+</h2>
+
+<p>
+An ascending channel slopes upward.
+</p>
+
+<p>
+Price may move between an upper boundary and a
+lower boundary while the overall structure moves
+higher.
+</p>
+
+<p>
+The boundaries are areas of interest, not
+guaranteed turning points.
+</p>
+
+
+<h2>
+12. Descending Channel
+</h2>
+
+<p>
+A descending channel slopes downward.
+</p>
+
+<p>
+Price may move between upper and lower boundaries
+while the overall structure moves lower.
+</p>
+
+
+<h2>
+13. Channels and Support/Resistance
+</h2>
+
+<p>
+Channels can be viewed as dynamic areas of
+potential support and resistance.
+</p>
+
+<p>
+The lower boundary may act as an area where
+buyers have previously appeared, while the upper
+boundary may act as an area where sellers have
+previously appeared.
+</p>
+
+<p>
+However, price can break through either boundary.
+</p>
+
+
+<h2>
+14. Trendline Confluence
+</h2>
+
+<p>
+A trendline becomes more interesting when it
+aligns with other forms of market information.
+</p>
+
+<p>
+For example:
+</p>
+
+<ul>
+
+<li>
+A significant support or resistance zone
+</li>
+
+<li>
+A clear market-structure point
+</li>
+
+<li>
+A higher-timeframe level
+</li>
+
+<li>
+A previous swing high or swing low
+</li>
+
+</ul>
+
+<div class="key-point">
+
+<strong>Confluence:</strong>
+
+<p>
+Confluence means multiple independent pieces of
+analysis point toward the same area or scenario.
+It still does not remove trading risk.
+</p>
+
+</div>
+
+
+<h2>
+15. Common Trendline Mistakes
+</h2>
+
+<ul>
+
+<li>
+Forcing a trendline to fit the chart.
+</li>
+
+<li>
+Connecting insignificant price points.
+</li>
+
+<li>
+Drawing dozens of trendlines.
+</li>
+
+<li>
+Assuming every trendline touch is a trade signal.
+</li>
+
+<li>
+Treating a trendline break as a guaranteed reversal.
+</li>
+
+<li>
+Ignoring the higher timeframe.
+</li>
+
+<li>
+Using trendlines without a risk-management plan.
+</li>
+
+</ul>
+
+
+<h2>
+16. A Simple Trendline Analysis Process
+</h2>
+
+<ul>
+
+<li>
+Start with a higher timeframe.
+</li>
+
+<li>
+Identify the broader market structure.
+</li>
+
+<li>
+Mark significant swing highs and lows.
+</li>
+
+<li>
+Draw the simplest trendline that represents
+the structure.
+</li>
+
+<li>
+Check whether price respects or breaks the line.
+</li>
+
+<li>
+Compare the trendline with support and resistance.
+</li>
+
+<li>
+Move to a lower timeframe only when necessary.
+</li>
+
+<li>
+Never assume the line guarantees the next move.
+</li>
+
+</ul>
+
+
+<h2>
+17. Practical Exercise
+</h2>
+
+<div class="example">
+
+<h3>
+Your Task</h3>
+
+<p>
+Open a demo chart for EUR/USD.
+</p>
+
+<p>
+Choose the 4-hour timeframe.
+</p>
+
+<p>
+Find two or more meaningful swing lows if the
+market structure is rising.
+</p>
+
+<p>
+Draw an upward trendline through those areas.
+</p>
+
+<p>
+Then observe how price behaves when it approaches
+the line.
+</p>
+
+<p>
+Do not place a real-money trade simply because
+price touches the trendline.
+</p>
+
+</div>
+
+
+<div class="reflection">
+
+<h2>
+🧠 Lesson 07 Checkpoint
+</h2>
+
+<ul>
+
+<li>
+What is a trendline?
+</li>
+
+<li>
+How is an upward trendline normally drawn?
+</li>
+
+<li>
+How is a downward trendline normally drawn?
+</li>
+
+<li>
+Why should meaningful swing points be used?
+</li>
+
+<li>
+What is a trendline break?
+</li>
+
+<li>
+What is a false break?
+</li>
+
+<li>
+What is a channel?
+</li>
+
+<li>
+What is an ascending channel?
+</li>
+
+<li>
+What is a descending channel?
+</li>
+
+<li>
+Why should trendlines be combined with broader
+market analysis?
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="lesson-navigation">
+
+<a href="support-resistance.html"
+class="nav-button">
+← Previous Lesson
+</a>
+
+<a href="../trading.html"
+class="nav-button">
+Trading Academy
+</a>
+
+<a href="indicators.html"
+class="nav-button">
+Next Lesson →
+</a>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer>
+
+<p>
+<strong>Kingdom Learning Hub</strong>
+</p>
+
+<p>
+By Richard
+</p>
+
+<p>
+Faith • Knowledge • Skills • Growth
+</p>
+
+<p>
+© 2026 Kingdom Learning Hub
+</p>
+
+</footer>
+
+
+</body>
+
+</html>

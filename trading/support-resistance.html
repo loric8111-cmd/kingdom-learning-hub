@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Support & Resistance | Kingdom Learning Hub</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gold: #d4a017;
+    --gold-light: #f3c85b;
+    --dark: #070a10;
+    --card: rgba(255,255,255,0.055);
+    --border: rgba(255,255,255,0.12);
+    --text: #f4f5f7;
+    --muted: #a2a9b7;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    line-height: 1.8;
+}
+
+.container {
+    width: 90%;
+    max-width: 850px;
+    margin: auto;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(7,10,16,.95);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    min-height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--gold-light);
+}
+
+.logo small {
+    display: block;
+    color: #777;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.back {
+    color: var(--gold-light);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.lesson-header {
+    text-align: center;
+    padding: 80px 20px 55px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(212,160,23,.13),
+            transparent 60%
+        );
+}
+
+.lesson-number {
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.lesson-header h1 {
+    font-size: clamp(36px,7vw,58px);
+    line-height: 1.1;
+    margin: 15px 0;
+}
+
+.lesson-header p {
+    color: var(--muted);
+    max-width: 650px;
+    margin: auto;
+}
+
+.lesson-content {
+    padding: 30px 0 80px;
+}
+
+.lesson-content h2 {
+    font-size: 27px;
+    margin: 40px 0 15px;
+    color: var(--gold-light);
+}
+
+.lesson-content p {
+    color: #c7cbd4;
+    margin-bottom: 18px;
+}
+
+.lesson-content ul {
+    margin: 15px 0 25px 25px;
+    color: #c7cbd4;
+}
+
+.lesson-content li {
+    margin-bottom: 10px;
+}
+
+.key-point {
+    margin: 30px 0;
+    padding: 25px;
+    background: rgba(212,160,23,.07);
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+}
+
+.key-point strong {
+    color: var(--gold-light);
+}
+
+.example {
+    margin: 30px 0;
+    padding: 25px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.example h3 {
+    color: var(--gold-light);
+    margin-bottom: 10px;
+}
+
+/* ZONE VISUAL */
+
+.zone-box {
+    margin: 35px 0;
+    padding: 30px 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
+
+.price-line {
+    height: 2px;
+    background: var(--gold);
+    margin: 25px 0;
+    position: relative;
+}
+
+.price-line span {
+    position: absolute;
+    right: 0;
+    top: -13px;
+    font-size: 11px;
+    color: var(--gold-light);
+}
+
+.zone {
+    padding: 18px;
+    margin: 15px 0;
+    text-align: center;
+    border: 1px dashed var(--gold);
+    border-radius: 8px;
+}
+
+.zone strong {
+    color: var(--gold-light);
+}
+
+/* TABLE */
+
+.table-wrapper {
+    overflow-x: auto;
+    margin: 25px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 500px;
+}
+
+th,
+td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    color: var(--gold-light);
+    background: rgba(212,160,23,.07);
+}
+
+td {
+    color: #c7cbd4;
+}
+
+/* REFLECTION */
+
+.reflection {
+    margin-top: 45px;
+    padding: 30px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
+
+.reflection h2 {
+    margin-top: 0;
+}
+
+/* NAVIGATION */
+
+.lesson-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 50px;
+}
+
+.nav-button {
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: var(--gold);
+    color: #111;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.nav-button:hover {
+    background: var(--gold-light);
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: #05070b;
+    border-top: 1px solid var(--border);
+}
+
+footer strong {
+    color: var(--gold-light);
+}
+
+footer p {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 6px;
+}
+
+@media(max-width:600px) {
+
+    .lesson-navigation {
+        flex-direction: column;
+    }
+
+    .nav-button {
+        text-align: center;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">
+
+Kingdom <span>Learning Hub</span>
+
+<small>BY RICHARD</small>
+
+</div>
+
+<a href="../trading.html" class="back">
+← Trading Academy
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<section class="lesson-header">
+
+<div class="container">
+
+<div class="lesson-number">
+TRADING ACADEMY • LESSON 06
+</div>
+
+<h1>
+Support & Resistance
+</h1>
+
+<p>
+Learn how important price areas are identified
+and how traders use support and resistance when
+analyzing charts.
+</p>
+
+</div>
+
+</section>
+
+
+<main class="lesson-content">
+
+<div class="container">
+
+
+<h2>
+1. What Is Support?
+</h2>
+
+<p>
+Support is a price area where downward movement
+has previously slowed or where buying interest
+has appeared.
+</p>
+
+<p>
+Traders watch these areas because price may react
+there again. However, support is not a guarantee
+that price will stop falling.
+</p>
+
+<div class="key-point">
+
+<strong>Think of support as an area, not a magic line.</strong>
+
+<p>
+Price can move slightly above or below an area
+before reacting.
+</p>
+
+</div>
+
+
+<h2>
+2. What Is Resistance?
+</h2>
+
+<p>
+Resistance is a price area where upward movement
+has previously slowed or where selling interest
+has appeared.
+</p>
+
+<p>
+Traders may watch the area for another reaction,
+but resistance can also fail.
+</p>
+
+
+<div class="zone-box">
+
+<div class="zone">
+
+<strong>RESISTANCE ZONE</strong>
+
+<br>
+
+Price may encounter selling pressure here.
+
+</div>
+
+<div class="price-line">
+<span>Price movement</span>
+</div>
+
+<div class="zone">
+
+<strong>SUPPORT ZONE</strong>
+
+<br>
+
+Price may encounter buying interest here.
+
+</div>
+
+</div>
+
+
+<h2>
+3. Support and Resistance Are Zones
+</h2>
+
+<p>
+Beginners often draw one perfectly precise line
+and expect price to respect it exactly.
+Real markets are usually more complicated.
+</p>
+
+<p>
+Support and resistance are often better understood
+as areas where price has previously reacted.
+</p>
+
+
+<h2>
+4. How Do You Find Support?
+</h2>
+
+<p>
+Look at historical price action and identify areas
+where price repeatedly reacted after moving lower.
+</p>
+
+<p>
+Possible clues include:
+</p>
+
+<ul>
+
+<li>
+Previous swing lows
+</li>
+
+<li>
+Repeated reactions from a similar area
+</li>
+
+<li>
+Consolidation areas
+</li>
+
+<li>
+Important higher-timeframe price levels
+</li>
+
+</ul>
+
+
+<h2>
+5. How Do You Find Resistance?
+</h2>
+
+<p>
+Look for areas where price repeatedly struggled
+to continue higher.
+</p>
+
+<p>
+Possible clues include:
+</p>
+
+<ul>
+
+<li>
+Previous swing highs
+</li>
+
+<li>
+Repeated rejection areas
+</li>
+
+<li>
+Previous consolidation zones
+</li>
+
+<li>
+Important higher-timeframe levels
+</li>
+
+</ul>
+
+
+<h2>
+6. Example of Support
+</h2>
+
+<div class="example">
+
+<h3>
+Example</h3>
+
+<p>
+Imagine EUR/USD falls toward 1.1000 several times.
+</p>
+
+<p>
+Each time price approaches the area, selling slows
+and price moves upward again.
+</p>
+
+<p>
+The 1.1000 area could therefore be considered a
+potential support zone.
+</p>
+
+<p>
+It is not guaranteed to hold in the future.
+</p>
+
+</div>
+
+
+<h2>
+7. Example of Resistance
+</h2>
+
+<div class="example">
+
+<h3>
+Example</h3>
+
+<p>
+Imagine EUR/USD rises toward 1.1100 several times.
+</p>
+
+<p>
+Each time price approaches the area, upward movement
+slows and price moves lower.
+</p>
+
+<p>
+The 1.1100 area could therefore be considered a
+potential resistance zone.
+</p>
+
+</div>
+
+
+<h2>
+8. Role Reversal</h2>
+
+<p>
+Sometimes an area that previously acted as support
+can later become resistance.
+</p>
+
+<p>
+The opposite can also happen: an area that acted
+as resistance may later become support.
+</p>
+
+<div class="example">
+
+<h3>
+Simple Example</h3>
+
+<p>
+Price repeatedly holds above an area around 1.1000.
+</p>
+
+<p>
+Later, price breaks below that area.
+</p>
+
+<p>
+If price subsequently rises back toward 1.1000
+and struggles there, traders may describe the
+area as having changed from support to resistance.
+</p>
+
+</div>
+
+
+<h2>
+9. Breakouts</h2>
+
+<p>
+A breakout occurs when price moves beyond an
+important price area.
+</p>
+
+<p>
+For example, price may move above a resistance
+zone or below a support zone.
+</p>
+
+<p>
+A breakout does not automatically mean that price
+will continue in the same direction.
+</p>
+
+
+<h2>
+10. False Breakouts</h2>
+
+<p>
+Sometimes price moves beyond a support or resistance
+area and then quickly returns back inside the
+previous range.
+</p>
+
+<p>
+This is often called a false breakout or failed
+breakout.
+</p>
+
+<div class="key-point">
+
+<strong>Important:</strong>
+
+<p>
+Never assume that every breakout will continue.
+Wait for the price behavior and broader context
+to support your analysis.
+</p>
+
+</div>
+
+
+<h2>
+11. Higher-Timeframe Levels</h2>
+
+<p>
+Support and resistance can be observed on many
+different timeframes.
+</p>
+
+<p>
+A level visible on a daily or weekly chart may
+provide broader context than a level visible only
+on a very short timeframe.
+</p>
+
+<p>
+This does not mean higher-timeframe levels will
+always hold. It simply means traders may consider
+them when building a broader market view.
+</p>
+
+
+<h2>
+12. Strong and Weak Levels</h2>
+
+<p>
+Not all price areas have equal significance.
+</p>
+
+<div class="table-wrapper">
+
+<table>
+
+<tr>
+<th>Possible Characteristic</th>
+<th>What It May Indicate</th>
+</tr>
+
+<tr>
+<td>Multiple reactions</td>
+<td>The area has attracted attention before.</td>
+</tr>
+
+<tr>
+<td>Clear swing point</td>
+<td>The area may be structurally important.</td>
+</tr>
+
+<tr>
+<td>Higher-timeframe visibility</td>
+<td>The area may provide broader context.</td>
+</tr>
+
+<tr>
+<td>Very recent level</td>
+<td>May reflect current market behavior.</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<h2>
+13. Support & Resistance With Market Structure
+</h2>
+
+<p>
+Support and resistance become more useful when
+studied together with market structure.
+</p>
+
+<p>
+For example, in an upward structure, previous
+swing areas may become important places to observe
+how price reacts during a pullback.
+</p>
+
+<p>
+In a downward structure, previous swing areas can
+also provide useful context.
+</p>
+
+
+<h2>
+14. Do Not Draw Too Many Levels</h2>
+
+<p>
+A common beginner mistake is covering the chart
+with dozens of horizontal lines.
+</p>
+
+<p>
+Too many levels can make analysis confusing.
+</p>
+
+<div class="key-point">
+
+<strong>Better approach:</strong>
+
+<p>
+Focus on the most meaningful areas and ask why
+each level matters before putting it on your chart.
+</p>
+
+</div>
+
+
+<h2>
+15. A Simple Method for Marking Zones</h2>
+
+<ul>
+
+<li>
+Start with a higher timeframe.
+</li>
+
+<li>
+Identify obvious swing highs and lows.
+</li>
+
+<li>
+Look for areas where price reacted multiple times.
+</li>
+
+<li>
+Mark a zone rather than forcing perfect precision.
+</li>
+
+<li>
+Move to a lower timeframe only after understanding
+the broader context.
+</li>
+
+<li>
+Observe what price does when it approaches the zone.
+</li>
+
+</ul>
+
+
+<h2>
+16. Common Beginner Mistakes
+</h2>
+
+<ul>
+
+<li>
+Treating support and resistance as guaranteed.
+</li>
+
+<li>
+Drawing too many levels.
+</li>
+
+<li>
+Ignoring higher timeframes.
+</li>
+
+<li>
+Entering immediately whenever price touches a level.
+</li>
+
+<li>
+Assuming every breakout is real.
+</li>
+
+<li>
+Ignoring market structure.
+</li>
+
+<li>
+Using levels without a risk-management plan.
+</li>
+
+</ul>
+
+
+<h2>
+17. Risk Management Still Comes First
+</h2>
+
+<p>
+Finding a good-looking support or resistance zone
+does not eliminate trading risk.
+</p>
+
+<p>
+Price can break through a level unexpectedly.
+News events can produce rapid movement, and
+technical analysis can be wrong.
+</p>
+
+<p>
+A responsible trading plan should define how much
+capital you are willing to risk before entering
+a trade.
+</p>
+
+
+<div class="reflection">
+
+<h2>
+🧠 Lesson 06 Checkpoint
+</h2>
+
+<ul>
+
+<li>
+What is support?
+</li>
+
+<li>
+What is resistance?
+</li>
+
+<li>
+Why are support and resistance often treated as
+zones instead of exact lines?
+</li>
+
+<li>
+How can you identify a potential support area?
+</li>
+
+<li>
+How can you identify a potential resistance area?
+</li>
+
+<li>
+What is role reversal?
+</li>
+
+<li>
+What is a breakout?
+</li>
+
+<li>
+What is a false breakout?
+</li>
+
+<li>
+Why can higher-timeframe levels be useful?
+</li>
+
+<li>
+Why should you avoid putting too many levels
+on your chart?
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="lesson-navigation">
+
+<a href="market-structure.html"
+class="nav-button">
+← Previous Lesson
+</a>
+
+<a href="../trading.html"
+class="nav-button">
+Trading Academy
+</a>
+
+<a href="trendlines.html"
+class="nav-button">
+Next Lesson →
+</a>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer>
+
+<p>
+<strong>Kingdom Learning Hub</strong>
+</p>
+
+<p>
+By Richard
+</p>
+
+<p>
+Faith • Knowledge • Skills • Growth
+</p>
+
+<p>
+© 2026 Kingdom Learning Hub
+</p>
+
+</footer>
+
+
+</body>
+
+</html>

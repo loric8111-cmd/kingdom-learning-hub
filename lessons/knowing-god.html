@@ -12,46 +12,83 @@ content="width=device-width, initial-scale=1.0">
 
 <style>
 
+/* =========================
+   RESET
+========================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
+/* =========================
+   VARIABLES
+========================= */
+
 :root {
     --gold: #d4a017;
     --gold-light: #f3c85b;
+
     --dark: #070a10;
+    --dark-2: #0b0f17;
+
     --card: rgba(255,255,255,0.055);
     --border: rgba(255,255,255,0.12);
+
     --text: #f4f5f7;
-    --muted: #a2a9b7;
+    --body-text: #c8ccd5;
+    --muted: #9da5b5;
 }
 
+
+/* =========================
+   BODY
+========================= */
+
 body {
-    font-family: Arial, sans-serif;
-    background: var(--dark);
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        linear-gradient(
+            180deg,
+            #070a10 0%,
+            #090d14 50%,
+            #070a10 100%
+        );
+
     color: var(--text);
+
     line-height: 1.8;
 }
 
+
+/* =========================
+   CONTAINER
+========================= */
+
 .container {
     width: 90%;
-    max-width: 850px;
+    max-width: 900px;
     margin: auto;
 }
 
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header {
     position: sticky;
     top: 0;
+
     z-index: 100;
 
-    background: rgba(7,10,16,.95);
+    background: rgba(7,10,16,0.96);
 
-    border-bottom: 1px solid var(--border);
+    border-bottom:
+        1px solid var(--border);
 
     backdrop-filter: blur(15px);
 }
@@ -61,16 +98,20 @@ nav {
 
     display: flex;
 
-    justify-content: space-between;
+    justify-content:
+        space-between;
 
     align-items: center;
 
-    gap: 15px;
+    gap: 20px;
 }
 
 .logo {
     font-size: 18px;
+
     font-weight: bold;
+
+    line-height: 1.2;
 }
 
 .logo span {
@@ -79,15 +120,26 @@ nav {
 
 .logo small {
     display: block;
+
+    margin-top: 4px;
+
     color: #777;
+
     font-size: 9px;
+
     letter-spacing: 2px;
 }
 
 .back {
     color: var(--gold-light);
+
     text-decoration: none;
+
     font-size: 13px;
+
+    white-space: nowrap;
+
+    transition: 0.3s;
 }
 
 .back:hover {
@@ -95,19 +147,25 @@ nav {
 }
 
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .lesson-hero {
     text-align: center;
 
-    padding: 90px 20px 65px;
+    padding:
+        100px 20px 80px;
 
     background:
         radial-gradient(
             circle at center,
-            rgba(212,160,23,.15),
+            rgba(212,160,23,0.15),
             transparent 60%
         );
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.05);
 }
 
 .lesson-label {
@@ -118,37 +176,50 @@ nav {
     font-weight: bold;
 
     letter-spacing: 2px;
+
+    text-transform: uppercase;
 }
 
 .lesson-hero h1 {
-    font-size: clamp(38px,7vw,60px);
+    font-size:
+        clamp(38px, 7vw, 62px);
 
     line-height: 1.1;
 
-    margin: 15px 0;
+    margin:
+        18px 0;
 }
 
 .lesson-hero p {
-    max-width: 700px;
+    max-width: 720px;
 
     margin: auto;
 
     color: var(--muted);
+
+    font-size: 16px;
 }
 
 
-/* CONTENT */
+/* =========================
+   LESSON CONTENT
+========================= */
 
 .lesson-content {
-    padding: 30px 0 90px;
+    padding:
+        30px 0 100px;
 }
 
 .lesson-content h2 {
     color: var(--gold-light);
 
-    font-size: 27px;
+    font-size:
+        clamp(25px, 5vw, 32px);
 
-    margin: 45px 0 15px;
+    line-height: 1.3;
+
+    margin:
+        55px 0 18px;
 }
 
 .lesson-content h3 {
@@ -156,57 +227,88 @@ nav {
 
     font-size: 20px;
 
-    margin: 25px 0 10px;
+    margin:
+        30px 0 12px;
 }
 
 .lesson-content p {
-    color: #c7cbd4;
+    color: var(--body-text);
 
-    margin-bottom: 18px;
+    font-size: 16px;
+
+    margin-bottom: 20px;
 }
 
-.lesson-content ul {
-    color: #c7cbd4;
 
-    margin: 15px 0 25px 25px;
+/* =========================
+   LISTS
+========================= */
+
+.lesson-content ul {
+    margin:
+        15px 0 25px 25px;
+
+    color: var(--body-text);
 }
 
 .lesson-content li {
-    margin-bottom: 10px;
+    margin-bottom: 9px;
+
+    padding-left: 5px;
 }
 
 
-/* KEY POINT */
+/* =========================
+   QUOTES
+========================= */
 
-.key-point {
-    margin: 30px 0;
+.quote {
+    margin:
+        28px 0;
 
-    padding: 25px;
+    padding:
+        22px 25px;
 
-    background: rgba(212,160,23,.07);
+    border-left:
+        4px solid var(--gold);
 
-    border-left: 4px solid var(--gold);
+    background:
+        rgba(212,160,23,0.07);
 
-    border-radius: 8px;
+    border-radius:
+        0 10px 10px 0;
 }
 
-.key-point strong {
-    color: var(--gold-light);
+.quote p {
+    color: #e4e6eb;
+
+    font-size: 17px;
+
+    font-style: italic;
+
+    margin: 0;
 }
 
 
-/* SCRIPTURE */
+/* =========================
+   SCRIPTURE
+========================= */
 
 .scripture {
-    margin: 30px 0;
+    margin:
+        30px 0;
 
-    padding: 25px;
+    padding:
+        25px;
 
-    background: var(--card);
+    background:
+        var(--card);
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
 
-    border-radius: 13px;
+    border-radius:
+        14px;
 }
 
 .scripture-title {
@@ -214,147 +316,554 @@ nav {
 
     font-weight: bold;
 
+    font-size: 14px;
+
+    letter-spacing: 1px;
+
     margin-bottom: 8px;
 }
 
+.scripture p {
+    margin: 0;
 
-/* CARDS */
+    color: #d8dbe2;
+}
 
-.card-grid {
+
+/* =========================
+   KEY PRINCIPLE
+========================= */
+
+.key-principle {
+    margin:
+        35px 0;
+
+    padding:
+        28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(212,160,23,0.10),
+            rgba(255,255,255,0.025)
+        );
+
+    border:
+        1px solid
+        rgba(212,160,23,0.25);
+
+    border-radius:
+        14px;
+}
+
+.key-principle strong {
+    display: block;
+
+    color: var(--gold-light);
+
+    font-size: 17px;
+
+    margin-bottom: 8px;
+}
+
+.key-principle p {
+    margin: 0;
+}
+
+
+/* =========================
+   EXAMPLE BOX
+========================= */
+
+.example {
+    margin:
+        30px 0;
+
+    padding:
+        28px;
+
+    background:
+        var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        14px;
+}
+
+.example-title {
+    color: var(--gold-light);
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 15px;
+}
+
+.example p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================
+   COMPARISON
+========================= */
+
+.comparison {
     display: grid;
 
     grid-template-columns:
         repeat(2, 1fr);
 
-    gap: 16px;
+    gap: 18px;
 
-    margin: 30px 0;
+    margin:
+        30px 0;
 }
 
-.card {
-    padding: 23px;
+.comparison-box {
+    padding:
+        25px;
 
-    background: var(--card);
+    background:
+        var(--card);
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
 
-    border-radius: 13px;
+    border-radius:
+        14px;
 }
 
-.card-icon {
-    font-size: 27px;
-
-    margin-bottom: 8px;
-}
-
-.card h3 {
+.comparison-box h3 {
     color: var(--gold-light);
 
-    margin: 0 0 8px;
-
-    font-size: 19px;
+    margin:
+        0 0 12px;
 }
 
-.card p {
-    font-size: 14px;
-
+.comparison-box p {
     margin: 0;
 }
 
 
-/* REFLECTION */
+/* =========================
+   STAGE BOXES
+========================= */
 
-.reflection {
-    margin-top: 50px;
+.stages {
+    display: grid;
 
-    padding: 30px;
-
-    background: var(--card);
-
-    border: 1px solid var(--border);
-
-    border-radius: 15px;
-}
-
-.reflection h2 {
-    margin-top: 0;
-}
-
-
-/* NAVIGATION */
-
-.lesson-navigation {
-    display: flex;
-
-    justify-content: space-between;
+    grid-template-columns:
+        repeat(3, 1fr);
 
     gap: 15px;
 
-    margin-top: 50px;
+    margin:
+        30px 0;
+}
+
+.stage {
+    padding:
+        25px;
+
+    background:
+        var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        14px;
+}
+
+.stage-number {
+    color:
+        var(--gold-light);
+
+    font-size:
+        12px;
+
+    font-weight:
+        bold;
+
+    letter-spacing:
+        2px;
+
+    margin-bottom:
+        10px;
+}
+
+.stage h3 {
+    margin:
+        0 0 10px;
+
+    font-size:
+        20px;
+}
+
+.stage p {
+    margin:
+        0;
+}
+
+
+/* =========================
+   SCRIPTURE TABLE
+========================= */
+
+.table-wrapper {
+    overflow-x: auto;
+
+    margin:
+        30px 0;
+}
+
+.scripture-table {
+    width: 100%;
+
+    border-collapse:
+        collapse;
+
+    min-width:
+        650px;
+
+    background:
+        var(--card);
+
+    border:
+        1px solid var(--border);
+}
+
+.scripture-table th {
+    text-align: left;
+
+    color:
+        var(--gold-light);
+
+    background:
+        rgba(212,160,23,0.08);
+
+    padding:
+        15px;
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+.scripture-table td {
+    padding:
+        15px;
+
+    color:
+        var(--body-text);
+
+    border-bottom:
+        1px solid var(--border);
+
+    vertical-align:
+        top;
+}
+
+.scripture-table tr:last-child td {
+    border-bottom:
+        none;
+}
+
+
+/* =========================
+   REFLECTION
+========================= */
+
+.reflection {
+    margin:
+        45px 0;
+
+    padding:
+        30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.065),
+            rgba(255,255,255,0.025)
+        );
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        16px;
+}
+
+.reflection h2 {
+    margin-top:
+        0;
+}
+
+.reflection p:last-child {
+    margin-bottom:
+        0;
+}
+
+
+/* =========================
+   FINAL THOUGHT
+========================= */
+
+.final-thought {
+    margin:
+        50px 0 20px;
+
+    padding:
+        35px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(212,160,23,0.12),
+            rgba(255,255,255,0.025)
+        );
+
+    border:
+        1px solid
+        rgba(212,160,23,0.28);
+
+    border-radius:
+        16px;
+}
+
+.final-thought h2 {
+    margin-top:
+        0;
+}
+
+.final-thought p:last-child {
+    margin-bottom:
+        0;
+}
+
+
+/* =========================
+   FRAMEWORK
+========================= */
+
+.framework {
+    text-align:
+        center;
+
+    margin:
+        30px 0;
+
+    padding:
+        25px;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        var(--card);
+
+    border-radius:
+        14px;
+}
+
+.framework strong {
+    color:
+        var(--gold-light);
+
+    font-size:
+        clamp(14px, 3vw, 19px);
+
+    letter-spacing:
+        1px;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.lesson-navigation {
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    gap:
+        15px;
+
+    margin-top:
+        60px;
+
+    padding-top:
+        30px;
+
+    border-top:
+        1px solid var(--border);
 }
 
 .nav-button {
-    padding: 12px 20px;
+    display:
+        inline-block;
 
-    border-radius: 8px;
+    padding:
+        13px 20px;
 
-    background: var(--gold);
+    border-radius:
+        8px;
 
-    color: #111;
+    background:
+        var(--gold);
 
-    text-decoration: none;
+    color:
+        #111;
 
-    font-size: 13px;
+    text-decoration:
+        none;
 
-    font-weight: bold;
+    font-size:
+        13px;
 
-    text-align: center;
+    font-weight:
+        bold;
+
+    transition:
+        0.3s;
 }
 
 .nav-button:hover {
-    background: var(--gold-light);
+    background:
+        var(--gold-light);
+
+    transform:
+        translateY(-2px);
 }
 
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer {
-    text-align: center;
+    padding:
+        45px 20px;
 
-    padding: 40px 20px;
+    text-align:
+        center;
 
-    background: #05070b;
+    background:
+        #05070b;
 
-    border-top: 1px solid var(--border);
+    border-top:
+        1px solid var(--border);
 }
 
 footer strong {
-    color: var(--gold-light);
+    color:
+        var(--gold-light);
 }
 
 footer p {
-    color: var(--muted);
+    color:
+        var(--muted);
 
-    font-size: 13px;
+    font-size:
+        13px;
 
-    margin: 6px;
+    margin:
+        6px;
 }
 
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
-@media(max-width:600px) {
+@media (max-width: 700px) {
 
-    .card-grid {
-        grid-template-columns: 1fr;
+    .lesson-hero {
+        padding:
+            75px 18px 60px;
+    }
+
+    .lesson-content {
+        padding:
+            20px 0 70px;
+    }
+
+    .lesson-content p {
+        font-size:
+            15px;
+    }
+
+    .comparison {
+        grid-template-columns:
+            1fr;
+    }
+
+    .stages {
+        grid-template-columns:
+            1fr;
     }
 
     .lesson-navigation {
-        flex-direction: column;
+        flex-direction:
+            column;
     }
 
     .nav-button {
-        width: 100%;
+        width:
+            100%;
+
+        text-align:
+            center;
+    }
+
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 430px) {
+
+    nav {
+        min-height:
+            65px;
+    }
+
+    .logo {
+        font-size:
+            15px;
+    }
+
+    .back {
+        font-size:
+            12px;
+    }
+
+    .lesson-hero h1 {
+        font-size:
+            38px;
+    }
+
+    .quote,
+    .example,
+    .scripture,
+    .reflection,
+    .final-thought,
+    .key-principle {
+        padding:
+            20px;
     }
 
 }
@@ -367,7 +876,9 @@ footer p {
 <body>
 
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
@@ -382,6 +893,7 @@ Kingdom <span>Learning Hub</span>
 <small>BY RICHARD</small>
 
 </div>
+
 
 <a href="../bible-study.html"
 class="back">
@@ -398,25 +910,34 @@ class="back">
 
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="lesson-hero">
 
 <div class="container">
 
 <div class="lesson-label">
-BIBLE STUDIES • LESSON 02
+
+Bible Studies • Lesson 02
+
 </div>
 
+
 <h1>
+
 Knowing God
+
 </h1>
 
+
 <p>
-Discover what it means to know God—not merely
-to know information about Him, but to develop
-a life-changing relationship with Him through
-faith, Scripture, prayer, obedience and fellowship.
+
+What does it really mean to know God?
+Explore the difference between religious information
+and a genuine relationship with God.
+
 </p>
 
 </div>
@@ -425,816 +946,2979 @@ faith, Scripture, prayer, obedience and fellowship.
 
 
 
-<!-- LESSON CONTENT -->
+<!-- =========================
+     LESSON
+========================= -->
 
 <main class="lesson-content">
 
 <div class="container">
 
 
+<!-- INTRODUCTION -->
+
 <h2>
+
+Introduction: Knowing God Is More Than Religion
+
+</h2>
+
+
+<p>
+
+One of the greatest questions a Christian can ask is:
+
+</p>
+
+
+<div class="quote">
+
+<p>
+
+“Do I actually know God, or do I only know things about God?”
+
+</p>
+
+</div>
+
+
+<p>
+
+A person can attend church for years, listen to sermons,
+memorize Scripture, know Christian terminology, and still
+have very little personal fellowship with God.
+
+</p>
+
+
+<p>
+
+The Bible presents knowing God as something much deeper.
+
+</p>
+
+
+<p>
+
+It involves knowledge, relationship, trust, obedience,
+love, worship, transformation and perseverance.
+
+</p>
+
+
+<p>
+
+Think about a student who knows everything about a famous
+teacher. The student may know the teacher's name, education,
+achievements, favorite subjects and teaching methods. But if
+the teacher has never personally interacted with the student,
+that student doesn't actually know the teacher in a relational sense.
+
+</p>
+
+
+<p>
+
+The same distinction applies spiritually.
+
+</p>
+
+
+<p>
+
+You can know the stories of Noah, Abraham, Moses and David;
+the Ten Commandments; the teachings of Jesus; biblical prophecy;
+Christian theology; and dozens of Bible verses—and still fail
+to surrender your life to God.
+
+</p>
+
+
+<div class="key-principle">
+
+<strong>
+
+The central question is not simply:
+
+</strong>
+
+<p>
+
+“How much Bible knowledge do I have?”
+
+</p>
+
+<strong>
+
+It is:
+
+</strong>
+
+<p>
+
+“What is my knowledge of God doing inside my life?”
+
+</p>
+
+</div>
+
+
+<p>
+
+If knowing God is real, it should gradually influence the way
+you think, speak, make decisions, handle money, treat people,
+respond to temptation, deal with failure and face uncertainty.
+
+</p>
+
+
+
+<!-- 1 -->
+
+<h2>
+
 1. What Does It Mean to Know God?
+
 </h2>
 
+
 <p>
-Knowing God is one of the deepest themes in
-Christian faith. It involves more than learning
-facts about God's existence, character or laws.
-It involves responding to God personally and
-developing a relationship with Him.
+
+Knowing God means entering into a genuine relationship with Him
+based on the truth He has revealed about Himself.
+
+</p>
+
+
+<p>
+
+It begins with discovering who God is, but it does not end there.
+
+</p>
+
+
+<p>
+
+There is a difference between:
+
+</p>
+
+
+<div class="comparison">
+
+<div class="comparison-box">
+
+<h3>
+
+Information About God
+
+</h3>
+
+<p>
+
+Learning what Scripture teaches about God's character,
+His actions, His promises and His commands.
+
+</p>
+
+</div>
+
+
+<div class="comparison-box">
+
+<h3>
+
+Relationship With God
+
+</h3>
+
+<p>
+
+Personally trusting God, responding to Him, walking with Him
+and allowing His truth to influence your life.
+
+</p>
+
+</div>
+
+</div>
+
+
+<p>
+
+For example, you might know that God is faithful.
+
+</p>
+
+
+<div class="quote">
+
+<p>
+
+“Do I trust His faithfulness when my circumstances are difficult?”
+
+</p>
+
+</div>
+
+
+<p>
+
+You may know that God commands forgiveness.
+
+</p>
+
+
+<div class="quote">
+
+<p>
+
+“What do I do when somebody genuinely hurts me?”
+
+</p>
+
+</div>
+
+
+<p>
+
+You may know that God tells you not to be controlled by greed.
+
+</p>
+
+
+<div class="quote">
+
+<p>
+
+“How do I behave when I desperately need money?”
+
+</p>
+
+</div>
+
+
+<p>
+
+That is where theology becomes practical.
+
+</p>
+
+
+
+<div class="example">
+
+<div class="example-title">
+
+Real-World Example
+
+</div>
+
+<p>
+
+Imagine a young person who has very little money and sees
+an opportunity to make quick money through something dishonest.
+
 </p>
 
 <p>
-A person can know many facts about another person
-without actually having a relationship with them.
-In the same way, someone can know Bible information
-without allowing that knowledge to shape their
-relationship with God.
+
+Knowing about God might tell him:
+
 </p>
 
-<div class="key-point">
-
-<strong>Key idea:</strong>
+<div class="quote">
 
 <p>
-Knowing God involves both truth and relationship.
-We learn who God is through His revelation and
-respond to Him through faith, trust, worship,
-obedience and love.
+
+“The Bible says stealing is wrong.”
+
+</p>
+
+</div>
+
+<p>
+
+Knowing God should take him further:
+
+</p>
+
+<div class="quote">
+
+<p>
+
+“God sees what I am about to do. I trust Him enough to refuse
+dishonest gain, even though I need money.”
+
+</p>
+
+</div>
+
+<p>
+
+The second response demonstrates that biblical knowledge is
+beginning to influence behavior.
+
+</p>
+
+</div>
+
+
+<div class="key-principle">
+
+<strong>
+
+Key Principle
+
+</strong>
+
+<p>
+
+Knowing God means allowing the truth about God to shape the
+way you live before God.
+
 </p>
 
 </div>
 
 
 
+<!-- 2 -->
+
 <h2>
+
 2. Knowing About God vs. Knowing God
+
 </h2>
 
-<div class="card-grid">
-
-<div class="card">
-
-<div class="card-icon">
-📚
-</div>
 
 <h3>
+
 Knowing About God
+
 </h3>
 
+
 <p>
-Learning facts about God's character, His works,
-His commands, His promises and the biblical story.
+
+This involves learning information:
+
 </p>
 
-</div>
+
+<ul>
+
+<li>God's attributes</li>
+
+<li>His promises</li>
+
+<li>His commandments</li>
+
+<li>His actions throughout history</li>
+
+<li>Biblical theology</li>
+
+<li>The life and teachings of Jesus</li>
+
+<li>Christian doctrine</li>
+
+</ul>
 
 
-<div class="card">
+<p>
 
-<div class="card-icon">
-❤️
-</div>
+This is important.
+
+</p>
+
+
+<p>
+
+You cannot have a healthy relationship with God while believing
+false things about Him.
+
+</p>
+
+
+<p>
+
+But information alone is insufficient.
+
+</p>
+
 
 <h3>
+
 Knowing God
+
 </h3>
 
+
 <p>
-Living in a genuine relationship with God that
-affects your trust, decisions, character and life.
+
+Knowing God involves personal trust and fellowship with Him.
+
+</p>
+
+
+<p>
+
+It affects:
+
+</p>
+
+
+<ul>
+
+<li>Your priorities</li>
+
+<li>Your conscience</li>
+
+<li>Your decisions</li>
+
+<li>Your character</li>
+
+<li>Your relationships</li>
+
+<li>Your response to temptation</li>
+
+<li>Your understanding of suffering</li>
+
+<li>Your attitude toward possessions</li>
+
+<li>Your treatment of people</li>
+
+</ul>
+
+
+<div class="example">
+
+<div class="example-title">
+
+Modern Example
+
+</div>
+
+<p>
+
+Consider someone who watches Christian videos every day but
+spends hours consuming content that continually feeds lust,
+hatred, envy or greed.
+
+</p>
+
+<p>
+
+They may have accumulated enormous amounts of Christian information.
+
+</p>
+
+<p>
+
+But the question remains:
+
+</p>
+
+<div class="quote">
+
+<p>
+
+“Is that knowledge transforming them?”
+
 </p>
 
 </div>
 
-</div>
-
 <p>
-The two should not be separated. Biblical
-relationship with God is built upon truth about
-who God actually is.
+
+Christian maturity isn't measured simply by how much religious
+content someone consumes.
+
 </p>
 
+<p>
 
+It is also measured by whether truth is producing spiritual fruit.
+
+</p>
+
+</div>
+
+
+
+<!-- 3 -->
 
 <h2>
+
 3. God Makes Himself Known
+
 </h2>
 
-<p>
-Christianity begins with the conviction that God
-has revealed Himself. Human beings do not have to
-invent their own picture of God.
-</p>
 
 <p>
-God reveals Himself through creation, Scripture
-and ultimately through Jesus Christ.
+
+Christianity does not begin with humanity inventing a god.
+
 </p>
+
+
+<p>
+
+It begins with God revealing Himself.
+
+</p>
+
+
+<p>
+
+This is called divine revelation.
+
+</p>
+
+
+<p>
+
+God makes Himself known through several means, including:
+
+</p>
+
+
+<h3>
+
+Creation
+
+</h3>
+
+
+<p>
+
+Creation points beyond itself to a Creator.
+
+</p>
+
 
 <div class="scripture">
 
 <div class="scripture-title">
+
 Romans 1:20
+
 </div>
 
 <p>
-Paul explains that God's invisible qualities can
-be perceived through what He has made.
+
+Romans 1:20 teaches that God's invisible qualities can be
+perceived through what He has made.
+
 </p>
 
 </div>
 
+
+<p>
+
+The universe raises fundamental questions:
+
+</p>
+
+
+<ul>
+
+<li>Why does anything exist?</li>
+
+<li>Why does the universe have order?</li>
+
+<li>Why do humans possess moral awareness?</li>
+
+<li>Why do we experience beauty?</li>
+
+<li>Why do we search for meaning?</li>
+
+</ul>
+
+
+<p>
+
+Creation does not provide every detail of Christian theology,
+but it points toward God's existence and power.
+
+</p>
+
+
+<h3>
+
+Scripture
+
+</h3>
+
+
+<p>
+
+The Bible provides God's revealed testimony concerning Himself,
+humanity, sin, salvation and His purposes.
+
+</p>
+
+
+<h3>
+
+Jesus Christ
+
+</h3>
+
+
 <div class="scripture">
 
 <div class="scripture-title">
+
 Hebrews 1:1–3
+
 </div>
 
 <p>
-The passage presents Jesus Christ as the supreme
-revelation of God and describes Him as the exact
-representation of God's being.
+
+Hebrews 1:1–3 presents Christ as the supreme revelation of God.
+
+</p>
+
+</div>
+
+
+<p>
+
+Jesus does not merely speak about God.
+
+</p>
+
+
+<p>
+
+Christian faith teaches that in Jesus, God has made Himself known
+in a unique and decisive way.
+
+</p>
+
+
+<div class="example">
+
+<div class="example-title">
+
+Real-World Example
+
+</div>
+
+<p>
+
+Today, people encounter thousands of competing ideas about God
+through TikTok, YouTube, podcasts, social media, artificial
+intelligence, influencers and religious debates.
+
+</p>
+
+<p>
+
+The danger is allowing algorithms to become your theology.
+
+</p>
+
+<p>
+
+A viral video can receive millions of views and still present
+a completely distorted picture of God.
+
+</p>
+
+<p>
+
+Therefore, Christians must ask:
+
+</p>
+
+<div class="quote">
+
+<p>
+
+“Where did this idea about God come from?”
+
+</p>
+
+</div>
+
+<p>
+
+Popularity is not the same thing as truth.
+
 </p>
 
 </div>
 
 
 
+<!-- 4 -->
+
 <h2>
+
 4. Jesus Christ and Knowing God
+
 </h2>
 
-<p>
-Jesus occupies a central place in Christian
-understanding of knowing God.
-</p>
 
 <p>
-According to the Gospel of John, eternal life
-is connected with knowing the only true God and
-Jesus Christ whom He sent.
+
+Jesus is central to Christian understanding of God.
+
 </p>
+
 
 <div class="scripture">
 
 <div class="scripture-title">
+
 John 17:3
+
 </div>
 
 <p>
-Jesus describes eternal life in terms of knowing
-the true God and Jesus Christ whom God sent.
+
+“And this is eternal life, that they know you, the only true God,
+and Jesus Christ whom you have sent.”
+
+</p>
+
+</div>
+
+
+<p>
+
+Notice that Jesus describes eternal life in terms of knowing God.
+
+</p>
+
+
+<p>
+
+This does not mean that eternal life is merely intellectual knowledge.
+
+</p>
+
+
+<p>
+
+The biblical idea involves relationship, recognition, trust and allegiance.
+
+</p>
+
+
+<p>
+
+Jesus also said in John 14:6 that He is the way to the Father.
+
+</p>
+
+
+<p>
+
+Therefore, Christianity does not treat Jesus as merely a moral
+teacher among many.
+
+</p>
+
+
+<p>
+
+He is central to understanding who God is and how humanity is
+reconciled to God.
+
+</p>
+
+
+<div class="example">
+
+<div class="example-title">
+
+Real-World Example
+
+</div>
+
+<p>
+
+Suppose someone says:
+
+</p>
+
+<div class="quote">
+
+<p>
+
+“I believe in God, but I don't need Jesus.”
+
 </p>
 
 </div>
 
 <p>
-This shows that knowing God is not presented merely
-as information. It is connected with relationship,
-faith and eternal life.
+
+Christian theology must take that statement seriously because
+Jesus Himself placed His identity and mission at the center
+of knowing God.
+
 </p>
 
+<p>
 
+The Christian question isn't merely:
+
+</p>
+
+<div class="quote">
+
+<p>
+
+“Do you believe there is a God?”
+
+</p>
+
+</div>
+
+<p>
+
+It is:
+
+</p>
+
+<div class="quote">
+
+<p>
+
+“Who do you believe Jesus Christ is, and what does your response
+to Him mean for your life?”
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- 5 -->
 
 <h2>
+
 5. Knowing God Begins With Faith
+
 </h2>
 
-<p>
-Faith is the response of trust toward God. Christian
-faith involves trusting God's character, believing
-His promises and responding to His revelation.
-</p>
 
 <div class="scripture">
 
 <div class="scripture-title">
+
 Hebrews 11:6
+
 </div>
 
 <p>
-The writer teaches that faith is essential in
-approaching God and that those who come to Him
-must believe that He exists and rewards those
-who earnestly seek Him.
+
+Hebrews 11:6 teaches that faith is essential in approaching God.
+
+</p>
+
+</div>
+
+
+<p>
+
+Faith is not simply believing something without thinking.
+
+</p>
+
+
+<p>
+
+Biblical faith includes trust, reliance and commitment.
+
+</p>
+
+
+<p>
+
+You can have questions and still have faith.
+
+</p>
+
+
+<p>
+
+You can experience uncertainty and still seek God.
+
+</p>
+
+
+<div class="quote">
+
+<p>
+
+“I don't understand everything, but I choose to trust God while
+I continue seeking truth.”
+
+</p>
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+
+Real-World Example
+
+</div>
+
+<p>
+
+Imagine someone who has prayed for employment for months but
+remains unemployed.
+
+</p>
+
+<p>
+
+Faith does not necessarily mean saying:
+
+</p>
+
+<div class="quote">
+
+<p>
+
+“Tomorrow I will definitely receive a job.”
+
 </p>
 
 </div>
 
 <p>
-Faith does not mean pretending that questions do
-not exist. It means choosing to trust God while
-continuing to seek truth and understanding.
+
+That would be making a prediction.
+
 </p>
 
+<p>
 
+Faith means:
+
+</p>
+
+<div class="quote">
+
+<p>
+
+“I will continue seeking God, working honestly, developing my
+skills and refusing to abandon my trust in Him simply because
+circumstances are difficult.”
+
+</p>
+
+</div>
+
+<p>
+
+Faith becomes visible through perseverance.
+
+</p>
+
+</div>
+
+
+
+<!-- 6 -->
 
 <h2>
+
 6. Knowing God's Character
+
 </h2>
 
-<p>
-The more we study Scripture, the more we discover
-what the Bible teaches about God's character.
-</p>
-
-<div class="card-grid">
-
-<div class="card">
-
-<div class="card-icon">
-❤️
-</div>
-
-<h3>
-God Is Love
-</h3>
 
 <p>
-God's love is central to the biblical story and
-is demonstrated supremely in His sending of His
-Son.
+
+You cannot truly know God while ignoring His character.
+
 </p>
 
-</div>
-
-
-<div class="card">
-
-<div class="card-icon">
-⚖️
-</div>
-
-<h3>
-God Is Just
-</h3>
-
-<p>
-God's justice means that He is not morally corrupt
-or indifferent to righteousness and wrongdoing.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-icon">
-🕊️
-</div>
-
-<h3>
-God Is Holy
-</h3>
-
-<p>
-God's holiness distinguishes Him from creation
-and points to His absolute moral purity.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-icon">
-🛡️
-</div>
-
-<h3>
-God Is Faithful
-</h3>
-
-<p>
-Scripture repeatedly presents God as trustworthy
-and faithful to His promises.
-</p>
-
-</div>
-
-</div>
 
 <div class="scripture">
 
 <div class="scripture-title">
+
 Exodus 34:6–7
+
 </div>
 
 <p>
-God reveals Himself as merciful, gracious,
-patient and abounding in steadfast love and
-faithfulness, while also taking righteousness
+
+God reveals Himself as merciful, gracious, patient, abounding
+in steadfast love and faithfulness, while also taking righteousness
 and wrongdoing seriously.
+
+</p>
+
+</div>
+
+
+<p>
+
+This gives us a balanced picture.
+
+</p>
+
+
+<p>
+
+God is not merely “love without justice.”
+
+</p>
+
+
+<p>
+
+Nor is He merely “judgment without mercy.”
+
+</p>
+
+
+<p>
+
+Biblical theology holds together God's holiness, justice,
+mercy, love and faithfulness.
+
+</p>
+
+
+<h3>
+
+God Is Love
+
+</h3>
+
+
+<div class="scripture">
+
+<div class="scripture-title">
+
+1 John 4:8
+
+</div>
+
+<p>
+
+1 John 4:8 teaches that God is love.
+
+</p>
+
+</div>
+
+
+<p>
+
+God's love is not simply emotional approval.
+
+</p>
+
+
+<p>
+
+Biblical love seeks what is genuinely good.
+
+</p>
+
+
+<h3>
+
+God Is Just
+
+</h3>
+
+
+<p>
+
+God does not treat evil as though it does not matter.
+
+</p>
+
+
+<p>
+
+This matters when we experience injustice.
+
+</p>
+
+
+<p>
+
+If someone cheats you, abuses authority or deliberately harms
+another person, Christianity does not require pretending that
+wrongdoing is acceptable.
+
+</p>
+
+
+<h3>
+
+God Is Holy
+
+</h3>
+
+
+<p>
+
+God's holiness means that He is completely distinct from sin
+and morally pure.
+
+</p>
+
+
+<p>
+
+Knowing God's holiness should produce reverence rather than
+casualness toward God.
+
+</p>
+
+
+<h3>
+
+God Is Faithful
+
+</h3>
+
+
+<p>
+
+God's faithfulness means that He is trustworthy.
+
+</p>
+
+
+<div class="example">
+
+<div class="example-title">
+
+Real-World Example
+
+</div>
+
+<p>
+
+Suppose your business is struggling.
+
+</p>
+
+<p>
+
+You have two choices:
+
+</p>
+
+
+<p>
+
+<strong>Option A:</strong> manipulate customers because you're desperate.
+
+</p>
+
+
+<p>
+
+<strong>Option B:</strong> remain honest while looking for legitimate solutions.
+
+</p>
+
+
+<p>
+
+Knowing God's faithfulness does not guarantee that your business
+will immediately succeed.
+
+</p>
+
+
+<p>
+
+But it gives you a foundation for refusing to sacrifice your
+integrity simply to survive.
+
 </p>
 
 </div>
 
 
 
+<!-- 7 -->
+
 <h2>
+
 7. God's Names and What They Reveal
+
 </h2>
 
+
 <p>
-Throughout Scripture, names and descriptions of
-God communicate important truths about His
-character and relationship with His people.
+
+Biblical names and descriptions of God reveal aspects of His
+relationship with creation and humanity.
+
 </p>
 
-<ul>
 
-<li>
-<strong>Creator</strong> — God is the source of creation.
-</li>
+<h3>
 
-<li>
-<strong>Shepherd</strong> — God guides and cares for His people.
-</li>
+Creator
 
-<li>
-<strong>Father</strong> — Scripture uses fatherhood to describe
-God's relationship with His people.
-</li>
-
-<li>
-<strong>Lord</strong> — God has authority and rightful rule.
-</li>
-
-<li>
-<strong>King</strong> — God is presented as sovereign.
-</li>
-
-</ul>
+</h3>
 
 
+<p>
+
+God is the source of creation.
+
+</p>
+
+
+<p>
+
+This challenges the idea that human beings are ultimately self-made.
+
+</p>
+
+
+<h3>
+
+Shepherd
+
+</h3>
+
+
+<p>
+
+A shepherd guides, protects and cares for sheep.
+
+Psalm 23 uses this imagery to describe God's care.
+
+</p>
+
+
+<h3>
+
+Father
+
+</h3>
+
+
+<p>
+
+Scripture uses fatherhood to communicate relationship, care and authority.
+
+</p>
+
+
+<h3>
+
+Lord
+
+</h3>
+
+
+<p>
+
+God is not merely an adviser.
+
+</p>
+
+
+<p>
+
+Lordship means rightful authority.
+
+</p>
+
+
+<h3>
+
+King
+
+</h3>
+
+
+<p>
+
+God's kingship communicates sovereignty.
+
+</p>
+
+
+<div class="example">
+
+<div class="example-title">
+
+Why This Matters Today
+
+</div>
+
+<p>
+
+Modern culture strongly emphasizes:
+
+</p>
+
+<div class="quote">
+
+<p>
+
+“You are your own person. Do whatever you want.”
+
+</p>
+
+</div>
+
+<p>
+
+Christianity introduces another question:
+
+</p>
+
+<div class="quote">
+
+<p>
+
+“Who has the right to rule my life?”
+
+</p>
+
+</div>
+
+<p>
+
+If God is Lord, then your career, relationships, money, body,
+ambitions and future cannot be treated as completely independent
+from Him.
+
+</p>
+
+</div>
+
+
+
+<!-- 8 -->
 
 <h2>
+
 8. Knowing God Through Scripture
+
 </h2>
 
+
 <p>
-The Bible is central to developing knowledge of God
-because it records God's revelation and tells the
-story of His relationship with humanity.
+
+Scripture is essential because Christians need a reliable standard
+by which to evaluate their ideas about God.
+
 </p>
+
 
 <div class="scripture">
 
 <div class="scripture-title">
+
 2 Timothy 3:16–17
+
 </div>
 
 <p>
-Scripture is described as useful for teaching,
-correcting, training and equipping God's people
-for good works.
+
+2 Timothy 3:16–17 describes Scripture as useful for teaching,
+correction, reproof, training and equipping God's people.
+
+</p>
+
+</div>
+
+
+<p>
+
+But Bible study can also become mechanical.
+
+</p>
+
+
+<p>
+
+Someone can read ten chapters and remember almost nothing.
+
+</p>
+
+
+<p>
+
+A deeper approach asks:
+
+</p>
+
+
+<h3>
+
+Observation
+
+</h3>
+
+<p>
+
+What does the passage actually say?
+
+</p>
+
+
+<h3>
+
+Interpretation
+
+</h3>
+
+<p>
+
+What did it mean in its context?
+
+</p>
+
+
+<h3>
+
+Theology
+
+</h3>
+
+<p>
+
+What does it teach about God, humanity, sin, salvation or
+God's purposes?
+
+</p>
+
+
+<h3>
+
+Application
+
+</h3>
+
+<p>
+
+How should this truth affect my life?
+
+</p>
+
+
+<h3>
+
+Transformation
+
+</h3>
+
+<p>
+
+What needs to change because of what I have learned?
+
+</p>
+
+
+<div class="example">
+
+<div class="example-title">
+
+Real-World Example
+
+</div>
+
+<p>
+
+If you study Proverbs and learn about wisdom with money,
+don't stop at:
+
+</p>
+
+<div class="quote">
+
+<p>
+
+“Proverbs talks about money.”
+
 </p>
 
 </div>
 
 <p>
-Bible study should therefore move beyond simply
-collecting information. Ask:
+
+Ask:
+
 </p>
 
-<ul>
+<div class="quote">
 
-<li>
-What does this passage reveal about God?
-</li>
+<p>
 
-<li>
-What does it reveal about humanity?
-</li>
+“Am I financially disciplined?”
 
-<li>
-What does it teach about God's will?
-</li>
+</p>
 
-<li>
-How should this truth influence my life?
-</li>
+</div>
 
-</ul>
+<div class="quote">
+
+<p>
+
+“Do I spend money impulsively?”
+
+</p>
+
+</div>
+
+<div class="quote">
+
+<p>
+
+“Do I borrow unnecessarily?”
+
+</p>
+
+</div>
+
+<div class="quote">
+
+<p>
+
+“Am I honest in business?”
+
+</p>
+
+</div>
+
+<div class="quote">
+
+<p>
+
+“Am I allowing money to control my decisions?”
+
+</p>
+
+</div>
+
+<p>
+
+Now Bible study is moving from information to formation.
+
+</p>
+
+</div>
 
 
+
+<!-- 9 -->
 
 <h2>
+
 9. Knowing God Through Prayer
+
 </h2>
 
+
 <p>
-Prayer creates a pattern of communication,
-dependence, worship, confession, thanksgiving
-and seeking God's guidance.
+
+Prayer is more than requesting things.
+
 </p>
+
+
+<p>
+
+It includes:
+
+</p>
+
+
+<ul>
+
+<li>Worship</li>
+
+<li>Confession</li>
+
+<li>Thanksgiving</li>
+
+<li>Dependence</li>
+
+<li>Asking</li>
+
+<li>Listening through reflection on God's revealed Word</li>
+
+<li>Seeking wisdom</li>
+
+<li>Expressing sorrow</li>
+
+<li>Expressing gratitude</li>
+
+</ul>
+
 
 <div class="scripture">
 
 <div class="scripture-title">
+
 Jeremiah 29:12–13
+
 </div>
 
 <p>
-God promises that those who call upon Him and
-seek Him wholeheartedly will find Him.
+
+Jeremiah 29:12–13 speaks of seeking God wholeheartedly.
+
+</p>
+
+</div>
+
+
+<p>
+
+Prayer exposes our dependence.
+
+</p>
+
+
+<div class="example">
+
+<div class="example-title">
+
+Real-World Example
+
+</div>
+
+<p>
+
+Imagine receiving a difficult message from your employer.
+
+</p>
+
+<p>
+
+Your immediate reaction may be anger.
+
+</p>
+
+<p>
+
+Instead of responding impulsively, you stop and pray:
+
+</p>
+
+<div class="quote">
+
+<p>
+
+“God, give me wisdom. Help me control my words. Help me
+understand what I should do.”
+
 </p>
 
 </div>
 
 <p>
-Prayer should not be treated as a performance.
-It is an opportunity to approach God honestly,
-with reverence and trust.
+
+Prayer doesn't mean refusing to act.
+
 </p>
 
+<p>
 
+It means bringing your actions under God's authority before acting.
+
+</p>
+
+</div>
+
+
+
+<!-- 10 -->
 
 <h2>
+
 10. Knowing God Through Obedience
+
 </h2>
 
-<p>
-A growing relationship with God should affect
-how a person lives.
-</p>
 
 <div class="scripture">
 
 <div class="scripture-title">
+
 John 14:15
+
 </div>
 
 <p>
-Jesus connects love for Him with keeping His
-commandments.
+
+John 14:15 connects love for Jesus with obedience.
+
+</p>
+
+</div>
+
+
+<p>
+
+This is extremely important.
+
+</p>
+
+
+<p>
+
+Obedience is not a payment we give God in exchange for salvation.
+
+</p>
+
+
+<p>
+
+Rather, obedience demonstrates that God's authority matters to us.
+
+</p>
+
+
+<div class="example">
+
+<div class="example-title">
+
+Example
+
+</div>
+
+<p>
+
+Suppose someone says:
+
+</p>
+
+<div class="quote">
+
+<p>
+
+“I love God.”
+
 </p>
 
 </div>
 
 <p>
-Obedience does not mean earning God's love.
-Instead, obedience is a response to God and
-demonstrates that His teaching is being taken
-seriously.
+
+But they repeatedly justify lying whenever lying benefits them.
+
+</p>
+
+<p>
+
+Their words and behavior contradict each other.
+
 </p>
 
 
+<p>
+
+Another person may struggle, fail and repent, but genuinely desire
+to become truthful.
+
+</p>
+
+
+<p>
+
+The second person's life may demonstrate a deeper process of transformation.
+
+</p>
+
+
+<p>
+
+Christian obedience does not mean never falling.
+
+</p>
+
+
+<p>
+
+It means refusing to make peace with sin.
+
+</p>
+
+
+<p>
+
+When you fall, you return to God, repent, learn and continue walking.
+
+</p>
+
+</div>
+
+
+
+<!-- 11 -->
 
 <h2>
+
 11. Knowing God Through Love
+
 </h2>
 
-<p>
-Knowledge of God should transform the way we
-treat other people.
-</p>
 
 <div class="scripture">
 
 <div class="scripture-title">
+
 1 John 4:7–8
-</div>
-
-<p>
-John teaches that love has its source in God
-and connects knowing God with loving others.
-</p>
 
 </div>
 
 <p>
-This gives us an important test: if our supposed
-knowledge of God never affects our treatment of
-other people, something is missing from our
-spiritual development.
+
+1 John 4:7–8 connects knowing God with loving others.
+
+</p>
+
+</div>
+
+
+<p>
+
+This is one of the strongest tests of spiritual maturity.
+
 </p>
 
 
+<p>
+
+If your Christianity makes you arrogant, cruel, constantly hateful,
+unforgiving, dishonest or exploitative, something has gone seriously wrong.
+
+</p>
+
+
+<div class="example">
+
+<div class="example-title">
+
+Real-World Example
+
+</div>
+
+<p>
+
+Imagine someone insulting you publicly online.
+
+</p>
+
+
+<p>
+
+You have several possible responses:
+
+</p>
+
+
+<ul>
+
+<li>Revenge</li>
+
+<li>Humiliation</li>
+
+<li>Insults</li>
+
+<li>Threats</li>
+
+<li>Spreading their private information</li>
+
+<li>Calm correction</li>
+
+<li>Silence</li>
+
+<li>Forgiveness where appropriate</li>
+
+</ul>
+
+
+<p>
+
+Knowing God should increasingly affect how you respond.
+
+</p>
+
+
+<p>
+
+Love does not mean allowing abuse or refusing appropriate boundaries.
+
+</p>
+
+
+<p>
+
+It means refusing to become evil simply because someone else
+behaved badly.
+
+</p>
+
+</div>
+
+
+
+<!-- 12 -->
 
 <h2>
+
 12. Knowing God Through Christian Fellowship
+
 </h2>
 
-<p>
-Christian growth is not designed to happen entirely
-alone.
-</p>
 
 <p>
-Fellowship provides opportunities for encouragement,
-teaching, accountability, worship and service.
-Other believers can help us see weaknesses that
-we might not recognize ourselves.
+
+Christianity was not designed as a completely isolated journey.
+
 </p>
+
 
 <div class="scripture">
 
 <div class="scripture-title">
+
 Hebrews 10:24–25
+
 </div>
 
 <p>
-Believers are encouraged to consider how they can
-encourage one another toward love and good works
-and to continue meeting together.
+
+Hebrews 10:24–25 encourages believers to encourage one another
+toward love and good works.
+
 </p>
 
 </div>
 
 
+<p>
+
+Healthy fellowship provides:
+
+</p>
+
+
+<ul>
+
+<li>Encouragement</li>
+
+<li>Correction</li>
+
+<li>Teaching</li>
+
+<li>Accountability</li>
+
+<li>Prayer</li>
+
+<li>Service</li>
+
+<li>Shared worship</li>
+
+</ul>
+
+
+<div class="example">
+
+<div class="example-title">
+
+Modern Example
+
+</div>
+
+<p>
+
+Social media can create the illusion of Christian community.
+
+</p>
+
+
+<p>
+
+You might follow 500 Christian accounts but have nobody who
+actually knows your struggles, challenges your hypocrisy or
+encourages you when you're failing.
+
+</p>
+
+
+<p>
+
+Digital content can supplement fellowship.
+
+</p>
+
+
+<p>
+
+It cannot automatically replace meaningful human relationships.
+
+</p>
+
+
+<p>
+
+A mature believer needs people who can say:
+
+</p>
+
+
+<div class="quote">
+
+<p>
+
+“Brother, I think you're going in the wrong direction.”
+
+</p>
+
+</div>
+
+
+<p>
+
+And rather than becoming defensive, the believer learns humility.
+
+</p>
+
+</div>
+
+
+
+<!-- 13 -->
 
 <h2>
+
 13. Knowing God Is a Lifelong Pursuit
+
 </h2>
 
-<p>
-Knowing God is not something that ends after one
-prayer, one church service or one Bible lesson.
-It is a continuing journey.
-</p>
 
 <div class="scripture">
 
 <div class="scripture-title">
+
 Philippians 3:8–10
-</div>
-
-<p>
-Paul expresses his desire to know Christ more
-deeply and to experience the transforming reality
-of belonging to Him.
-</p>
 
 </div>
 
 <p>
-This gives Christian growth a forward-looking
-character. There is always more to learn about
-God's character and more opportunity to become
-more faithful in following Him.
+
+Philippians 3:8–10 shows Paul's continuing desire to know Christ.
+
+</p>
+
+</div>
+
+
+<p>
+
+Paul was already an experienced believer.
+
 </p>
 
 
+<p>
+
+Yet he still wanted to know Christ more deeply.
+
+</p>
+
+
+<p>
+
+This destroys the idea that spiritual maturity means:
+
+</p>
+
+
+<div class="quote">
+
+<p>
+
+“I've learned everything.”
+
+</p>
+
+</div>
+
+
+<p>
+
+You never reach a point where you can stop growing.
+
+</p>
+
+
+<p>
+
+Think of it like this:
+
+</p>
+
+
+<ul>
+
+<li>More character to develop</li>
+
+<li>More wisdom to acquire</li>
+
+<li>More selfishness to surrender</li>
+
+<li>More love to demonstrate</li>
+
+<li>More Scripture to understand</li>
+
+<li>More faith to exercise</li>
+
+</ul>
+
+
+<p>
+
+Christian maturity is not reaching perfection overnight.
+
+</p>
+
+
+<p>
+
+It is moving continually toward Christ.
+
+</p>
+
+
+
+<!-- 14 -->
 
 <h2>
+
 14. What Can Prevent Us From Knowing God?
+
 </h2>
 
+
+<h3>
+
+Pride
+
+</h3>
+
 <p>
-Several attitudes can interfere with genuine
-knowledge of God.
+
+“I already know enough.”
+
+Pride closes the mind.
+
 </p>
 
-<ul>
 
-<li>
-<strong>Pride</strong> — believing we already know everything.
-</li>
+<h3>
 
-<li>
-<strong>Hypocrisy</strong> — presenting an outward image
-while refusing inward change.
-</li>
+Hypocrisy
 
-<li>
-<strong>Neglect</strong> — refusing to make time for Scripture
-and prayer.
-</li>
+</h3>
 
-<li>
-<strong>Disobedience</strong> — repeatedly ignoring what we
-understand God has commanded.
-</li>
+<p>
 
-<li>
-<strong>Distraction</strong> — allowing temporary things to
-consume our attention.
-</li>
+Knowing the right words while refusing inward transformation.
 
-<li>
-<strong>False ideas about God</strong> — creating a picture
-of God based only on personal preferences rather
-than Scripture.
-</li>
-
-</ul>
+</p>
 
 
+<h3>
+
+Neglect
+
+</h3>
+
+<p>
+
+You cannot expect a relationship to deepen when you consistently
+refuse to invest time in it.
+
+</p>
+
+
+<h3>
+
+Disobedience
+
+</h3>
+
+<p>
+
+Repeatedly knowing what is right and deliberately refusing it
+hardens the heart.
+
+</p>
+
+
+<h3>
+
+Distraction
+
+</h3>
+
+<p>
+
+Modern life provides endless distractions.
+
+</p>
+
+
+<div class="quote">
+
+<p>
+
+“I don't have time to pray.”
+
+</p>
+
+</div>
+
+
+<p>
+
+The problem may not be the absence of time.
+
+</p>
+
+
+<p>
+
+It may be the allocation of attention.
+
+</p>
+
+
+<h3>
+
+False Ideas About God
+
+</h3>
+
+<p>
+
+This is particularly dangerous.
+
+</p>
+
+
+<p>
+
+People can create a god according to their preferences:
+
+</p>
+
+
+<div class="quote">
+
+<p>
+
+“My god would never judge.”
+
+</p>
+
+</div>
+
+
+<p>
+
+or:
+
+</p>
+
+
+<div class="quote">
+
+<p>
+
+“My god only cares about rules.”
+
+</p>
+
+</div>
+
+
+<p>
+
+Neither statement should be accepted simply because it sounds convincing.
+
+</p>
+
+
+<p>
+
+We must ask:
+
+</p>
+
+
+<div class="quote">
+
+<p>
+
+“What has God actually revealed about Himself?”
+
+</p>
+
+</div>
+
+
+
+<!-- 15 -->
 
 <h2>
+
 15. Knowing God Changes the Way We Live
+
 </h2>
 
+
 <p>
-The purpose of knowing God is not simply to become
-better at religious discussion. Knowledge of God
-should influence our decisions, relationships,
-priorities and character.
+
+The ultimate test isn't how impressive your religious vocabulary sounds.
+
 </p>
 
-<div class="key-point">
-
-<strong>Ask yourself:</strong>
 
 <p>
-"If I am truly growing in my knowledge of God,
-what evidence should appear in my everyday life?"
+
+It is what happens in ordinary life.
+
+</p>
+
+
+<p>
+
+Knowing God should progressively affect:
+
+</p>
+
+
+<h3>
+
+Money
+
+</h3>
+
+<p>
+
+Do I become dishonest when I need money?
+
+</p>
+
+
+<h3>
+
+Relationships
+
+</h3>
+
+<p>
+
+Do I use people or genuinely care about them?
+
+</p>
+
+
+<h3>
+
+Sexuality
+
+</h3>
+
+<p>
+
+Do I allow desire to control my decisions?
+
+</p>
+
+
+<h3>
+
+Anger
+
+</h3>
+
+<p>
+
+How do I respond when disrespected?
+
+</p>
+
+
+<h3>
+
+Work
+
+</h3>
+
+<p>
+
+Do I work honestly when nobody is watching?
+
+</p>
+
+
+<h3>
+
+Ambition
+
+</h3>
+
+<p>
+
+Do I want success merely to prove myself superior to others?
+
+</p>
+
+
+<h3>
+
+Failure
+
+</h3>
+
+<p>
+
+Does failure destroy my identity?
+
+</p>
+
+
+<h3>
+
+Success
+
+</h3>
+
+<p>
+
+Does success make me arrogant?
+
+</p>
+
+
+<h3>
+
+Suffering
+
+</h3>
+
+<p>
+
+Do difficult circumstances cause me to abandon every conviction I have?
+
+</p>
+
+
+<h3>
+
+Technology
+
+</h3>
+
+<p>
+
+Does technology serve me, or has it become the master of my attention?
+
+</p>
+
+
+<div class="key-principle">
+
+<strong>
+
+This is where knowing God becomes visible.
+
+</strong>
+
+<p>
+
+The relationship becomes visible through ordinary decisions,
+especially when nobody is watching.
+
 </p>
 
 </div>
 
-<p>
-Greater knowledge should lead toward greater
-trust, humility, obedience, love, wisdom and
-dependence upon God.
-</p>
 
 
+<!-- 16 -->
 
 <h2>
+
 16. A Practical Daily Pattern
+
 </h2>
 
-<div class="card-grid">
 
-<div class="card">
+<p>
 
-<div class="card-icon">
-📖
-</div>
+Use this simple pattern when studying Scripture.
+
+</p>
+
 
 <h3>
+
 Read
+
 </h3>
 
 <p>
-Read a portion of Scripture slowly and carefully.
+
+Read a manageable section carefully.
+
+Don't rush.
+
 </p>
 
-</div>
-
-
-<div class="card">
-
-<div class="card-icon">
-🔎
-</div>
 
 <h3>
+
 Understand
+
 </h3>
 
 <p>
-Ask what the passage actually teaches about God.
+
+Ask:
+
 </p>
 
-</div>
-
-
-<div class="card">
-
-<div class="card-icon">
-🙏
-</div>
-
-<h3>
-Pray
-</h3>
-
-<p>
-Respond to what you have learned through prayer.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-icon">
-🛠️
-</div>
-
-<h3>
-Apply
-</h3>
-
-<p>
-Identify one practical way to live out the lesson.
-</p>
-
-</div>
-
-</div>
-
-
-
-<h2>
-17. A Simple Example
-</h2>
-
-<p>
-Suppose you study a passage that teaches that
-God is patient.
-</p>
-
-<p>
-Knowing the information is the first step.
-But deeper knowledge asks:
-</p>
 
 <ul>
 
-<li>
-Do I trust God's patience toward me?
-</li>
+<li>What is actually happening?</li>
 
-<li>
-Am I becoming more patient with other people?
-</li>
+<li>Who is speaking?</li>
 
-<li>
-Do I remain patient when life does not move
-according to my plans?
-</li>
+<li>Who is being addressed?</li>
 
-<li>
-Does God's character influence my character?
-</li>
+<li>What is the context?</li>
 
 </ul>
 
+
+<h3>
+
+Discover
+
+</h3>
+
 <p>
-This is where biblical knowledge begins to move
-from information toward transformation.
+
+Ask:
+
 </p>
 
 
+<div class="quote">
+
+<p>
+
+“What does this reveal about God?”
+
+</p>
+
+</div>
+
+
+<h3>
+
+Respond
+
+</h3>
+
+<p>
+
+Pray about what you discovered.
+
+</p>
+
+
+<h3>
+
+Apply
+
+</h3>
+
+<p>
+
+Choose one concrete action.
+
+</p>
+
+
+<p>
+
+For example:
+
+</p>
+
+
+<div class="quote">
+
+<p>
+
+“Today I will apologize to the person I wronged.”
+
+</p>
+
+</div>
+
+
+<div class="quote">
+
+<p>
+
+“Today I will refuse to lie about my work.”
+
+</p>
+
+</div>
+
+
+<div class="quote">
+
+<p>
+
+“Today I will spend 20 minutes studying Scripture instead of scrolling.”
+
+</p>
+
+</div>
+
+
+<h3>
+
+Review
+
+</h3>
+
+<p>
+
+At the end of the day ask:
+
+</p>
+
+
+<div class="quote">
+
+<p>
+
+“Did I actually practice what I learned?”
+
+</p>
+
+</div>
+
+
+<p>
+
+That final question is powerful.
+
+</p>
+
+
+
+<!-- 17 -->
 
 <h2>
-18. Reflection: Do I Really Know God?
+
+17. A Real-World Example: God's Patience
+
 </h2>
 
+
+<div class="example">
+
+<div class="example-title">
+
+From Information to Transformation
+
+</div>
+
 <p>
-Take time to examine your spiritual life honestly.
-This is not about comparing yourself with another
-person. It is about examining the direction of
-your own relationship with God.
+
+Suppose your Bible study teaches that God is patient.
+
 </p>
+
+
+<p>
+
+You understand the doctrine.
+
+</p>
+
+
+<p>
+
+But now imagine someone repeatedly annoys you.
+
+You become angry.
+
+</p>
+
+
+<p>
+
+This creates a practical test.
+
+</p>
+
+
+<p>
+
+<strong>Information:</strong> “I know God is patient.”
+
+</p>
+
+
+<p>
+
+<strong>Understanding:</strong> “God demonstrates patience.”
+
+</p>
+
+
+<p>
+
+<strong>Application:</strong> “I should practice patience.”
+
+</p>
+
+
+<p>
+
+<strong>Transformation:</strong> “I am becoming slower to anger
+and more controlled in difficult situations.”
+
+</p>
+
+
+<p>
+
+The goal is not merely knowing:
+
+</p>
+
+
+<div class="quote">
+
+<p>
+
+“God is patient.”
+
+</p>
+
+</div>
+
+
+<p>
+
+The goal is becoming a person whose character increasingly reflects
+what you have learned about God.
+
+</p>
+
+
+<p>
+
+This is part of spiritual formation.
+
+</p>
+
+</div>
+
+
+
+<!-- 18 -->
+
+<h2>
+
+18. Reflection: Do I Really Know God?
+
+</h2>
+
+
+<p>
+
+This question requires honesty.
+
+</p>
+
+
+<p>
+
+Don't ask:
+
+</p>
+
+
+<div class="quote">
+
+<p>
+
+“Do people think I'm a good Christian?”
+
+</p>
+
+</div>
+
+
+<p>
+
+Ask:
+
+</p>
+
+
+<div class="quote">
+
+<p>
+
+“What is actually happening between me and God?”
+
+</p>
+
+</div>
+
+
+<p>
+
+Consider your private life.
+
+</p>
+
+
+<p>
+
+When nobody is watching:
+
+</p>
+
+
+<ul>
+
+<li>What do you desire?</li>
+
+<li>What do you worship?</li>
+
+<li>What controls your attention?</li>
+
+<li>What do you fear most?</li>
+
+<li>What do you trust?</li>
+
+<li>How do you respond to temptation?</li>
+
+<li>How do you respond when God seems silent?</li>
+
+<li>What happens when you receive money?</li>
+
+<li>What happens when you lose money?</li>
+
+<li>How do you treat people who cannot benefit you?</li>
+
+<li>Do you seek God only when you need something?</li>
+
+</ul>
+
 
 <div class="reflection">
 
 <h2>
-Questions for Reflection
+
+Reflection Questions
+
 </h2>
+
 
 <ul>
 
 <li>
+
 What is the difference between knowing about God
 and knowing God?
+
 </li>
 
 <li>
-What does Scripture reveal about God's character?
+
+What does God's revelation teach us about Him?
+
 </li>
 
 <li>
-How does Jesus help us understand God?
+
+How does Jesus Christ help us understand God?
+
 </li>
 
 <li>
-How does Bible study help us know God?
+
+How does faith contribute to knowing God?
+
 </li>
 
 <li>
-How does prayer contribute to our relationship
-with God?
+
+How can Scripture move from information to transformation?
+
 </li>
 
 <li>
-Why should knowing God affect our behavior?
+
+How does prayer reveal our dependence upon God?
+
 </li>
 
 <li>
-How can Christian fellowship help spiritual growth?
+
+How does obedience demonstrate that God's authority matters?
+
 </li>
 
 <li>
-What distractions make it difficult for you to
-seek God consistently?
+
+How does knowing God affect the way we treat people?
+
 </li>
 
 <li>
-Which area needs growth: Scripture, prayer,
-obedience, love or fellowship?
+
+What distractions compete for your attention?
+
 </li>
 
 <li>
-What practical step will you take this week to
-pursue God more intentionally?
+
+What practical step can you take this week to pursue God more intentionally?
+
 </li>
 
 </ul>
@@ -1243,71 +3927,441 @@ pursue God more intentionally?
 
 
 
+<!-- 19 -->
+
 <h2>
-19. Key Scriptures for This Lesson
+
+19. Key Scriptures and Their Practical Meaning
+
 </h2>
 
-<ul>
 
-<li>
-John 17:3 — Knowing God and Jesus Christ
-</li>
+<div class="table-wrapper">
 
-<li>
-Jeremiah 29:12–13 — Seeking God wholeheartedly
-</li>
+<table class="scripture-table">
 
-<li>
-Hebrews 11:6 — Faith and seeking God
-</li>
+<thead>
 
-<li>
-Exodus 34:6–7 — God's revealed character
-</li>
+<tr>
 
-<li>
-John 14:15 — Love and obedience
-</li>
+<th>Scripture</th>
 
-<li>
-1 John 4:7–8 — Knowing God and love
-</li>
+<th>Central Lesson</th>
 
-<li>
-Philippians 3:8–10 — Knowing Christ
-</li>
+<th>Modern Application</th>
 
-<li>
-2 Timothy 3:16–17 — The value of Scripture
-</li>
+</tr>
 
-<li>
-Hebrews 10:24–25 — Christian fellowship
-</li>
-
-</ul>
+</thead>
 
 
+<tbody>
 
-<div class="key-point">
+<tr>
 
-<strong>Final Thought</strong>
+<td>John 17:3</td>
+
+<td>Knowing God and Christ</td>
+
+<td>Relationship with God is central to eternal life.</td>
+
+</tr>
+
+
+<tr>
+
+<td>Jeremiah 29:12–13</td>
+
+<td>Seek God wholeheartedly</td>
+
+<td>Don't pursue God casually.</td>
+
+</tr>
+
+
+<tr>
+
+<td>Hebrews 11:6</td>
+
+<td>Faith</td>
+
+<td>Trust God while continuing to seek Him.</td>
+
+</tr>
+
+
+<tr>
+
+<td>Exodus 34:6–7</td>
+
+<td>God's character</td>
+
+<td>Understand both His mercy and justice.</td>
+
+</tr>
+
+
+<tr>
+
+<td>John 14:15</td>
+
+<td>Love and obedience</td>
+
+<td>Genuine love affects behavior.</td>
+
+</tr>
+
+
+<tr>
+
+<td>1 John 4:7–8</td>
+
+<td>Love and knowing God</td>
+
+<td>Your treatment of people matters.</td>
+
+</tr>
+
+
+<tr>
+
+<td>Philippians 3:8–10</td>
+
+<td>Knowing Christ</td>
+
+<td>Spiritual growth continues throughout life.</td>
+
+</tr>
+
+
+<tr>
+
+<td>2 Timothy 3:16–17</td>
+
+<td>Scripture</td>
+
+<td>Use God's Word for transformation and training.</td>
+
+</tr>
+
+
+<tr>
+
+<td>Hebrews 10:24–25</td>
+
+<td>Fellowship</td>
+
+<td>Grow with other believers.</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+
+<!-- DEEPER QUESTION -->
+
+<h2>
+
+The Deeper Question
+
+</h2>
+
 
 <p>
-The goal of Bible study is not simply to fill
-your mind with information. The goal is to know
-God according to the truth He has revealed, trust
-Him, walk with Him and allow that relationship
-to transform the way you live.
+
+There is an important distinction between three stages:
+
+</p>
+
+
+<div class="stages">
+
+
+<div class="stage">
+
+<div class="stage-number">
+
+STAGE 01
+
+</div>
+
+<h3>
+
+Information
+
+</h3>
+
+<p>
+
+“I know what the Bible says.”
+
+</p>
+
+</div>
+
+
+<div class="stage">
+
+<div class="stage-number">
+
+STAGE 02
+
+</div>
+
+<h3>
+
+Conviction
+
+</h3>
+
+<p>
+
+“I believe what the Bible teaches.”
+
+</p>
+
+</div>
+
+
+<div class="stage">
+
+<div class="stage-number">
+
+STAGE 03
+
+</div>
+
+<h3>
+
+Transformation
+
+</h3>
+
+<p>
+
+“I am allowing what I believe to change the way I live.”
+
+</p>
+
+</div>
+
+</div>
+
+
+<p>
+
+The third stage is where knowledge becomes visible.
+
+</p>
+
+
+<div class="example">
+
+<div class="example-title">
+
+When Truth Is Tested
+
+</div>
+
+<p>
+
+You know God values truth.
+
+</p>
+
+<p>
+
+You believe truth matters.
+
+</p>
+
+<p>
+
+Then someone offers you an opportunity to make money through deception.
+
+</p>
+
+<p>
+
+Your decision reveals whether that truth has entered your life.
+
+</p>
+
+
+<br>
+
+
+<p>
+
+You know Jesus teaches forgiveness.
+
+</p>
+
+<p>
+
+You believe forgiveness is important.
+
+</p>
+
+<p>
+
+Then someone seriously hurts you.
+
+</p>
+
+<p>
+
+Your response reveals how deeply that teaching has taken root.
+
+</p>
+
+
+<br>
+
+
+<p>
+
+You know God is sovereign.
+
+</p>
+
+<p>
+
+You believe God is trustworthy.
+
+</p>
+
+<p>
+
+Then your plans collapse.
+
+</p>
+
+<p>
+
+Your response reveals whether your trust depends entirely on circumstances.
+
 </p>
 
 </div>
 
 
 
-<!-- NAVIGATION -->
+<!-- FINAL THOUGHT -->
+
+<div class="final-thought">
+
+<h2>
+
+Final Thought
+
+</h2>
+
+
+<p>
+
+Knowing God is not simply collecting religious information.
+
+</p>
+
+
+<p>
+
+It is a lifelong movement:
+
+</p>
+
+
+<div class="framework">
+
+<strong>
+
+Revelation → Knowledge → Faith → Relationship →
+Obedience → Character → Transformation
+
+</strong>
+
+</div>
+
+
+<p>
+
+The more we know God according to the truth He has revealed,
+the more that knowledge should influence the person we are becoming.
+
+</p>
+
+
+<p>
+
+The goal is not simply to say:
+
+</p>
+
+
+<div class="quote">
+
+<p>
+
+“I know about God.”
+
+</p>
+
+</div>
+
+
+<p>
+
+The deeper goal is to be able to say:
+
+</p>
+
+
+<div class="quote">
+
+<p>
+
+“I am learning to know God, trust Him, walk with Him,
+obey Him, love what He loves, and allow His truth to
+transform my life.”
+
+</p>
+
+</div>
+
+
+<p>
+
+And that transformation is not measured only inside a church
+or Bible-study meeting.
+
+</p>
+
+
+<p>
+
+It is revealed on Monday morning, when money is involved,
+when temptation comes, when someone disrespects you,
+when nobody is watching, when your plans fail, and when
+you have the power to choose between what is easy and what is right.
+
+</p>
+
+</div>
+
+
+
+<!-- =========================
+     LESSON NAVIGATION
+========================= -->
 
 <div class="lesson-navigation">
+
 
 <a href="why-study-bible.html"
 class="nav-button">
@@ -1324,6 +4378,7 @@ Next Lesson →
 
 </a>
 
+
 </div>
 
 
@@ -1333,24 +4388,36 @@ Next Lesson →
 
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
 <p>
-<strong>Kingdom Learning Hub</strong>
+
+<strong>
+Kingdom Learning Hub
+</strong>
+
 </p>
 
 <p>
+
 By Richard
+
 </p>
 
 <p>
-Faith • Knowledge • Skills • Growth
+
+Grow in Faith. Grow in Knowledge. Grow in Life.
+
 </p>
 
 <p>
+
 © 2026 Kingdom Learning Hub
+
 </p>
 
 </footer>

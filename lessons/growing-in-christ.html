@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Growing in Christ | Kingdom Learning Hub</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gold: #d4a017;
+    --gold-light: #f3c85b;
+    --dark: #070a10;
+    --card: rgba(255,255,255,0.055);
+    --border: rgba(255,255,255,0.12);
+    --text: #f4f5f7;
+    --muted: #a2a9b7;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    line-height: 1.8;
+}
+
+.container {
+    width: 90%;
+    max-width: 850px;
+    margin: auto;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(7,10,16,.95);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    min-height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--gold-light);
+}
+
+.logo small {
+    display: block;
+    color: #777;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.back {
+    color: var(--gold-light);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.lesson-header {
+    text-align: center;
+    padding: 80px 20px 55px;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(212,160,23,.13),
+            transparent 60%
+        );
+}
+
+.lesson-number {
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.lesson-header h1 {
+    font-size: clamp(36px,7vw,58px);
+    line-height: 1.1;
+    margin: 15px 0;
+}
+
+.lesson-header p {
+    color: var(--muted);
+    max-width: 680px;
+    margin: auto;
+}
+
+.lesson-content {
+    padding: 30px 0 80px;
+}
+
+.lesson-content h2 {
+    font-size: 27px;
+    margin: 40px 0 15px;
+    color: var(--gold-light);
+}
+
+.lesson-content p {
+    color: #c7cbd4;
+    margin-bottom: 18px;
+}
+
+.lesson-content ul {
+    margin: 15px 0 25px 25px;
+    color: #c7cbd4;
+}
+
+.lesson-content li {
+    margin-bottom: 10px;
+}
+
+.key-point {
+    margin: 30px 0;
+    padding: 25px;
+    background: rgba(212,160,23,.07);
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+}
+
+.key-point strong {
+    color: var(--gold-light);
+}
+
+.scripture {
+    margin: 25px 0;
+    padding: 24px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.scripture strong {
+    color: var(--gold-light);
+}
+
+.example {
+    margin: 30px 0;
+    padding: 25px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.example h3 {
+    color: var(--gold-light);
+    margin-bottom: 10px;
+}
+
+.growth-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.growth-card {
+    padding: 24px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.growth-card .icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.growth-card h3 {
+    color: var(--gold-light);
+    margin-bottom: 8px;
+}
+
+.growth-card p {
+    font-size: 13px;
+    margin: 0;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.step {
+    padding: 22px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.step-number {
+    color: var(--gold-light);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.step h3 {
+    margin: 7px 0;
+}
+
+.step p {
+    font-size: 13px;
+    margin: 0;
+}
+
+.reflection {
+    margin-top: 45px;
+    padding: 30px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
+
+.reflection h2 {
+    margin-top: 0;
+}
+
+.lesson-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 50px;
+}
+
+.nav-button {
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: var(--gold);
+    color: #111;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.nav-button:hover {
+    background: var(--gold-light);
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: #05070b;
+    border-top: 1px solid var(--border);
+}
+
+footer strong {
+    color: var(--gold-light);
+}
+
+footer p {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 6px;
+}
+
+@media(max-width:600px) {
+
+    .growth-grid,
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .lesson-navigation {
+        flex-direction: column;
+    }
+
+    .nav-button {
+        text-align: center;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">
+Kingdom <span>Learning Hub</span>
+<small>BY RICHARD</small>
+</div>
+
+<a href="../bible-study.html" class="back">
+← Bible Studies
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<section class="lesson-header">
+
+<div class="container">
+
+<div class="lesson-number">
+BIBLE STUDIES • LESSON 10
+</div>
+
+<h1>
+Growing in Christ
+</h1>
+
+<p>
+Learn how Christian growth develops through God's
+Word, prayer, faith, obedience, character, community
+and a life increasingly centered on Christ.
+</p>
+
+</div>
+
+</section>
+
+
+<main class="lesson-content">
+
+<div class="container">
+
+
+<h2>
+1. What Does It Mean to Grow in Christ?
+</h2>
+
+<p>
+Growing in Christ means continually developing in
+our relationship with God and allowing our faith
+to influence our character, decisions and everyday
+life.
+</p>
+
+<p>
+Christian growth is not simply about knowing more
+Bible verses. It involves becoming more mature in
+the way we think, speak, respond and live.
+</p>
+
+<div class="key-point">
+
+<strong>Key idea:</strong>
+
+<p>
+Christian growth is a journey of becoming more
+mature in faith and increasingly reflecting the
+character of Christ.
+</p>
+
+</div>
+
+
+<h2>
+2. Spiritual Growth Takes Time
+</h2>
+
+<p>
+Growth normally happens progressively. Just as a
+physical person develops over time, spiritual
+maturity also involves learning, practice,
+correction and perseverance.
+</p>
+
+<div class="scripture">
+
+<strong>2 Peter 3:18</strong>
+
+<p>
+Peter encourages believers to grow in the grace
+and knowledge of Jesus Christ.
+</p>
+
+</div>
+
+<p>
+Do not measure your entire journey by one difficult
+day. Look at the direction of your life and the
+lessons you are learning along the way.
+</p>
+
+
+<h2>
+3. God's Word
+</h2>
+
+<p>
+Scripture provides instruction, wisdom,
+encouragement and correction.
+</p>
+
+<div class="scripture">
+
+<strong>2 Timothy 3:16–17</strong>
+
+<p>
+Paul describes Scripture as useful for teaching,
+correction, training and equipping people for
+good works.
+</p>
+
+</div>
+
+<p>
+Regular Bible study can help develop a stronger
+foundation for Christian living.
+</p>
+
+
+<h2>
+4. Prayer and Relationship With God
+</h2>
+
+<p>
+Prayer is more than asking God for things. It is
+also a way of expressing gratitude, confession,
+worship, dependence and seeking guidance.
+</p>
+
+<div class="scripture">
+
+<strong>1 Thessalonians 5:17</strong>
+
+<p>
+Paul encourages believers to pray continually.
+</p>
+
+</div>
+
+<div class="key-point">
+
+<strong>Build consistency, not performance.</strong>
+
+<p>
+A growing prayer life develops through regular
+communication with God rather than trying to
+impress other people.
+</p>
+
+</div>
+
+
+<h2>
+5. Faith and Obedience
+</h2>
+
+<p>
+Faith is not merely agreeing that certain
+statements are true. Christian faith is intended
+to influence how a person lives.
+</p>
+
+<div class="scripture">
+
+<strong>James 2:17</strong>
+
+<p>
+James teaches that faith without corresponding
+action is dead.
+</p>
+
+</div>
+
+<p>
+Growth therefore involves learning what God teaches
+and putting that teaching into practice.
+</p>
+
+
+<h2>
+6. Areas of Christian Growth
+</h2>
+
+<div class="growth-grid">
+
+<div class="growth-card">
+
+<div class="icon">📖</div>
+
+<h3>
+Bible
+</h3>
+
+<p>
+Develop a deeper understanding of Scripture and
+learn to apply it responsibly.
+</p>
+
+</div>
+
+
+<div class="growth-card">
+
+<div class="icon">🙏</div>
+
+<h3>
+Prayer
+</h3>
+
+<p>
+Develop a consistent relationship with God through
+prayer and dependence on Him.
+</p>
+
+</div>
+
+
+<div class="growth-card">
+
+<div class="icon">❤️</div>
+
+<h3>
+Character
+</h3>
+
+<p>
+Develop qualities such as patience, humility,
+honesty, love and self-control.
+</p>
+
+</div>
+
+
+<div class="growth-card">
+
+<div class="icon">🤝</div>
+
+<h3>
+Relationships
+</h3>
+
+<p>
+Learn to treat other people with forgiveness,
+respect, compassion and wisdom.
+</p>
+
+</div>
+
+
+<div class="growth-card">
+
+<div class="icon">🛡️</div>
+
+<h3>
+Self-Control
+</h3>
+
+<p>
+Learn to manage desires, emotions and impulses
+rather than allowing them to control your actions.
+</p>
+
+</div>
+
+
+<div class="growth-card">
+
+<div class="icon">🛠️</div>
+
+<h3>
+Service
+</h3>
+
+<p>
+Use your abilities, time and resources to contribute
+to the wellbeing of others.
+</p>
+
+</div>
+
+</div>
+
+
+<h2>
+7. The Fruit of the Spirit
+</h2>
+
+<p>
+Galatians 5:22–23 describes qualities associated
+with the fruit of the Spirit.
+</p>
+
+<div class="scripture">
+
+<strong>Galatians 5:22–23</strong>
+
+<p>
+Love, joy, peace, patience, kindness, goodness,
+faithfulness, gentleness and self-control.
+</p>
+
+</div>
+
+<p>
+These qualities provide a useful framework for
+examining character growth.
+</p>
+
+<p>
+Ask yourself not only, "How much do I know?"
+but also, "What kind of person am I becoming?"
+</p>
+
+
+<h2>
+8. Growth Through Difficulties
+</h2>
+
+<p>
+Difficult experiences can expose weaknesses,
+develop perseverance and teach us to depend on
+God.
+</p>
+
+<div class="scripture">
+
+<strong>James 1:2–4</strong>
+
+<p>
+James explains that the testing of faith can
+produce perseverance and maturity.
+</p>
+
+</div>
+
+<p>
+This does not mean every difficult experience is
+good in itself. It means difficulties can become
+opportunities for learning, endurance and growth.
+</p>
+
+
+<h2>
+9. Learning From Mistakes
+</h2>
+
+<p>
+Growth does not require pretending that we never
+make mistakes.
+</p>
+
+<p>
+A mature response to failure is to recognize the
+mistake, take responsibility, seek forgiveness
+where necessary and learn how to make better
+choices.
+</p>
+
+<div class="example">
+
+<h3>
+A Growth Mindset</h3>
+
+<p>
+Instead of saying:
+</p>
+
+<p>
+<strong>"I failed, so I can never change."</strong>
+</p>
+
+<p>
+Ask:
+</p>
+
+<p>
+<strong>
+"What happened, what can I learn, and what can I
+change next time?"
+</strong>
+</p>
+
+</div>
+
+
+<h2>
+10. Christian Community
+</h2>
+
+<p>
+Christian growth is not intended to happen entirely
+in isolation.
+</p>
+
+<p>
+Healthy relationships with other believers can
+provide encouragement, correction, wisdom,
+accountability and opportunities to serve.
+</p>
+
+<div class="scripture">
+
+<strong>Hebrews 10:24–25</strong>
+
+<p>
+The passage encourages believers to consider how
+they can encourage one another toward love and
+good works and not neglect meeting together.
+</p>
+
+</div>
+
+
+<h2>
+11. Guard What Influences You
+</h2>
+
+<p>
+Growth can be affected by the content we consume,
+the people we spend time with and the habits we
+practice.
+</p>
+
+<ul>
+
+<li>
+Choose content that strengthens your mind.
+</li>
+
+<li>
+Be thoughtful about the people influencing your
+decisions.
+</li>
+
+<li>
+Avoid repeatedly feeding destructive habits.
+</li>
+
+<li>
+Make time for learning and reflection.
+</li>
+
+<li>
+Create routines that support your goals.
+</li>
+
+</ul>
+
+
+<h2>
+12. Developing Christian Discipline
+</h2>
+
+<p>
+Discipline means repeatedly choosing what is
+valuable even when you do not feel motivated.
+</p>
+
+<div class="steps">
+
+<div class="step">
+
+<div class="step-number">
+01
+</div>
+
+<h3>
+Study</h3>
+
+<p>
+Set aside regular time to read and understand
+Scripture.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+02
+</div>
+
+<h3>
+Pray</h3>
+
+<p>
+Maintain regular times of prayer and reflection.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+03
+</div>
+
+<h3>
+Practice</h3>
+
+<p>
+Apply what you learn through everyday decisions.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+04
+</div>
+
+<h3>
+Reflect</h3>
+
+<p>
+Review your choices and identify areas where you
+need to grow.
+</p>
+
+</div>
+
+</div>
+
+
+<h2>
+13. Love as a Sign of Growth
+</h2>
+
+<p>
+Christian maturity is strongly connected with
+love for God and love for other people.
+</p>
+
+<div class="scripture">
+
+<strong>John 13:34–35</strong>
+
+<p>
+Jesus taught His disciples to love one another
+and described this love as a distinguishing mark
+of His followers.
+</p>
+
+</div>
+
+<p>
+Growth should therefore affect how we treat people,
+not merely what we know.
+</p>
+
+
+<h2>
+14. Becoming More Like Christ
+</h2>
+
+<p>
+Christian growth ultimately points toward becoming
+more like Christ in character and conduct.
+</p>
+
+<div class="scripture">
+
+<strong>Romans 12:2</strong>
+
+<p>
+Paul speaks about transformation through the
+renewing of the mind.
+</p>
+
+</div>
+
+<p>
+Transformation begins with how we think and
+eventually affects how we live.
+</p>
+
+
+<h2>
+15. A Simple Daily Growth Routine
+</h2>
+
+<div class="example">
+
+<h3>
+The 4-Part Daily Routine</h3>
+
+<ul>
+
+<li>
+<strong>Read:</strong> Spend time in Scripture.
+</li>
+
+<li>
+<strong>Pray:</strong> Talk honestly with God.
+</li>
+
+<li>
+<strong>Apply:</strong> Put one lesson into practice.
+</li>
+
+<li>
+<strong>Reflect:</strong> Examine your actions and
+identify one area for improvement.
+</li>
+
+</ul>
+
+</div>
+
+
+<h2>
+16. A 30-Day Growth Challenge
+</h2>
+
+<p>
+For the next 30 days, build a simple consistent
+routine around your relationship with God.
+</p>
+
+<div class="steps">
+
+<div class="step">
+
+<div class="step-number">
+EVERY DAY
+</div>
+
+<h3>
+Bible</h3>
+
+<p>
+Read and reflect on a portion of Scripture.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+EVERY DAY
+</div>
+
+<h3>
+Prayer</h3>
+
+<p>
+Spend intentional time talking with God.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+EVERY DAY
+</div>
+
+<h3>
+Character</h3>
+
+<p>
+Choose one character quality to practice.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+EVERY WEEK
+</div>
+
+<h3>
+Service</h3>
+
+<p>
+Find at least one practical opportunity to help
+someone.
+</p>
+
+</div>
+
+</div>
+
+
+<h2>
+17. Questions for Personal Growth
+</h2>
+
+<ul>
+
+<li>
+Am I becoming more consistent in studying
+Scripture?
+</li>
+
+<li>
+Is my prayer life becoming more intentional?
+</li>
+
+<li>
+What character quality needs the most attention?
+</li>
+
+<li>
+How do I respond when I am corrected?
+</li>
+
+<li>
+Am I becoming more patient and self-controlled?
+</li>
+
+<li>
+How do I treat people when nobody is watching?
+</li>
+
+<li>
+What influences should I reduce?
+</li>
+
+<li>
+What healthy habit should I develop?
+</li>
+
+<li>
+How can I serve other people better?
+</li>
+
+<li>
+What is God teaching me during this season of my
+life?
+</li>
+
+</ul>
+
+
+<h2>
+18. Key Scriptures
+</h2>
+
+<ul>
+
+<li>
+2 Peter 3:18 — Grow in grace and knowledge
+</li>
+
+<li>
+2 Timothy 3:16–17 — Scripture equips believers
+</li>
+
+<li>
+Galatians 5:22–23 — Fruit of the Spirit
+</li>
+
+<li>
+James 1:2–4 — Perseverance and maturity
+</li>
+
+<li>
+Romans 12:2 — Renewal of the mind
+</li>
+
+<li>
+John 13:34–35 — Love one another
+</li>
+
+<li>
+Hebrews 10:24–25 — Encourage one another
+</li>
+
+</ul>
+
+
+<div class="key-point">
+
+<strong>Final thought:</strong>
+
+<p>
+Do not compare your journey with someone else's.
+Focus on faithfully learning, practicing, correcting,
+serving and growing one day at a time.
+</p>
+
+</div>
+
+
+<div class="reflection">
+
+<h2>
+📖 Lesson 10 Reflection
+</h2>
+
+<ul>
+
+<li>
+What does growing in Christ mean to you?
+</li>
+
+<li>
+Why does Christian growth take time?
+</li>
+
+<li>
+How can Scripture contribute to spiritual growth?
+</li>
+
+<li>
+How can prayer strengthen your relationship with
+God?
+</li>
+
+<li>
+Why should faith influence our actions?
+</li>
+
+<li>
+Which area of Christian character needs the most
+growth in your life?
+</li>
+
+<li>
+How can difficulties produce maturity?
+</li>
+
+<li>
+Why is Christian community important?
+</li>
+
+<li>
+What influences should you be more careful about?
+</li>
+
+<li>
+What practical step will you take after completing
+this lesson?
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="lesson-navigation">
+
+<a href="serving-others.html"
+class="nav-button">
+← Previous Lesson
+</a>
+
+<a href="../bible-study.html"
+class="nav-button">
+Bible Studies
+</a>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer>
+
+<p>
+<strong>Kingdom Learning Hub</strong>
+</p>
+
+<p>
+By Richard
+</p>
+
+<p>
+Faith • Knowledge • Skills • Growth
+</p>
+
+<p>
+© 2026 Kingdom Learning Hub
+</p>
+
+</footer>
+
+</body>
+
+</html>

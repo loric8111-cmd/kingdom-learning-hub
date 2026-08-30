@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Trading Psychology | Kingdom Learning Hub</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gold: #d4a017;
+    --gold-light: #f3c85b;
+    --dark: #070a10;
+    --card: rgba(255,255,255,0.055);
+    --border: rgba(255,255,255,0.12);
+    --text: #f4f5f7;
+    --muted: #a2a9b7;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    line-height: 1.8;
+}
+
+.container {
+    width: 90%;
+    max-width: 850px;
+    margin: auto;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(7,10,16,.95);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    min-height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--gold-light);
+}
+
+.logo small {
+    display: block;
+    color: #777;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.back {
+    color: var(--gold-light);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.lesson-header {
+    text-align: center;
+    padding: 80px 20px 55px;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(212,160,23,.13),
+            transparent 60%
+        );
+}
+
+.lesson-number {
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.lesson-header h1 {
+    font-size: clamp(36px,7vw,58px);
+    line-height: 1.1;
+    margin: 15px 0;
+}
+
+.lesson-header p {
+    color: var(--muted);
+    max-width: 650px;
+    margin: auto;
+}
+
+.lesson-content {
+    padding: 30px 0 80px;
+}
+
+.lesson-content h2 {
+    font-size: 27px;
+    margin: 40px 0 15px;
+    color: var(--gold-light);
+}
+
+.lesson-content p {
+    color: #c7cbd4;
+    margin-bottom: 18px;
+}
+
+.lesson-content ul {
+    margin: 15px 0 25px 25px;
+    color: #c7cbd4;
+}
+
+.lesson-content li {
+    margin-bottom: 10px;
+}
+
+.key-point {
+    margin: 30px 0;
+    padding: 25px;
+    background: rgba(212,160,23,.07);
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+}
+
+.key-point strong {
+    color: var(--gold-light);
+}
+
+.example {
+    margin: 30px 0;
+    padding: 25px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.example h3 {
+    color: var(--gold-light);
+    margin-bottom: 10px;
+}
+
+.mindset-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.mindset-card {
+    padding: 25px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.mindset-card .icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.mindset-card h3 {
+    color: var(--gold-light);
+    margin-bottom: 8px;
+}
+
+.mindset-card p {
+    font-size: 13px;
+    margin: 0;
+}
+
+.reflection {
+    margin-top: 45px;
+    padding: 30px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
+
+.reflection h2 {
+    margin-top: 0;
+}
+
+.journal {
+    margin: 25px 0;
+    padding: 25px;
+    background: #0b0f17;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.journal-row {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    color: #c7cbd4;
+}
+
+.journal-row:last-child {
+    border-bottom: none;
+}
+
+.journal-row strong {
+    color: var(--gold-light);
+}
+
+.lesson-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 50px;
+}
+
+.nav-button {
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: var(--gold);
+    color: #111;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.nav-button:hover {
+    background: var(--gold-light);
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: #05070b;
+    border-top: 1px solid var(--border);
+}
+
+footer strong {
+    color: var(--gold-light);
+}
+
+footer p {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 6px;
+}
+
+@media(max-width:600px) {
+
+    .mindset-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lesson-navigation {
+        flex-direction: column;
+    }
+
+    .nav-button {
+        text-align: center;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">
+
+Kingdom <span>Learning Hub</span>
+
+<small>BY RICHARD</small>
+
+</div>
+
+<a href="../trading.html" class="back">
+← Trading Academy
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<section class="lesson-header">
+
+<div class="container">
+
+<div class="lesson-number">
+TRADING ACADEMY • LESSON 10
+</div>
+
+<h1>
+Trading Psychology
+</h1>
+
+<p>
+Learn how emotions, discipline and decision-making
+can influence your trading behavior and how to
+develop a more consistent process.
+</p>
+
+</div>
+
+</section>
+
+
+<main class="lesson-content">
+
+<div class="container">
+
+
+<h2>
+1. What Is Trading Psychology?
+</h2>
+
+<p>
+Trading psychology refers to the mental and
+emotional factors that influence how a trader
+makes decisions.
+</p>
+
+<p>
+A trader can have a well-designed strategy and
+still make poor decisions because of fear,
+greed, impatience or emotional reactions to
+wins and losses.
+</p>
+
+<div class="key-point">
+
+<strong>Core principle:</strong>
+
+<p>
+Good trading is not only about finding entries.
+It is also about controlling your behavior before,
+during and after a trade.
+</p>
+
+</div>
+
+
+<h2>
+2. The Four Major Emotional Challenges
+</h2>
+
+<div class="mindset-grid">
+
+<div class="mindset-card">
+
+<div class="icon">😨</div>
+
+<h3>
+Fear
+</h3>
+
+<p>
+Fear can cause hesitation, premature exits or
+avoidance of valid setups.
+</p>
+
+</div>
+
+
+<div class="mindset-card">
+
+<div class="icon">🤑</div>
+
+<h3>
+Greed
+</h3>
+
+<p>
+Greed can encourage oversized positions,
+unrealistic targets and excessive risk.
+</p>
+
+</div>
+
+
+<div class="mindset-card">
+
+<div class="icon">🔥</div>
+
+<h3>
+FOMO
+</h3>
+
+<p>
+Fear of missing out can cause traders to enter
+after a move has already happened.
+</p>
+
+</div>
+
+
+<div class="mindset-card">
+
+<div class="icon">🔄</div>
+
+<h3>
+Revenge
+</h3>
+
+<p>
+Revenge trading happens when a trader attempts
+to recover losses through emotional decisions.
+</p>
+
+</div>
+
+</div>
+
+
+<h2>
+3. Fear
+</h2>
+
+<p>
+Fear is a natural response to uncertainty.
+Trading involves uncertainty because future
+price movements cannot be known with certainty.
+</p>
+
+<p>
+Fear can become a problem when it causes a trader
+to repeatedly abandon a well-defined plan.
+</p>
+
+<div class="example">
+
+<h3>
+Example</h3>
+
+<p>
+A trader enters a position according to their
+plan. Price temporarily moves against them.
+</p>
+
+<p>
+Instead of following the predetermined risk plan,
+the trader closes the trade immediately because
+they become afraid of losing.
+</p>
+
+<p>
+The problem is not necessarily the emotion itself.
+The problem is allowing the emotion to override
+the trading process.
+</p>
+
+</div>
+
+
+<h2>
+4. Greed
+</h2>
+
+<p>
+Greed can appear after both winning and losing
+trades.
+</p>
+
+<p>
+A trader may increase position size because
+they believe a large profit is coming.
+</p>
+
+<p>
+This can expose the account to losses that are
+much larger than originally planned.
+</p>
+
+<div class="key-point">
+
+<strong>More risk does not guarantee more reward.</strong>
+
+<p>
+Increasing position size increases exposure.
+It does not improve the certainty of the trade.
+</p>
+
+</div>
+
+
+<h2>
+5. FOMO — Fear of Missing Out
+</h2>
+
+<p>
+FOMO occurs when a trader feels pressure to enter
+a market because price is moving without them.
+</p>
+
+<p>
+This often happens after seeing a large candle
+or a strong price movement.
+</p>
+
+<ul>
+
+<li>
+Chasing price after a major move
+</li>
+
+<li>
+Entering without a complete setup
+</li>
+
+<li>
+Ignoring the original trading plan
+</li>
+
+<li>
+Taking trades simply because others are trading
+</li>
+
+</ul>
+
+
+<h2>
+6. Revenge Trading
+</h2>
+
+<p>
+Revenge trading is an attempt to recover losses
+quickly through additional trades driven by
+frustration or anger.
+</p>
+
+<div class="example">
+
+<h3>
+The Dangerous Cycle</h3>
+
+<p>
+Loss → frustration → larger position →
+another loss → increased frustration →
+even larger position.
+</p>
+
+</div>
+
+<div class="key-point">
+
+<strong>Break the cycle.</strong>
+
+<p>
+After a significant emotional event, stepping
+away from the market can be more valuable than
+immediately looking for another trade.
+</p>
+
+</div>
+
+
+<h2>
+7. Overtrading
+</h2>
+
+<p>
+Overtrading means taking more trades than your
+strategy or plan justifies.
+</p>
+
+<p>
+More trades do not automatically mean more
+opportunities for profit.
+</p>
+
+<p>
+Every additional trade creates another opportunity
+for risk, costs and emotional mistakes.
+</p>
+
+
+<h2>
+8. Discipline
+</h2>
+
+<p>
+Discipline means following a predefined process
+even when emotions encourage you to behave
+differently.
+</p>
+
+<p>
+A disciplined trader does not need to predict
+every market movement.
+They need to execute their process consistently.
+</p>
+
+<div class="key-point">
+
+<strong>Discipline beats impulse.</strong>
+
+<p>
+A trading plan is useful only if you can actually
+follow it.
+</p>
+
+</div>
+
+
+<h2>
+9. Trading Plan
+</h2>
+
+<p>
+A trading plan should define the conditions under
+which you will and will not trade.
+</p>
+
+<p>
+Depending on your strategy, it may include:
+</p>
+
+<ul>
+
+<li>
+Markets you trade
+</li>
+
+<li>
+Trading sessions
+</li>
+
+<li>
+Timeframes
+</li>
+
+<li>
+Entry conditions
+</li>
+
+<li>
+Stop-loss rules
+</li>
+
+<li>
+Position-sizing rules
+</li>
+
+<li>
+Profit-taking rules
+</li>
+
+<li>
+Maximum daily or weekly risk
+</li>
+
+<li>
+Conditions for stopping trading
+</li>
+
+</ul>
+
+
+<h2>
+10. Trading Journal
+</h2>
+
+<p>
+A trading journal records information about your
+trades so you can review your decisions over time.
+</p>
+
+<div class="journal">
+
+<div class="journal-row">
+<strong>Market:</strong> What instrument did you trade?
+</div>
+
+<div class="journal-row">
+<strong>Setup:</strong> Why did you enter?
+</div>
+
+<div class="journal-row">
+<strong>Entry:</strong> Where did you enter?
+</div>
+
+<div class="journal-row">
+<strong>Stop:</strong> Where was your invalidation level?
+</div>
+
+<div class="journal-row">
+<strong>Target:</strong> What was your planned exit?
+</div>
+
+<div class="journal-row">
+<strong>Risk:</strong> How much were you risking?
+</div>
+
+<div class="journal-row">
+<strong>Emotion:</strong> How did you feel before and during the trade?
+</div>
+
+<div class="journal-row">
+<strong>Result:</strong> What happened?
+</div>
+
+<div class="journal-row">
+<strong>Lesson:</strong> What can you improve?
+</div>
+
+</div>
+
+
+<h2>
+11. Winning Streaks
+</h2>
+
+<p>
+Winning streaks can also create psychological
+problems.
+</p>
+
+<p>
+After several successful trades, a trader may
+become overconfident and begin taking excessive
+risk.
+</p>
+
+<div class="key-point">
+
+<strong>Confidence is not the same as certainty.</strong>
+
+<p>
+A successful trade does not guarantee that the
+next trade will succeed.
+</p>
+
+</div>
+
+
+<h2>
+12. Losing Streaks
+</h2>
+
+<p>
+Losing streaks are possible even when a strategy
+has a positive long-term expectation.
+</p>
+
+<p>
+The important question is whether losses occurred
+within the rules of the strategy or because the
+trader broke their own rules.
+</p>
+
+
+<h2>
+13. Process Over Outcome
+</h2>
+
+<p>
+One trade should not determine whether you are
+a good or bad trader.
+</p>
+
+<p>
+A better approach is to evaluate whether you
+followed your process.
+</p>
+
+<div class="table-wrapper">
+
+<table>
+
+<tr>
+<th>Outcome Focus</th>
+<th>Process Focus</th>
+</tr>
+
+<tr>
+<td>"I lost, so the trade was bad."</td>
+<td>"Did I follow my plan?"</td>
+</tr>
+
+<tr>
+<td>"I won, so my decision was perfect."</td>
+<td>"Was the decision justified?"</td>
+</tr>
+
+<tr>
+<td>"I need to recover today."</td>
+<td>"I need to protect my risk limits."</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<h2>
+14. A Pre-Trade Mental Checklist
+</h2>
+
+<ul>
+
+<li>
+Am I calm enough to make a rational decision?
+</li>
+
+<li>
+Does this trade meet my strategy rules?
+</li>
+
+<li>
+Do I know where the trade is invalidated?
+</li>
+
+<li>
+Is the risk acceptable?
+</li>
+
+<li>
+Am I entering because of my plan or because
+I am afraid of missing the move?
+</li>
+
+<li>
+Am I trying to recover a previous loss?
+</li>
+
+</ul>
+
+
+<h2>
+15. When You Should Stop Trading
+</h2>
+
+<p>
+A trader should consider stopping when emotional
+conditions make disciplined decision-making
+difficult.
+</p>
+
+<p>
+Warning signs can include:
+</p>
+
+<ul>
+
+<li>
+Anger after a loss
+</li>
+
+<li>
+Strong urge to immediately recover money
+</li>
+
+<li>
+Repeated rule-breaking
+</li>
+
+<li>
+Unusual position sizes
+</li>
+
+<li>
+Trading without a clear setup
+</li>
+
+<li>
+Unable to accept a normal loss
+</li>
+
+</ul>
+
+
+<h2>
+16. Building Consistency
+</h2>
+
+<p>
+Consistency does not mean winning every day.
+</p>
+
+<p>
+It means repeatedly applying the same disciplined
+process while accepting that individual outcomes
+are uncertain.
+</p>
+
+<div class="key-point">
+
+<strong>Think in series, not single trades.</strong>
+
+<p>
+Evaluate your strategy over a meaningful sample
+of trades rather than judging everything from
+one result.
+</p>
+
+</div>
+
+
+<h2>
+17. Practical Exercise
+</h2>
+
+<div class="example">
+
+<h3>
+The 10-Trade Discipline Challenge</h3>
+
+<p>
+Before taking your next ten demo trades, write
+down your rules before entering each trade.
+</p>
+
+<p>
+After each trade, record whether you followed
+your rules.
+</p>
+
+<p>
+At the end of ten trades, calculate how many
+trades followed your plan.
+</p>
+
+<p>
+The objective is not simply to make money.
+The objective is to measure your discipline.
+</p>
+
+</div>
+
+
+<h2>
+18. Common Psychology Mistakes
+</h2>
+
+<ul>
+
+<li>
+Trading while angry or emotionally unstable.
+</li>
+
+<li>
+Increasing risk after losses.
+</li>
+
+<li>
+Taking trades because another trader posted a
+profit.
+</li>
+
+<li>
+Changing strategies after a few losing trades.
+</li>
+
+<li>
+Moving stop-losses because you cannot accept
+the planned loss.
+</li>
+
+<li>
+Trading constantly because you feel you must
+always be in the market.
+</li>
+
+<li>
+Confusing luck with skill after a winning trade.
+</li>
+
+</ul>
+
+
+<div class="reflection">
+
+<h2>
+🧠 Lesson 10 Checkpoint
+</h2>
+
+<ul>
+
+<li>
+What is trading psychology?
+</li>
+
+<li>
+How can fear affect trading decisions?
+</li>
+
+<li>
+What is greed?
+</li>
+
+<li>
+What does FOMO mean?
+</li>
+
+<li>
+What is revenge trading?
+</li>
+
+<li>
+What is overtrading?
+</li>
+
+<li>
+Why is discipline important?
+</li>
+
+<li>
+What information should a trading journal contain?
+</li>
+
+<li>
+Why can winning streaks create overconfidence?
+</li>
+
+<li>
+Why should traders focus on their process rather
+than one individual outcome?
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="lesson-navigation">
+
+<a href="risk-management.html"
+class="nav-button">
+← Previous Lesson
+</a>
+
+<a href="../trading.html"
+class="nav-button">
+Trading Academy
+</a>
+
+<a href="trading-strategy.html"
+class="nav-button">
+Next Lesson →
+</a>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer>
+
+<p>
+<strong>Kingdom Learning Hub</strong>
+</p>
+
+<p>
+By Richard
+</p>
+
+<p>
+Faith • Knowledge • Skills • Growth
+</p>
+
+<p>
+© 2026 Kingdom Learning Hub
+</p>
+
+</footer>
+
+
+</body>
+
+</html>

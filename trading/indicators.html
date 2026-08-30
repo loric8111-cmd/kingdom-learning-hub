@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Technical Indicators | Kingdom Learning Hub</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gold: #d4a017;
+    --gold-light: #f3c85b;
+    --dark: #070a10;
+    --card: rgba(255,255,255,0.055);
+    --border: rgba(255,255,255,0.12);
+    --text: #f4f5f7;
+    --muted: #a2a9b7;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    line-height: 1.8;
+}
+
+.container {
+    width: 90%;
+    max-width: 850px;
+    margin: auto;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(7,10,16,.95);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    min-height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--gold-light);
+}
+
+.logo small {
+    display: block;
+    color: #777;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.back {
+    color: var(--gold-light);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.lesson-header {
+    text-align: center;
+    padding: 80px 20px 55px;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(212,160,23,.13),
+            transparent 60%
+        );
+}
+
+.lesson-number {
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.lesson-header h1 {
+    font-size: clamp(36px,7vw,58px);
+    line-height: 1.1;
+    margin: 15px 0;
+}
+
+.lesson-header p {
+    color: var(--muted);
+    max-width: 650px;
+    margin: auto;
+}
+
+.lesson-content {
+    padding: 30px 0 80px;
+}
+
+.lesson-content h2 {
+    font-size: 27px;
+    margin: 40px 0 15px;
+    color: var(--gold-light);
+}
+
+.lesson-content p {
+    color: #c7cbd4;
+    margin-bottom: 18px;
+}
+
+.lesson-content ul {
+    margin: 15px 0 25px 25px;
+    color: #c7cbd4;
+}
+
+.lesson-content li {
+    margin-bottom: 10px;
+}
+
+.key-point {
+    margin: 30px 0;
+    padding: 25px;
+    background: rgba(212,160,23,.07);
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+}
+
+.key-point strong {
+    color: var(--gold-light);
+}
+
+.example {
+    margin: 30px 0;
+    padding: 25px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.example h3 {
+    color: var(--gold-light);
+    margin-bottom: 10px;
+}
+
+/* INDICATOR CARDS */
+
+.indicator-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.indicator-card {
+    padding: 25px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.indicator-card .symbol {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--gold-light);
+    margin-bottom: 8px;
+}
+
+.indicator-card h3 {
+    margin-bottom: 8px;
+}
+
+.indicator-card p {
+    font-size: 13px;
+    margin: 0;
+}
+
+/* COMPARISON TABLE */
+
+.table-wrapper {
+    overflow-x: auto;
+    margin: 25px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 550px;
+}
+
+th,
+td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    color: var(--gold-light);
+    background: rgba(212,160,23,.07);
+}
+
+td {
+    color: #c7cbd4;
+}
+
+/* NAVIGATION */
+
+.lesson-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 50px;
+}
+
+.nav-button {
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: var(--gold);
+    color: #111;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.nav-button:hover {
+    background: var(--gold-light);
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: #05070b;
+    border-top: 1px solid var(--border);
+}
+
+footer strong {
+    color: var(--gold-light);
+}
+
+footer p {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 6px;
+}
+
+@media(max-width:600px) {
+
+    .indicator-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lesson-navigation {
+        flex-direction: column;
+    }
+
+    .nav-button {
+        text-align: center;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">
+
+Kingdom <span>Learning Hub</span>
+
+<small>BY RICHARD</small>
+
+</div>
+
+<a href="../trading.html" class="back">
+← Trading Academy
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<section class="lesson-header">
+
+<div class="container">
+
+<div class="lesson-number">
+TRADING ACADEMY • LESSON 08
+</div>
+
+<h1>
+Technical Indicators
+</h1>
+
+<p>
+Learn what technical indicators measure,
+how common indicators work, and how they
+can be used as supporting information when
+studying price charts.
+</p>
+
+</div>
+
+</section>
+
+
+<main class="lesson-content">
+
+<div class="container">
+
+
+<h2>
+1. What Is a Technical Indicator?
+</h2>
+
+<p>
+A technical indicator is a mathematical calculation
+based on market data such as price and, in some
+cases, volume.
+</p>
+
+<p>
+Indicators transform historical market information
+into a visual or numerical representation that
+traders can study.
+</p>
+
+<div class="key-point">
+
+<strong>Important:</strong>
+
+<p>
+An indicator does not know the future. It processes
+available market data and can therefore be wrong.
+</p>
+
+</div>
+
+
+<h2>
+2. Common Indicators
+</h2>
+
+<div class="indicator-grid">
+
+<div class="indicator-card">
+
+<div class="symbol">
+MA
+</div>
+
+<h3>
+Moving Average
+</h3>
+
+<p>
+Helps smooth price data and visualize an average
+price over a selected period.
+</p>
+
+</div>
+
+
+<div class="indicator-card">
+
+<div class="symbol">
+RSI
+</div>
+
+<h3>
+Relative Strength Index
+</h3>
+
+<p>
+A momentum oscillator commonly used to study the
+speed and magnitude of recent price movements.
+</p>
+
+</div>
+
+
+<div class="indicator-card">
+
+<div class="symbol">
+MACD
+</div>
+
+<h3>
+Moving Average Convergence Divergence
+</h3>
+
+<p>
+A momentum and trend-following indicator based
+on moving averages.
+</p>
+
+</div>
+
+
+<div class="indicator-card">
+
+<div class="symbol">
+ATR
+</div>
+
+<h3>
+Average True Range
+</h3>
+
+<p>
+Measures market volatility rather than predicting
+whether price will rise or fall.
+</p>
+
+</div>
+
+</div>
+
+
+<h2>
+3. Moving Averages
+</h2>
+
+<p>
+A moving average calculates an average from a
+selected number of previous price observations.
+</p>
+
+<p>
+As new price data appears, older data eventually
+drops out of the calculation. This causes the
+average to move with price.
+</p>
+
+<p>
+Moving averages can help traders visualize the
+general direction of historical price movement.
+</p>
+
+
+<h2>
+4. Simple Moving Average — SMA
+</h2>
+
+<p>
+A Simple Moving Average gives equal mathematical
+weight to the observations included in its period.
+</p>
+
+<div class="example">
+
+<h3>
+Example</h3>
+
+<p>
+A 20-period SMA calculates an average using the
+selected 20 previous price observations.
+</p>
+
+<p>
+The exact value depends on the data and the
+calculation method used by the charting platform.
+</p>
+
+</div>
+
+
+<h2>
+5. Exponential Moving Average — EMA
+</h2>
+
+<p>
+An Exponential Moving Average gives greater weight
+to more recent price observations.
+</p>
+
+<p>
+Because of this weighting, an EMA can respond to
+recent price changes differently from an SMA.
+</p>
+
+
+<div class="table-wrapper">
+
+<table>
+
+<tr>
+<th>Indicator</th>
+<th>Basic Characteristic</th>
+</tr>
+
+<tr>
+<td>SMA</td>
+<td>Equal weighting within the selected period</td>
+</tr>
+
+<tr>
+<td>EMA</td>
+<td>Greater weighting toward recent data</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<h2>
+6. Moving Average Limitations
+</h2>
+
+<p>
+Moving averages are calculated from historical
+data. This means they respond to price rather
+than predicting price with certainty.
+</p>
+
+<p>
+They can also behave differently in trending and
+ranging markets.
+</p>
+
+<div class="key-point">
+
+<strong>Remember:</strong>
+
+<p>
+A moving average crossing another moving average
+is not automatically a profitable trading signal.
+</p>
+
+</div>
+
+
+<h2>
+7. RSI — Relative Strength Index
+</h2>
+
+<p>
+RSI is a momentum oscillator that commonly uses
+a scale from 0 to 100.
+</p>
+
+<p>
+It is designed to measure the strength of recent
+price movements.
+</p>
+
+<p>
+Traders often study RSI when considering whether
+recent momentum may be relatively strong or weak.
+</p>
+
+
+<h2>
+8. RSI and the 70/30 Levels
+</h2>
+
+<p>
+A common RSI setup highlights 70 and 30 as reference
+levels.
+</p>
+
+<ul>
+
+<li>
+RSI above 70 is commonly described as
+"overbought."
+</li>
+
+<li>
+RSI below 30 is commonly described as
+"oversold."
+</li>
+
+</ul>
+
+<div class="key-point">
+
+<strong>But be careful:</strong>
+
+<p>
+Overbought does not automatically mean "sell,"
+and oversold does not automatically mean "buy."
+</p>
+
+<p>
+Strong trends can remain at extreme RSI levels
+for extended periods.
+</p>
+
+</div>
+
+
+<h2>
+9. MACD
+</h2>
+
+<p>
+MACD stands for Moving Average Convergence
+Divergence.
+</p>
+
+<p>
+It is commonly used to study momentum and
+trend-related behavior.
+</p>
+
+<p>
+The indicator is built from exponential moving
+averages and includes a MACD line, signal line
+and histogram.
+</p>
+
+
+<h2>
+10. Understanding MACD Crossovers
+</h2>
+
+<p>
+Traders sometimes compare the MACD line with
+the signal line.
+</p>
+
+<p>
+When the two lines cross, traders may interpret
+the event as information about changing momentum.
+</p>
+
+<p>
+However, crossovers can produce false signals,
+especially in sideways markets.
+</p>
+
+
+<h2>
+11. ATR — Average True Range
+</h2>
+
+<p>
+ATR is primarily a volatility indicator.
+</p>
+
+<p>
+It helps describe how much an instrument has
+been moving over a selected period.
+</p>
+
+<p>
+ATR does not tell you whether the market will
+move upward or downward.
+</p>
+
+<div class="example">
+
+<h3>
+Example</h3>
+
+<p>
+If volatility increases, ATR may rise.
+</p>
+
+<p>
+If price movement becomes quieter, ATR may fall.
+</p>
+
+<p>
+This can help traders understand the changing
+volatility environment.
+</p>
+
+</div>
+
+
+<h2>
+12. Leading vs. Lagging Information
+</h2>
+
+<p>
+Some trading discussions classify indicators as
+"leading" or "lagging."
+</p>
+
+<p>
+Most traditional indicators are calculated from
+existing market data, so they should not be
+treated as crystal balls that predict the future.
+</p>
+
+<div class="table-wrapper">
+
+<table>
+
+<tr>
+<th>Concept</th>
+<th>Meaning</th>
+</tr>
+
+<tr>
+<td>Historical data</td>
+<td>Information already produced by the market</td>
+</tr>
+
+<tr>
+<td>Lagging behavior</td>
+<td>Indicator responds to previous price information</td>
+</tr>
+
+<tr>
+<td>Prediction</td>
+<td>A future outcome that remains uncertain</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<h2>
+13. Indicators and Price Action
+</h2>
+
+<p>
+Indicators can be used alongside the concepts
+you have already learned.
+</p>
+
+<p>
+For example, you might study:
+</p>
+
+<ul>
+
+<li>
+Market structure
+</li>
+
+<li>
+Support and resistance
+</li>
+
+<li>
+Trendlines
+</li>
+
+<li>
+Candlestick behavior
+</li>
+
+<li>
+Momentum indicators
+</li>
+
+<li>
+Volatility
+</li>
+
+</ul>
+
+<p>
+The purpose is to build a broader picture rather
+than depend on one indicator.
+</p>
+
+
+<h2>
+14. Avoid Indicator Overload
+</h2>
+
+<p>
+Adding many indicators to a chart does not
+necessarily improve analysis.
+</p>
+
+<p>
+Several indicators can also provide similar
+information because they are calculated from
+related price data.
+</p>
+
+<div class="key-point">
+
+<strong>Keep your chart understandable.</strong>
+
+<p>
+Use tools because they answer a specific analytical
+question—not simply because they look professional.
+</p>
+
+</div>
+
+
+<h2>
+15. Example of Combining Information
+</h2>
+
+<div class="example">
+
+<h3>
+Educational Example</h3>
+
+<p>
+Suppose market structure shows Higher Highs and
+Higher Lows.
+</p>
+
+<p>
+Price approaches a previously identified support
+zone.
+</p>
+
+<p>
+An indicator such as RSI shows that recent
+downward momentum has weakened.
+</p>
+
+<p>
+These observations may provide context for
+further analysis, but they do not guarantee that
+price will rise.
+</p>
+
+</div>
+
+
+<h2>
+16. Common Beginner Mistakes
+</h2>
+
+<ul>
+
+<li>
+Using indicators without understanding what they
+calculate.
+</li>
+
+<li>
+Treating RSI 70 as an automatic sell signal.
+</li>
+
+<li>
+Treating RSI 30 as an automatic buy signal.
+</li>
+
+<li>
+Entering every time two moving averages cross.
+</li>
+
+<li>
+Using too many indicators.
+</li>
+
+<li>
+Ignoring market structure and price action.
+</li>
+
+<li>
+Believing indicators can eliminate trading risk.
+</li>
+
+</ul>
+
+
+<h2>
+17. Practical Exercise
+</h2>
+
+<div class="example">
+
+<h3>
+Your Task</h3>
+
+<p>
+Open a demo EUR/USD chart.
+</p>
+
+<p>
+Add a 20-period SMA and a 50-period SMA.
+</p>
+
+<p>
+Then add RSI.
+</p>
+
+<p>
+Observe how the indicators behave during an
+uptrend, a downtrend and a ranging market.
+</p>
+
+<p>
+Do not place a real-money trade based solely
+on this exercise.
+</p>
+
+</div>
+
+
+<div class="reflection">
+
+<h2>
+🧠 Lesson 08 Checkpoint
+</h2>
+
+<ul>
+
+<li>
+What is a technical indicator?
+</li>
+
+<li>
+What does a moving average do?
+</li>
+
+<li>
+What is the difference between SMA and EMA?
+</li>
+
+<li>
+What does RSI measure?
+</li>
+
+<li>
+Why does RSI above 70 not automatically mean
+"sell"?
+</li>
+
+<li>
+What does MACD help traders study?
+</li>
+
+<li>
+What does ATR measure?
+</li>
+
+<li>
+Why can indicators give false signals?
+</li>
+
+<li>
+Why should you avoid indicator overload?
+</li>
+
+<li>
+Why should indicators be combined with broader
+market analysis?
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="lesson-navigation">
+
+<a href="trendlines.html"
+class="nav-button">
+← Previous Lesson
+</a>
+
+<a href="../trading.html"
+class="nav-button">
+Trading Academy
+</a>
+
+<a href="risk-management.html"
+class="nav-button">
+Next Lesson →
+</a>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer>
+
+<p>
+<strong>Kingdom Learning Hub</strong>
+</p>
+
+<p>
+By Richard
+</p>
+
+<p>
+Faith • Knowledge • Skills • Growth
+</p>
+
+<p>
+© 2026 Kingdom Learning Hub
+</p>
+
+</footer>
+
+
+</body>
+
+</html>

@@ -455,7 +455,7 @@
                 Build a consistent prayer life and
                 deepen your relationship with God.
             </p>
-            <a href="#">Prayer Resources →</a>
+            <a href="prayer/what-is-prayer.html">Prayer Resources →</a>
         </div>
 
         <div class="card">

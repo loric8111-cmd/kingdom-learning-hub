@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Wisdom & Proverbs | Kingdom Learning Hub</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gold: #d4a017;
+    --gold-light: #f3c85b;
+    --dark: #070a10;
+    --card: rgba(255,255,255,0.055);
+    --border: rgba(255,255,255,0.12);
+    --text: #f4f5f7;
+    --muted: #a2a9b7;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    line-height: 1.8;
+}
+
+.container {
+    width: 90%;
+    max-width: 850px;
+    margin: auto;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(7,10,16,.95);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    min-height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--gold-light);
+}
+
+.logo small {
+    display: block;
+    color: #777;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.back {
+    color: var(--gold-light);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.lesson-header {
+    text-align: center;
+    padding: 80px 20px 55px;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(212,160,23,.13),
+            transparent 60%
+        );
+}
+
+.lesson-number {
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.lesson-header h1 {
+    font-size: clamp(34px,7vw,58px);
+    line-height: 1.1;
+    margin: 15px 0;
+}
+
+.lesson-header p {
+    color: var(--muted);
+    max-width: 650px;
+    margin: auto;
+}
+
+.lesson-content {
+    padding: 30px 0 80px;
+}
+
+.lesson-content h2 {
+    font-size: 27px;
+    margin: 40px 0 15px;
+    color: var(--gold-light);
+}
+
+.lesson-content p {
+    color: #c7cbd4;
+    margin-bottom: 18px;
+}
+
+.lesson-content ul {
+    margin: 15px 0 25px 25px;
+    color: #c7cbd4;
+}
+
+.lesson-content li {
+    margin-bottom: 10px;
+}
+
+.key-point {
+    margin: 30px 0;
+    padding: 25px;
+    background: rgba(212,160,23,.07);
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+}
+
+.key-point strong {
+    color: var(--gold-light);
+}
+
+.scripture {
+    margin: 25px 0;
+    padding: 24px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.scripture strong {
+    color: var(--gold-light);
+}
+
+.example {
+    margin: 30px 0;
+    padding: 25px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.example h3 {
+    color: var(--gold-light);
+    margin-bottom: 10px;
+}
+
+.wisdom-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.wisdom-card {
+    padding: 24px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.wisdom-card .icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.wisdom-card h3 {
+    color: var(--gold-light);
+    margin-bottom: 8px;
+}
+
+.wisdom-card p {
+    font-size: 13px;
+    margin: 0;
+}
+
+.reflection {
+    margin-top: 45px;
+    padding: 30px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
+
+.reflection h2 {
+    margin-top: 0;
+}
+
+.lesson-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 50px;
+}
+
+.nav-button {
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: var(--gold);
+    color: #111;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.nav-button:hover {
+    background: var(--gold-light);
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: #05070b;
+    border-top: 1px solid var(--border);
+}
+
+footer strong {
+    color: var(--gold-light);
+}
+
+footer p {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 6px;
+}
+
+@media(max-width:600px) {
+
+    .wisdom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lesson-navigation {
+        flex-direction: column;
+    }
+
+    .nav-button {
+        text-align: center;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">
+
+Kingdom <span>Learning Hub</span>
+
+<small>BY RICHARD</small>
+
+</div>
+
+<a href="../bible-study.html" class="back">
+← Bible Studies
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<section class="lesson-header">
+
+<div class="container">
+
+<div class="lesson-number">
+BIBLE STUDIES • LESSON 08
+</div>
+
+<h1>
+Wisdom & Proverbs
+</h1>
+
+<p>
+Discover what biblical wisdom means and learn how
+God's wisdom can guide your decisions, relationships,
+speech, work and everyday life.
+</p>
+
+</div>
+
+</section>
+
+
+<main class="lesson-content">
+
+<div class="container">
+
+
+<h2>
+1. What Is Biblical Wisdom?
+</h2>
+
+<p>
+Biblical wisdom is more than having a lot of
+information. It involves learning to understand
+what is right and applying that understanding to
+the way we live.
+</p>
+
+<p>
+A person may have knowledge without making wise
+decisions. Biblical wisdom connects understanding
+with godly action.
+</p>
+
+<div class="key-point">
+
+<strong>Key idea:</strong>
+
+<p>
+Knowledge tells you what you know. Wisdom helps
+you understand how to live according to what is
+right.
+</p>
+
+</div>
+
+
+<h2>
+2. The Book of Proverbs
+</h2>
+
+<p>
+Proverbs is a collection of wisdom teachings found
+in the Old Testament. Much of the book gives
+practical instruction about character, speech,
+work, relationships, money, discipline and
+decision-making.
+</p>
+
+<div class="scripture">
+
+<strong>Proverbs 1:7</strong>
+
+<p>
+The verse presents the fear of the Lord as the
+beginning of knowledge and contrasts it with
+foolish rejection of wisdom and instruction.
+</p>
+
+</div>
+
+
+<h2>
+3. The Fear of the Lord
+</h2>
+
+<p>
+In Proverbs, the fear of the Lord is closely
+connected with wisdom. It does not mean living
+in constant panic before God.
+</p>
+
+<p>
+It points toward reverence, respect and a serious
+recognition of God's authority.
+</p>
+
+<div class="key-point">
+
+<strong>Wisdom begins with God.</strong>
+
+<p>
+Biblical wisdom does not place human intelligence
+above God. It begins with recognizing Him as the
+source of truth and moral authority.
+</p>
+
+</div>
+
+
+<h2>
+4. Wisdom in Everyday Life
+</h2>
+
+<div class="wisdom-grid">
+
+<div class="wisdom-card">
+
+<div class="icon">🗣️</div>
+
+<h3>
+Speech
+</h3>
+
+<p>
+Think before speaking. Words can encourage,
+heal, damage or create conflict.
+</p>
+
+</div>
+
+
+<div class="wisdom-card">
+
+<div class="icon">🤝</div>
+
+<h3>
+Friendships
+</h3>
+
+<p>
+The people around you can influence your
+character, decisions and direction.
+</p>
+
+</div>
+
+
+<div class="wisdom-card">
+
+<div class="icon">💰</div>
+
+<h3>
+Money
+</h3>
+
+<p>
+Use financial resources responsibly and avoid
+allowing money to control your priorities.
+</p>
+
+</div>
+
+
+<div class="wisdom-card">
+
+<div class="icon">🛠️</div>
+
+<h3>
+Work
+</h3>
+
+<p>
+Diligence, responsibility and preparation are
+repeated themes in biblical wisdom.
+</p>
+
+</div>
+
+</div>
+
+
+<h2>
+5. Wisdom in Speech
+</h2>
+
+<p>
+Words are powerful. A wise person learns when to
+speak, when to listen and how to communicate
+without unnecessarily creating conflict.
+</p>
+
+<div class="scripture">
+
+<strong>Proverbs 15:1</strong>
+
+<p>
+This proverb teaches that a gentle answer can
+turn away anger, while harsh words can stir up
+anger.
+</p>
+
+</div>
+
+<p>
+Before speaking, ask:
+</p>
+
+<ul>
+
+<li>
+Is what I am about to say true?
+</li>
+
+<li>
+Is it necessary?
+</li>
+
+<li>
+Will it help or unnecessarily harm?
+</li>
+
+<li>
+Am I speaking from wisdom or anger?
+</li>
+
+</ul>
+
+
+<h2>
+6. Wisdom in Friendships
+</h2>
+
+<p>
+Relationships can influence the direction of our
+lives.
+</p>
+
+<div class="scripture">
+
+<strong>Proverbs 13:20</strong>
+
+<p>
+The proverb connects walking with wise people
+with growing in wisdom and warns about the
+consequences of keeping company with fools.
+</p>
+
+</div>
+
+<div class="key-point">
+
+<strong>Choose influences carefully.</strong>
+
+<p>
+Ask whether the people and content around you
+encourage the character and direction you want
+to develop.
+</p>
+
+</div>
+
+
+<h2>
+7. Wisdom and Correction
+</h2>
+
+<p>
+A wise person does not automatically reject
+correction.
+</p>
+
+<p>
+Correction can reveal weaknesses, expose mistakes
+and provide an opportunity for growth.
+</p>
+
+<div class="scripture">
+
+<strong>Proverbs 12:1</strong>
+
+<p>
+The proverb strongly connects loving discipline
+with loving knowledge and contrasts it with
+rejecting correction.
+</p>
+
+</div>
+
+
+<h2>
+8. Wisdom and Humility
+</h2>
+
+<p>
+Pride can make a person believe they already know
+everything they need to know.
+</p>
+
+<p>
+Humility creates room for learning, correction
+and growth.
+</p>
+
+<div class="scripture">
+
+<strong>Proverbs 11:2</strong>
+
+<p>
+The proverb contrasts pride with humility and
+associates humility with wisdom.
+</p>
+
+</div>
+
+
+<h2>
+9. Wisdom and Money
+</h2>
+
+<p>
+The Bible contains many teachings about how
+people should approach wealth, possessions,
+generosity and responsibility.
+</p>
+
+<p>
+Money can be useful, but it should not become the
+foundation of a person's identity or the highest
+priority in life.
+</p>
+
+<div class="example">
+
+<h3>
+Wise Financial Thinking</h3>
+
+<ul>
+
+<li>
+Understand what you earn and spend.
+</li>
+
+<li>
+Avoid unnecessary debt where possible.
+</li>
+
+<li>
+Plan before making major financial decisions.
+</li>
+
+<li>
+Do not allow greed to control your choices.
+</li>
+
+<li>
+Consider generosity and the needs of others.
+</li>
+
+</ul>
+
+</div>
+
+
+<h2>
+10. Wisdom and Work
+</h2>
+
+<p>
+Proverbs frequently contrasts diligence with
+laziness.
+</p>
+
+<div class="scripture">
+
+<strong>Proverbs 6:6–11</strong>
+
+<p>
+The passage uses the ant as an example of
+initiative, preparation and diligent work.
+</p>
+
+</div>
+
+<p>
+The lesson is not simply "work harder." It also
+encourages preparation, responsibility and
+recognizing opportunities to act wisely.
+</p>
+
+
+<h2>
+11. Wisdom Before Decisions
+</h2>
+
+<p>
+Wise decision-making requires more than acting on
+the first emotion that appears.
+</p>
+
+<p>
+Before making an important decision, consider:
+</p>
+
+<ul>
+
+<li>
+What are the facts?
+</li>
+
+<li>
+What are the possible consequences?
+</li>
+
+<li>
+Am I acting from anger, fear or pride?
+</li>
+
+<li>
+Have I sought wise counsel?
+</li>
+
+<li>
+Does this decision agree with biblical principles?
+</li>
+
+<li>
+What could happen if I am wrong?
+</li>
+
+</ul>
+
+
+<h2>
+12. Wisdom and Listening
+</h2>
+
+<p>
+A wise person is willing to listen.
+</p>
+
+<p>
+Listening does not mean agreeing with everything
+you hear. It means being willing to understand,
+evaluate and learn before responding.
+</p>
+
+<div class="scripture">
+
+<strong>Proverbs 18:13</strong>
+
+<p>
+The proverb warns against answering a matter
+before hearing it fully.
+</p>
+
+</div>
+
+
+<h2>
+13. Wisdom and Anger
+</h2>
+
+<p>
+Anger can affect judgment and communication.
+Biblical wisdom encourages patience and restraint.
+</p>
+
+<div class="scripture">
+
+<strong>Proverbs 14:29</strong>
+
+<p>
+The proverb connects patience with understanding
+and contrasts it with a quick temper.
+</p>
+
+</div>
+
+<div class="key-point">
+
+<strong>Pause before reacting.</strong>
+
+<p>
+Sometimes the wisest response is to wait, calm
+down and think before speaking or acting.
+</p>
+
+</div>
+
+
+<h2>
+14. Wisdom and Planning
+</h2>
+
+<p>
+Wise living involves recognizing that actions
+have consequences.
+</p>
+
+<p>
+Planning does not mean controlling the future.
+It means preparing responsibly while recognizing
+that circumstances can change.
+</p>
+
+<div class="scripture">
+
+<strong>Proverbs 16:3</strong>
+
+<p>
+The proverb encourages committing one's works
+to the Lord.
+</p>
+
+</div>
+
+
+<h2>
+15. Knowledge vs Wisdom
+</h2>
+
+<div class="example">
+
+<h3>
+Consider the Difference</h3>
+
+<p>
+<strong>Knowledge:</strong> You know that anger
+can damage relationships.
+</p>
+
+<p>
+<strong>Wisdom:</strong> When someone insults you,
+you control your response instead of immediately
+reacting.
+</p>
+
+<p>
+<strong>Knowledge:</strong> You know that discipline
+is important.
+</p>
+
+<p>
+<strong>Wisdom:</strong> You create routines that
+help you consistently practice what you believe.
+</p>
+
+</div>
+
+
+<h2>
+16. Wisdom Is Practiced
+</h2>
+
+<p>
+Reading Proverbs is valuable, but biblical wisdom
+becomes meaningful when it changes behavior.
+</p>
+
+<p>
+The goal is not simply to collect Bible verses.
+The goal is to allow God's truth to shape the way
+we think, speak and live.
+</p>
+
+<div class="key-point">
+
+<strong>Read → Understand → Apply → Reflect.</strong>
+
+<p>
+Use this pattern when studying Proverbs or other
+parts of Scripture.
+</p>
+
+</div>
+
+
+<h2>
+17. A Simple Proverbs Study Method
+</h2>
+
+<div class="wisdom-grid">
+
+<div class="wisdom-card">
+
+<div class="icon">📖</div>
+
+<h3>
+Read
+</h3>
+
+<p>
+Read a small section carefully rather than rushing
+through many chapters.
+</p>
+
+</div>
+
+
+<div class="wisdom-card">
+
+<div class="icon">🔎</div>
+
+<h3>
+Understand
+</h3>
+
+<p>
+Ask what the passage is teaching about God,
+people, wisdom or behavior.
+</p>
+
+</div>
+
+
+<div class="wisdom-card">
+
+<div class="icon">🛠️</div>
+
+<h3>
+Apply
+</h3>
+
+<p>
+Identify one practical action you can take.
+</p>
+
+</div>
+
+
+<div class="wisdom-card">
+
+<div class="icon">🧠</div>
+
+<h3>
+Reflect
+</h3>
+
+<p>
+Return later and consider whether your behavior
+is changing.
+</p>
+
+</div>
+
+</div>
+
+
+<h2>
+18. Proverbs to Explore
+</h2>
+
+<ul>
+
+<li>
+Proverbs 1 — Purpose of Proverbs and beginning of wisdom
+</li>
+
+<li>
+Proverbs 3 — Trusting God and seeking wisdom
+</li>
+
+<li>
+Proverbs 4 — Guarding your heart and pursuing wisdom
+</li>
+
+<li>
+Proverbs 6 — Diligence and avoiding destructive behavior
+</li>
+
+<li>
+Proverbs 10 — Wisdom, speech and conduct
+</li>
+
+<li>
+Proverbs 12 — Correction and character
+</li>
+
+<li>
+Proverbs 13 — Discipline and relationships
+</li>
+
+<li>
+Proverbs 15 — Speech and anger
+</li>
+
+<li>
+Proverbs 16 — Decisions, pride and humility
+</li>
+
+<li>
+Proverbs 18 — Words, listening and relationships
+</li>
+
+</ul>
+
+
+<h2>
+19. Practical Challenge
+</h2>
+
+<div class="example">
+
+<h3>
+7-Day Wisdom Challenge</h3>
+
+<p>
+For seven days, read one short section from
+Proverbs each day.
+</p>
+
+<p>
+Write down:
+</p>
+
+<ul>
+
+<li>
+One thing you learned.
+</li>
+
+<li>
+One mistake you need to avoid.
+</li>
+
+<li>
+One action you can apply.
+</li>
+
+<li>
+One prayer related to what you learned.
+</li>
+
+</ul>
+
+<p>
+At the end of seven days, review your notes and
+identify the lesson that challenged you most.
+</p>
+
+</div>
+
+
+<div class="reflection">
+
+<h2>
+📖 Lesson 08 Reflection
+</h2>
+
+<ul>
+
+<li>
+What is biblical wisdom?
+</li>
+
+<li>
+What is the difference between knowledge and
+wisdom?
+</li>
+
+<li>
+Why does Proverbs connect wisdom with the fear
+of the Lord?
+</li>
+
+<li>
+How can your words demonstrate wisdom?
+</li>
+
+<li>
+How can friendships influence your character?
+</li>
+
+<li>
+Why is accepting correction important?
+</li>
+
+<li>
+How can wisdom affect your approach to money?
+</li>
+
+<li>
+What can the Proverbs teach us about work?
+</li>
+
+<li>
+Why should we pause before making emotional
+decisions?
+</li>
+
+<li>
+What is one area of your life where you need
+more wisdom?
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="lesson-navigation">
+
+<a href="temptation-self-control.html"
+class="nav-button">
+← Previous Lesson
+</a>
+
+<a href="../bible-study.html"
+class="nav-button">
+Bible Studies
+</a>
+
+<a href="serving-others.html"
+class="nav-button">
+Next Lesson →
+</a>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer>
+
+<p>
+<strong>Kingdom Learning Hub</strong>
+</p>
+
+<p>
+By Richard
+</p>
+
+<p>
+Faith • Knowledge • Skills • Growth
+</p>
+
+<p>
+© 2026 Kingdom Learning Hub
+</p>
+
+</footer>
+
+
+</body>
+
+</html>

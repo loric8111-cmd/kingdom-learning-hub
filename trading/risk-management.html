@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Risk Management | Kingdom Learning Hub</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gold: #d4a017;
+    --gold-light: #f3c85b;
+    --dark: #070a10;
+    --card: rgba(255,255,255,0.055);
+    --border: rgba(255,255,255,0.12);
+    --text: #f4f5f7;
+    --muted: #a2a9b7;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    line-height: 1.8;
+}
+
+.container {
+    width: 90%;
+    max-width: 850px;
+    margin: auto;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(7,10,16,.95);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    min-height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--gold-light);
+}
+
+.logo small {
+    display: block;
+    color: #777;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.back {
+    color: var(--gold-light);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.lesson-header {
+    text-align: center;
+    padding: 80px 20px 55px;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(212,160,23,.13),
+            transparent 60%
+        );
+}
+
+.lesson-number {
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.lesson-header h1 {
+    font-size: clamp(36px,7vw,58px);
+    line-height: 1.1;
+    margin: 15px 0;
+}
+
+.lesson-header p {
+    color: var(--muted);
+    max-width: 650px;
+    margin: auto;
+}
+
+.lesson-content {
+    padding: 30px 0 80px;
+}
+
+.lesson-content h2 {
+    font-size: 27px;
+    margin: 40px 0 15px;
+    color: var(--gold-light);
+}
+
+.lesson-content p {
+    color: #c7cbd4;
+    margin-bottom: 18px;
+}
+
+.lesson-content ul {
+    margin: 15px 0 25px 25px;
+    color: #c7cbd4;
+}
+
+.lesson-content li {
+    margin-bottom: 10px;
+}
+
+.key-point {
+    margin: 30px 0;
+    padding: 25px;
+    background: rgba(212,160,23,.07);
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+}
+
+.key-point strong {
+    color: var(--gold-light);
+}
+
+.example {
+    margin: 30px 0;
+    padding: 25px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.example h3 {
+    color: var(--gold-light);
+    margin-bottom: 10px;
+}
+
+.formula {
+    margin: 25px 0;
+    padding: 20px;
+    text-align: center;
+    background: #0b0f17;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--gold-light);
+    font-size: 18px;
+    font-weight: bold;
+    overflow-x: auto;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    margin: 25px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 550px;
+}
+
+th,
+td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    color: var(--gold-light);
+    background: rgba(212,160,23,.07);
+}
+
+td {
+    color: #c7cbd4;
+}
+
+.reflection {
+    margin-top: 45px;
+    padding: 30px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
+
+.reflection h2 {
+    margin-top: 0;
+}
+
+.lesson-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 50px;
+}
+
+.nav-button {
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: var(--gold);
+    color: #111;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.nav-button:hover {
+    background: var(--gold-light);
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: #05070b;
+    border-top: 1px solid var(--border);
+}
+
+footer strong {
+    color: var(--gold-light);
+}
+
+footer p {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 6px;
+}
+
+@media(max-width:600px) {
+
+    .lesson-navigation {
+        flex-direction: column;
+    }
+
+    .nav-button {
+        text-align: center;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">
+
+Kingdom <span>Learning Hub</span>
+
+<small>BY RICHARD</small>
+
+</div>
+
+<a href="../trading.html" class="back">
+← Trading Academy
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<section class="lesson-header">
+
+<div class="container">
+
+<div class="lesson-number">
+TRADING ACADEMY • LESSON 09
+</div>
+
+<h1>
+Risk Management
+</h1>
+
+<p>
+Learn how traders manage potential losses,
+calculate position size, use stop-losses and
+protect their trading capital.
+</p>
+
+</div>
+
+</section>
+
+
+<main class="lesson-content">
+
+<div class="container">
+
+
+<h2>
+1. What Is Risk Management?
+</h2>
+
+<p>
+Risk management is the process of controlling
+how much money you could lose if a trade does
+not go as expected.
+</p>
+
+<p>
+It is one of the most important parts of a
+trading plan because no analysis method can
+guarantee that every trade will be profitable.
+</p>
+
+<div class="key-point">
+
+<strong>Core principle:</strong>
+
+<p>
+The goal is not to avoid every losing trade.
+The goal is to prevent individual losses from
+destroying your trading account.
+</p>
+
+</div>
+
+
+<h2>
+2. Risk Per Trade
+</h2>
+
+<p>
+Risk per trade is the amount of your account
+you are prepared to lose if your trade reaches
+its planned stop-loss.
+</p>
+
+<p>
+Many traders express this as a percentage of
+account equity.
+</p>
+
+<div class="formula">
+Risk Amount = Account Balance × Risk Percentage
+</div>
+
+
+<h2>
+3. Example: Calculating Risk
+</h2>
+
+<div class="example">
+
+<h3>
+Educational Example</h3>
+
+<p>
+Suppose a hypothetical account contains
+$1,000.
+</p>
+
+<p>
+If the trader chooses to risk 1% on one trade:
+</p>
+
+<div class="formula">
+$1,000 × 0.01 = $10
+</div>
+
+<p>
+The planned risk would therefore be $10 before
+considering trading costs such as spreads,
+commissions or slippage.
+</p>
+
+</div>
+
+
+<h2>
+4. Stop-Loss
+</h2>
+
+<p>
+A stop-loss is an order or predefined exit
+level designed to limit a trade's loss if price
+moves against the position.
+</p>
+
+<p>
+The exact execution price can differ from the
+intended level during fast markets or gaps,
+depending on the instrument and broker.
+</p>
+
+<div class="key-point">
+
+<strong>A stop-loss is not a guarantee of an exact
+loss.</strong>
+
+<p>
+Slippage and market conditions can cause the
+actual result to differ from the planned risk.
+</p>
+
+</div>
+
+
+<h2>
+5. Why Stop-Loss Placement Matters
+</h2>
+
+<p>
+A stop-loss should be connected to the reason
+for taking the trade.
+</p>
+
+<p>
+Placing a stop extremely close simply to reduce
+the dollar amount of risk can cause a position
+to exit from normal market fluctuations.
+</p>
+
+<p>
+Instead, traders should first determine where
+their trade idea would be invalidated and then
+calculate an appropriate position size.
+</p>
+
+
+<h2>
+6. Position Sizing
+</h2>
+
+<p>
+Position sizing determines how large a trade
+should be based on the amount of money being
+risked and the distance to the stop-loss.
+</p>
+
+<p>
+The general concept is:
+</p>
+
+<div class="formula">
+Position Size = Risk Amount ÷ Risk Per Unit
+</div>
+
+<p>
+The exact calculation depends on the instrument,
+contract specifications, account currency,
+stop distance and broker.
+</p>
+
+
+<h2>
+7. Example of Position Sizing</h2>
+
+<div class="example">
+
+<h3>
+Simplified Example</h3>
+
+<p>
+Suppose your planned risk is $10.
+</p>
+
+<p>
+Your chosen position would lose $2 for every
+unit of movement between the entry and
+stop-loss.
+</p>
+
+<div class="formula">
+$10 ÷ $2 = 5 units
+</div>
+
+<p>
+This simplified example gives a position size
+of 5 units.
+</p>
+
+<p>
+Real forex position sizing requires the actual
+pip value or monetary value per price movement
+for the specific instrument.
+</p>
+
+</div>
+
+
+<h2>
+8. Risk-to-Reward Ratio
+</h2>
+
+<p>
+Risk-to-reward compares the amount potentially
+lost with the amount targeted for a trade.
+</p>
+
+<p>
+For example, a 1:2 risk-to-reward setup means
+the planned potential reward is twice the planned
+risk.
+</p>
+
+<div class="formula">
+Risk : Reward = 1 : 2
+</div>
+
+<p>
+If the planned risk were $10, the hypothetical
+target would be $20 before costs.
+</p>
+
+<div class="key-point">
+
+<strong>Important:</strong>
+
+<p>
+A high risk-to-reward ratio does not guarantee
+profitability. The probability of reaching the
+target also matters.
+</p>
+
+</div>
+
+
+<h2>
+9. Win Rate and Risk-to-Reward
+</h2>
+
+<p>
+Win rate and risk-to-reward should be considered
+together.
+</p>
+
+<div class="table-wrapper">
+
+<table>
+
+<tr>
+<th>Example</th>
+<th>Risk</th>
+<th>Target</th>
+</tr>
+
+<tr>
+<td>1:1</td>
+<td>$10</td>
+<td>$10</td>
+</tr>
+
+<tr>
+<td>1:2</td>
+<td>$10</td>
+<td>$20</td>
+</tr>
+
+<tr>
+<td>1:3</td>
+<td>$10</td>
+<td>$30</td>
+</tr>
+
+</table>
+
+</div>
+
+<p>
+These numbers describe planned outcomes, not
+guaranteed results.
+</p>
+
+
+<h2>
+10. Leverage
+</h2>
+
+<p>
+Leverage allows a trader to control a larger
+notional position using a smaller amount of
+margin.
+</p>
+
+<p>
+For example, 1:100 leverage means that $1 of
+margin can support up to $100 of notional
+exposure, subject to the broker's rules and
+instrument specifications.
+</p>
+
+<div class="key-point">
+
+<strong>Leverage does not make a trade safer.</strong>
+
+<p>
+Higher leverage can make it possible to open
+larger positions, which can increase both
+potential gains and potential losses.
+</p>
+
+</div>
+
+
+<h2>
+11. Margin
+</h2>
+
+<p>
+Margin is the amount of account funds required
+to open and maintain a leveraged position.
+</p>
+
+<p>
+Margin is not the same thing as the maximum
+amount you can afford to lose.
+</p>
+
+<p>
+A position can require a relatively small amount
+of margin while still exposing the account to
+significant market risk.
+</p>
+
+
+<h2>
+12. Drawdown
+</h2>
+
+<p>
+Drawdown measures a decline from an account's
+previous peak value.
+</p>
+
+<div class="example">
+
+<h3>
+Example</h3>
+
+<p>
+An account grows from $1,000 to $1,200.
+</p>
+
+<p>
+It then falls to $1,080.
+</p>
+
+<p>
+The decline from the $1,200 peak is:
+</p>
+
+<div class="formula">
+($1,200 - $1,080) ÷ $1,200 × 100 = 10%
+</div>
+
+<p>
+The account has experienced a 10% drawdown
+from its peak.
+</p>
+
+</div>
+
+
+<h2>
+13. Why Large Losses Are Dangerous
+</h2>
+
+<p>
+The percentage gain required to recover from a
+loss becomes larger as the loss increases.
+</p>
+
+<div class="table-wrapper">
+
+<table>
+
+<tr>
+<th>Account Loss</th>
+<th>Gain Needed to Recover</th>
+</tr>
+
+<tr>
+<td>10%</td>
+<td>11.11%</td>
+</tr>
+
+<tr>
+<td>20%</td>
+<td>25%</td>
+</tr>
+
+<tr>
+<td>30%</td>
+<td>42.86%</td>
+</tr>
+
+<tr>
+<td>50%</td>
+<td>100%</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="key-point">
+
+<strong>Protecting capital matters.</strong>
+
+<p>
+A 50% account loss requires a 100% gain on the
+remaining capital just to return to the starting
+balance.
+</p>
+
+</div>
+
+
+<h2>
+14. Losing Streaks
+</h2>
+
+<p>
+Even a strategy that has historically performed
+well can experience a sequence of losing trades.
+</p>
+
+<p>
+Risk management should therefore account for
+the possibility of consecutive losses.
+</p>
+
+<p>
+Reducing risk can help limit the damage caused
+by an unexpected losing streak.
+</p>
+
+
+<h2>
+15. Small Accounts
+</h2>
+
+<p>
+Small accounts require particular discipline.
+</p>
+
+<p>
+Trying to turn a very small balance into a large
+amount quickly can encourage excessive leverage,
+oversized positions and emotional decisions.
+</p>
+
+<div class="key-point">
+
+<strong>Do not confuse account size with acceptable
+risk.</strong>
+
+<p>
+A small balance does not justify risking an
+unreasonably large percentage of the account.
+</p>
+
+</div>
+
+
+<h2>
+16. Trading Costs
+</h2>
+
+<p>
+Risk calculations should consider costs such as:
+</p>
+
+<ul>
+
+<li>
+Spread
+</li>
+
+<li>
+Commission
+</li>
+
+<li>
+Swap or overnight financing where applicable
+</li>
+
+<li>
+Slippage
+</li>
+
+</ul>
+
+<p>
+These costs can affect the actual result of a
+trade.
+</p>
+
+
+<h2>
+17. Risk Management Checklist
+</h2>
+
+<ul>
+
+<li>
+What is my account equity?
+</li>
+
+<li>
+How much money am I willing to risk?
+</li>
+
+<li>
+Where is the trade idea invalidated?
+</li>
+
+<li>
+Where is the stop-loss?
+</li>
+
+<li>
+What is the position size?
+</li>
+
+<li>
+What are the trading costs?
+</li>
+
+<li>
+What is the planned reward relative to the risk?
+</li>
+
+<li>
+Can I accept the potential loss without changing
+my plan emotionally?
+</li>
+
+</ul>
+
+
+<h2>
+18. Common Risk Management Mistakes
+</h2>
+
+<ul>
+
+<li>
+Risking too much on one trade.
+</li>
+
+<li>
+Increasing position size after a loss to recover
+money quickly.
+</li>
+
+<li>
+Moving a stop-loss farther away because the trade
+is losing.
+</li>
+
+<li>
+Using excessive leverage.
+</li>
+
+<li>
+Ignoring spread, commission or slippage.
+</li>
+
+<li>
+Trading money needed for essential expenses.
+</li>
+
+<li>
+Taking multiple highly correlated positions without
+considering their combined exposure.
+</li>
+
+</ul>
+
+
+<h2>
+19. Practical Exercise
+</h2>
+
+<div class="example">
+
+<h3>
+Exercise A</h3>
+
+<p>
+Imagine an account with $500.
+</p>
+
+<p>
+You decide, for this educational exercise, to
+risk 1%.
+</p>
+
+<div class="formula">
+$500 × 0.01 = $5
+</div>
+
+<p>
+Your planned risk is $5.
+</p>
+
+</div>
+
+
+<div class="example">
+
+<h3>
+Exercise B</h3>
+
+<p>
+Imagine an account with $2,000 and a hypothetical
+risk limit of 0.5%.
+</p>
+
+<div class="formula">
+$2,000 × 0.005 = $10
+</div>
+
+<p>
+The planned risk is $10.
+</p>
+
+</div>
+
+
+<div class="reflection">
+
+<h2>
+🧠 Lesson 09 Checkpoint
+</h2>
+
+<ul>
+
+<li>
+What is risk management?
+</li>
+
+<li>
+How do you calculate a risk amount from account
+balance and risk percentage?
+</li>
+
+<li>
+What is a stop-loss?
+</li>
+
+<li>
+Why can actual stop-loss execution differ from
+the intended level?
+</li>
+
+<li>
+What is position sizing?
+</li>
+
+<li>
+What does risk-to-reward mean?
+</li>
+
+<li>
+Why does leverage increase exposure rather than
+automatically reduce risk?
+</li>
+
+<li>
+What is drawdown?
+</li>
+
+<li>
+Why are large account losses difficult to recover
+from?
+</li>
+
+<li>
+Why is protecting capital important?
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="lesson-navigation">
+
+<a href="indicators.html"
+class="nav-button">
+← Previous Lesson
+</a>
+
+<a href="../trading.html"
+class="nav-button">
+Trading Academy
+</a>
+
+<a href="trading-psychology.html"
+class="nav-button">
+Next Lesson →
+</a>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer>
+
+<p>
+<strong>Kingdom Learning Hub</strong>
+</p>
+
+<p>
+By Richard
+</p>
+
+<p>
+Faith • Knowledge • Skills • Growth
+</p>
+
+<p>
+© 2026 Kingdom Learning Hub
+</p>
+
+</footer>
+
+
+</body>
+
+</html>

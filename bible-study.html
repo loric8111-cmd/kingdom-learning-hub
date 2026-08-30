@@ -41,6 +41,7 @@ body {
     margin: auto;
 }
 
+
 /* HEADER */
 
 header {
@@ -59,7 +60,9 @@ nav {
     min-height: 72px;
 
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
 }
 
@@ -74,16 +77,26 @@ nav {
 
 .logo small {
     display: block;
+
     color: #777;
+
     font-size: 9px;
+
     letter-spacing: 2px;
 }
 
 .back {
     color: var(--gold-light);
+
     text-decoration: none;
+
     font-size: 13px;
 }
+
+.back:hover {
+    color: white;
+}
+
 
 /* HERO */
 
@@ -128,6 +141,7 @@ nav {
     color: var(--muted);
 }
 
+
 /* LESSONS */
 
 .lessons {
@@ -142,11 +156,14 @@ nav {
 
 .intro h2 {
     font-size: 32px;
+
+    margin-bottom: 8px;
 }
 
 .intro p {
     color: var(--muted);
 }
+
 
 /* GRID */
 
@@ -158,6 +175,7 @@ nav {
 
     gap: 20px;
 }
+
 
 /* CARD */
 
@@ -176,6 +194,10 @@ nav {
     border: 1px solid var(--border);
 
     transition: .35s;
+
+    display: flex;
+
+    flex-direction: column;
 }
 
 .lesson:hover {
@@ -229,11 +251,18 @@ nav {
     font-weight: bold;
 
     transition: .3s;
+
+    margin-top: auto;
+
+    text-align: center;
 }
 
 .lesson a:hover {
     background: var(--gold-light);
+
+    transform: translateY(-2px);
 }
+
 
 /* FOOTER */
 
@@ -257,6 +286,29 @@ footer p {
     font-size: 13px;
 
     margin: 6px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+    .hero {
+        padding: 65px 15px 50px;
+    }
+
+    .lesson {
+        padding: 25px;
+    }
+
+    .lesson h3 {
+        font-size: 20px;
+    }
+
+    nav {
+        min-height: 65px;
+    }
+
 }
 
 </style>
@@ -283,9 +335,12 @@ Kingdom <span>Learning Hub</span>
 
 </div>
 
+
 <a href="worship.html"
 class="back">
+
 ← Worship
+
 </a>
 
 </nav>
@@ -293,6 +348,7 @@ class="back">
 </div>
 
 </header>
+
 
 
 <!-- HERO -->
@@ -322,6 +378,7 @@ strengthen your faith and grow in wisdom.
 </section>
 
 
+
 <!-- LESSONS -->
 
 <section class="lessons">
@@ -336,16 +393,18 @@ Bible Study Courses
 </h2>
 
 <p>
-Choose a lesson to begin your study.
+Follow the lessons in order and grow step by step.
 </p>
 
 </div>
 
 
+
 <div class="lesson-grid">
 
 
-<!-- LESSON 1 -->
+
+<!-- LESSON 01 -->
 
 <div class="lesson">
 
@@ -369,7 +428,8 @@ Start Lesson →
 </div>
 
 
-<!-- LESSON 2 -->
+
+<!-- LESSON 02 -->
 
 <div class="lesson">
 
@@ -393,7 +453,8 @@ Start Lesson →
 </div>
 
 
-<!-- LESSON 3 -->
+
+<!-- LESSON 03 -->
 
 <div class="lesson">
 
@@ -417,7 +478,8 @@ Start Lesson →
 </div>
 
 
-<!-- LESSON 4 -->
+
+<!-- LESSON 04 -->
 
 <div class="lesson">
 
@@ -441,7 +503,8 @@ Start Lesson →
 </div>
 
 
-<!-- LESSON 5 -->
+
+<!-- LESSON 05 -->
 
 <div class="lesson">
 
@@ -465,7 +528,8 @@ Start Lesson →
 </div>
 
 
-<!-- LESSON 6 -->
+
+<!-- LESSON 06 -->
 
 <div class="lesson">
 
@@ -489,11 +553,116 @@ Start Lesson →
 </div>
 
 
+
+<!-- LESSON 07 -->
+
+<div class="lesson">
+
+<div class="number">
+LESSON 07
+</div>
+
+<h3>
+Temptation & Self-Control
+</h3>
+
+<p>
+Learn how to recognize temptation,
+develop self-control and make wise
+decisions in your walk with God.
+</p>
+
+<a href="lessons/temptation-self-control.html">
+Start Lesson →
+</a>
+
+</div>
+
+
+
+<!-- LESSON 08 -->
+
+<div class="lesson">
+
+<div class="number">
+LESSON 08
+</div>
+
+<h3>
+Wisdom & Proverbs
+</h3>
+
+<p>
+Discover practical biblical wisdom for
+making better decisions and living with
+understanding.
+</p>
+
+<a href="lessons/wisdom-proverbs.html">
+Start Lesson →
+</a>
+
+</div>
+
+
+
+<!-- LESSON 09 -->
+
+<div class="lesson">
+
+<div class="number">
+LESSON 09
+</div>
+
+<h3>
+Serving Others
+</h3>
+
+<p>
+Learn how to serve others with humility,
+compassion, generosity and love.
+</p>
+
+<a href="lessons/serving-others.html">
+Start Lesson →
+</a>
+
+</div>
+
+
+
+<!-- LESSON 10 -->
+
+<div class="lesson">
+
+<div class="number">
+LESSON 10
+</div>
+
+<h3>
+Growing in Christ
+</h3>
+
+<p>
+Learn how to continue growing through
+God's Word, prayer, faith, obedience,
+character and service.
+</p>
+
+<a href="lessons/growing-in-christ.html">
+Start Lesson →
+</a>
+
+</div>
+
+
+
 </div>
 
 </div>
 
 </section>
+
 
 
 <!-- FOOTER -->
@@ -517,6 +686,7 @@ Grow in Faith. Grow in Knowledge. Grow in Life.
 </p>
 
 </footer>
+
 
 
 </body>

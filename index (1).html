@@ -75,16 +75,30 @@
 
         /* HERO */
 
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 60px 7%;
-            background: linear-gradient(135deg, #151515, #292929);
-            color: white;
-        }
+       .hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 7%;
+    color: white;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(21, 21, 21, 0.45) 0%,
+            rgba(21, 21, 21, 0.70) 55%,
+            #151515 100%
+        ),
+        url("images/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
         .hero-content {
             max-width: 850px;

@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>What Is Prayer? | Kingdom Learning Hub</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gold: #d4a017;
+    --gold-light: #f3c85b;
+    --dark: #070a10;
+    --dark-soft: #0d1119;
+    --card: rgba(255,255,255,0.055);
+    --border: rgba(255,255,255,0.12);
+    --text: #f4f5f7;
+    --muted: #9da5b5;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    line-height: 1.8;
+}
+
+.container {
+    width: 90%;
+    max-width: 1050px;
+    margin: auto;
+}
+
+/* HEADER */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: rgba(7,10,16,.95);
+
+    border-bottom: 1px solid var(--border);
+
+    backdrop-filter: blur(15px);
+}
+
+nav {
+    min-height: 72px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--gold-light);
+}
+
+.logo small {
+    display: block;
+    color: #777;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.back {
+    color: var(--gold-light);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.back:hover {
+    color: white;
+}
+
+/* HERO */
+
+.hero {
+    text-align: center;
+
+    padding: 90px 20px 75px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(212,160,23,.13),
+            transparent 58%
+        );
+}
+
+.hero-icon {
+    font-size: 52px;
+    margin-bottom: 10px;
+}
+
+.category {
+    color: var(--gold-light);
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 7vw, 60px);
+
+    line-height: 1.15;
+
+    margin: 15px 0;
+}
+
+.hero p {
+    max-width: 720px;
+
+    margin: auto;
+
+    color: var(--muted);
+
+    font-size: 16px;
+}
+
+/* LESSON */
+
+.lesson {
+    padding: 20px 0 100px;
+}
+
+.lesson-content {
+    max-width: 820px;
+    margin: auto;
+}
+
+/* SECTIONS */
+
+.lesson-section {
+    margin-bottom: 55px;
+}
+
+.lesson-section h2 {
+    font-size: 28px;
+
+    margin-bottom: 18px;
+
+    color: var(--text);
+}
+
+.lesson-section h3 {
+    font-size: 21px;
+
+    margin: 30px 0 10px;
+
+    color: var(--gold-light);
+}
+
+.lesson-section p {
+    color: #c9ced8;
+
+    margin-bottom: 18px;
+}
+
+/* SCRIPTURE */
+
+.scripture {
+    margin: 25px 0;
+
+    padding: 25px 28px;
+
+    border-left: 3px solid var(--gold);
+
+    background: var(--card);
+
+    border-radius: 0 12px 12px 0;
+}
+
+.scripture p {
+    color: #f0f1f4;
+
+    font-size: 17px;
+
+    font-style: italic;
+
+    margin-bottom: 8px;
+}
+
+.scripture strong {
+    color: var(--gold-light);
+
+    font-size: 13px;
+
+    font-style: normal;
+}
+
+/* KEY IDEA */
+
+.key-idea {
+    margin: 30px 0;
+
+    padding: 25px;
+
+    border: 1px solid rgba(212,160,23,.3);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(212,160,23,.10),
+            rgba(255,255,255,.03)
+        );
+
+    border-radius: 14px;
+}
+
+.key-idea strong {
+    display: block;
+
+    color: var(--gold-light);
+
+    margin-bottom: 8px;
+}
+
+/* LIST */
+
+.lesson-section ul {
+    margin: 18px 0 18px 22px;
+}
+
+.lesson-section li {
+    color: #c9ced8;
+
+    margin-bottom: 10px;
+}
+
+/* EXAMPLE */
+
+.example {
+    margin: 25px 0;
+
+    padding: 25px;
+
+    background: var(--dark-soft);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+}
+
+.example strong {
+    color: var(--gold-light);
+}
+
+/* REFLECTION */
+
+.reflection {
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.025)
+        );
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    margin-top: 30px;
+}
+
+.reflection ol {
+    margin: 15px 0 0 22px;
+}
+
+.reflection li {
+    color: #c9ced8;
+
+    margin-bottom: 12px;
+}
+
+/* NAVIGATION */
+
+.lesson-navigation {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 70px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid var(--border);
+}
+
+.lesson-navigation a {
+    display: inline-block;
+
+    padding: 12px 18px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+.prev {
+    color: var(--muted);
+
+    border: 1px solid var(--border);
+}
+
+.next {
+    background: var(--gold);
+
+    color: #111;
+}
+
+.next:hover {
+    background: var(--gold-light);
+}
+
+/* FOOTER */
+
+footer {
+    padding: 45px 20px;
+
+    text-align: center;
+
+    background: #05070b;
+
+    border-top: 1px solid var(--border);
+}
+
+footer strong {
+    color: var(--gold-light);
+}
+
+footer p {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin: 5px;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    nav {
+        min-height: 65px;
+    }
+
+    .hero {
+        padding: 65px 15px 55px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .lesson-section h2 {
+        font-size: 25px;
+    }
+
+    .scripture {
+        padding: 20px;
+    }
+
+    .lesson-navigation {
+        flex-direction: column;
+    }
+
+    .lesson-navigation a {
+        text-align: center;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">
+
+Kingdom <span>Learning Hub</span>
+
+<small>BY RICHARD</small>
+
+</div>
+
+<a href="../prayer.html" class="back">
+← Prayer
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container">
+
+<div class="hero-icon">
+🙏
+</div>
+
+<div class="category">
+PRAYER • LESSON 01
+</div>
+
+<h1>
+What Is Prayer?
+</h1>
+
+<p>
+Understanding prayer as communication, relationship,
+dependence and fellowship with God.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- LESSON -->
+
+<main class="lesson">
+
+<div class="container">
+
+<div class="lesson-content">
+
+
+<!-- INTRODUCTION -->
+
+<section class="lesson-section">
+
+<h2>
+Introduction: Prayer Is More Than Asking
+</h2>
+
+<p>
+Prayer is one of the most important practices in the
+Christian life. Yet prayer is often misunderstood.
+</p>
+
+<p>
+Some people think prayer is simply asking God for
+things. Others see it as a religious ritual that must
+be performed using certain words.
+</p>
+
+<p>
+Biblically, prayer is much deeper.
+</p>
+
+<p>
+Prayer is the believer intentionally turning toward God
+with worship, thanksgiving, confession, requests,
+questions, dependence and surrender.
+</p>
+
+<div class="key-idea">
+
+<strong>Key Idea</strong>
+
+Prayer is not simply talking to God about what you want.
+It is learning to bring your whole life before God.
+
+</div>
+
+</section>
+
+
+<!-- SECTION 1 -->
+
+<section class="lesson-section">
+
+<h2>
+1. Prayer Is Communication With God
+</h2>
+
+<p>
+At its most basic level, prayer involves communicating
+with God.
+</p>
+
+<p>
+A Christian can speak to God honestly about what is
+happening internally and externally.
+</p>
+
+<p>
+This includes joy, fear, confusion, gratitude,
+disappointment, temptation, hope and need.
+</p>
+
+<p>
+Prayer therefore gives believers a place to stop
+pretending that they are self-sufficient.
+</p>
+
+<div class="example">
+
+<strong>Real-world example</strong>
+
+<p>
+Imagine that you have an important decision to make.
+Instead of immediately reacting according to fear or
+pressure, you stop and bring the situation before God.
+</p>
+
+<p>
+You might pray:
+</p>
+
+<p>
+“God, I don't know what the best decision is.
+Give me wisdom and help me act according to truth.”
+</p>
+
+</div>
+
+</section>
+
+
+<!-- SECTION 2 -->
+
+<section class="lesson-section">
+
+<h2>
+2. Prayer Is Relationship With God
+</h2>
+
+<p>
+Prayer is not merely a transaction.
+</p>
+
+<p>
+A transaction says:
+</p>
+
+<div class="scripture">
+
+<p>
+“I give something, and I receive something in return.”
+</p>
+
+</div>
+
+<p>
+A relationship is different.
+</p>
+
+<p>
+In relationship, communication is valuable because of
+the person you are communicating with.
+</p>
+
+<p>
+Christian prayer is rooted in knowing and approaching
+God as He has revealed Himself.
+</p>
+
+<p>
+This means prayer should gradually become more than a
+list of requests.
+</p>
+
+<p>
+It should become part of walking with God.
+</p>
+
+</section>
+
+
+<!-- SECTION 3 -->
+
+<section class="lesson-section">
+
+<h2>
+3. Jesus Demonstrated the Importance of Prayer
+</h2>
+
+<p>
+Jesus regularly prayed during His earthly ministry.
+</p>
+
+<div class="scripture">
+
+<p>
+“But Jesus often withdrew to lonely places and prayed.”
+</p>
+
+<strong>Luke 5:16</strong>
+
+</div>
+
+<p>
+This is significant because Jesus did not treat prayer
+as an unnecessary activity.
+</p>
+
+<p>
+He intentionally created space to withdraw from the
+crowds and pray.
+</p>
+
+<p>
+His example teaches Christians that prayer requires
+intentionality.
+</p>
+
+<p>
+If prayer is always postponed until everything else is
+finished, it may continually be pushed aside.
+</p>
+
+</section>
+
+
+<!-- SECTION 4 -->
+
+<section class="lesson-section">
+
+<h2>
+4. Prayer Includes Worship
+</h2>
+
+<p>
+Prayer begins with God, not merely with our problems.
+</p>
+
+<p>
+Worship recognizes God's character, authority,
+goodness, holiness, faithfulness and greatness.
+</p>
+
+<p>
+Jesus demonstrated this principle in the model prayer.
+</p>
+
+<div class="scripture">
+
+<p>
+“Our Father in heaven, hallowed be your name.”
+</p>
+
+<strong>Matthew 6:9</strong>
+
+</div>
+
+<p>
+Before asking for daily needs, Jesus directs attention
+toward God's name and God's kingdom.
+</p>
+
+<p>
+This teaches us to remember who God is before focusing
+only on what we want from Him.
+</p>
+
+</section>
+
+
+<!-- SECTION 5 -->
+
+<section class="lesson-section">
+
+<h2>
+5. Prayer Includes Thanksgiving
+</h2>
+
+<p>
+Prayer should include gratitude.
+</p>
+
+<p>
+It is easy to focus so strongly on what is missing that
+we forget what we have already received.
+</p>
+
+<p>
+Thanksgiving changes the direction of our attention.
+</p>
+
+<div class="scripture">
+
+<p>
+“Do not be anxious about anything, but in every situation,
+by prayer and petition, with thanksgiving, present your
+requests to God.”
+</p>
+
+<strong>Philippians 4:6</strong>
+
+</div>
+
+<p>
+Notice that thanksgiving does not replace requests.
+They work together.
+</p>
+
+<p>
+We can honestly bring our needs to God while also
+recognizing His goodness and provision.
+</p>
+
+</section>
+
+
+<!-- SECTION 6 -->
+
+<section class="lesson-section">
+
+<h2>
+6. Prayer Includes Confession
+</h2>
+
+<p>
+Prayer is also a place for honesty about sin.
+</p>
+
+<div class="scripture">
+
+<p>
+“If we confess our sins, he is faithful and just and will
+forgive us our sins and purify us from all unrighteousness.”
+</p>
+
+<strong>1 John 1:9</strong>
+
+</div>
+
+<p>
+Confession means acknowledging our wrongdoing rather
+than hiding it or making excuses.
+</p>
+
+<p>
+A believer can come before God and say:
+</p>
+
+<div class="example">
+
+<p>
+“God, I was wrong. I recognize what I did. Forgive me,
+help me understand why I fell into this and give me
+strength to walk differently.”
+</p>
+
+</div>
+
+<p>
+Prayer therefore becomes part of repentance and
+spiritual growth.
+</p>
+
+</section>
+
+
+<!-- SECTION 7 -->
+
+<section class="lesson-section">
+
+<h2>
+7. Prayer Includes Asking
+</h2>
+
+<p>
+God invites His people to bring their needs before Him.
+</p>
+
+<p>
+These needs can include:
+
+</p>
+
+<ul>
+
+<li>wisdom</li>
+
+<li>strength</li>
+
+<li>daily provision</li>
+
+<li>guidance</li>
+
+<li>protection</li>
+
+<li>help during difficulty</li>
+
+<li>opportunities to serve others</li>
+
+</ul>
+
+<p>
+However, asking God for something does not mean that
+God becomes obligated to fulfill every request exactly
+as we imagine.
+</p>
+
+<p>
+Christian prayer includes trust in God's wisdom.
+</p>
+
+</section>
+
+
+<!-- SECTION 8 -->
+
+<section class="lesson-section">
+
+<h2>
+8. Prayer Includes Surrender
+</h2>
+
+<p>
+One of the deepest aspects of prayer is surrender.
+</p>
+
+<p>
+Jesus prayed in the context of His suffering:
+</p>
+
+<div class="scripture">
+
+<p>
+“Yet not my will, but yours be done.”
+</p>
+
+<strong>Luke 22:42</strong>
+
+</div>
+
+<p>
+This demonstrates that prayer can contain strong
+personal desires while still submitting to God's will.
+</p>
+
+<p>
+Surrender does not mean that your desires don't matter.
+It means recognizing that God's wisdom is greater than
+your own.
+</p>
+
+<div class="key-idea">
+
+<strong>A Mature Prayer</strong>
+
+“God, this is what I desire. But I trust You enough to
+submit my desire to Your wisdom and will.”
+
+</div>
+
+</section>
+
+
+<!-- SECTION 9 -->
+
+<section class="lesson-section">
+
+<h2>
+9. Prayer and Dependence
+</h2>
+
+<p>
+Human beings naturally want independence.
+</p>
+
+<p>
+We often say:
+</p>
+
+<div class="scripture">
+
+<p>
+“I can handle it myself.”
+</p>
+
+</div>
+
+<p>
+Prayer challenges this mindset.
+</p>
+
+<p>
+It reminds us that our knowledge, strength and control
+are limited.
+</p>
+
+<p>
+James 1:5 encourages those who lack wisdom to ask God.
+</p>
+
+<p>
+Prayer therefore develops dependence without removing
+responsibility.
+</p>
+
+<p>
+We pray for wisdom, and then we use that wisdom to act.
+</p>
+
+</section>
+
+
+<!-- SECTION 10 -->
+
+<section class="lesson-section">
+
+<h2>
+10. Prayer Does Not Replace Action
+</h2>
+
+<p>
+Prayer should never become an excuse for avoiding
+responsibility.
+</p>
+
+<div class="example">
+
+<strong>Example</strong>
+
+<p>
+If you pray:
+</p>
+
+<p>
+“God, help me succeed in my studies,”
+</p>
+
+<p>
+you should also study.
+</p>
+
+<p>
+If you pray:
+</p>
+
+<p>
+“God, help me become financially responsible,”
+</p>
+
+<p>
+you should also learn how to manage money.
+</p>
+
+<p>
+If you pray:
+</p>
+
+<p>
+“God, help me overcome temptation,”
+</p>
+
+<p>
+you should also establish wise boundaries.
+</p>
+
+</div>
+
+<p>
+Prayer and responsible action belong together.
+</p>
+
+</section>
+
+
+<!-- SECTION 11 -->
+
+<section class="lesson-section">
+
+<h2>
+11. Prayer During Difficult Times
+</h2>
+
+<p>
+Prayer becomes especially important when life becomes
+difficult.
+</p>
+
+<p>
+You may experience:
+
+</p>
+
+<ul>
+
+<li>financial pressure</li>
+
+<li>failure</li>
+
+<li>loss</li>
+
+<li>uncertainty</li>
+
+<li>rejection</li>
+
+<li>conflict</li>
+
+<li>fear</li>
+
+<li>disappointment</li>
+
+</ul>
+
+<p>
+Prayer does not guarantee that every difficult situation
+will immediately disappear.
+</p>
+
+<p>
+But prayer gives us a place to bring our suffering to
+God and seek His strength, wisdom and peace.
+</p>
+
+</section>
+
+
+<!-- SECTION 12 -->
+
+<section class="lesson-section">
+
+<h2>
+12. Prayer Can Become a Lifestyle
+</h2>
+
+<div class="scripture">
+
+<p>
+“Pray without ceasing.”
+</p>
+
+<strong>1 Thessalonians 5:17</strong>
+
+</div>
+
+<p>
+This does not mean that a Christian must speak audible
+prayers every second of the day.
+</p>
+
+<p>
+It points toward a life characterized by continual
+dependence upon God.
+</p>
+
+<p>
+You can develop small moments of prayer throughout the
+day.
+</p>
+
+<div class="example">
+
+<strong>Morning</strong>
+
+<p>
+“God, guide me today.”
+</p>
+
+<strong>Before a decision</strong>
+
+<p>
+“Give me wisdom.”
+</p>
+
+<strong>During temptation</strong>
+
+<p>
+“Give me strength to choose what is right.”
+</p>
+
+<strong>After success</strong>
+
+<p>
+“Thank You.”
+</p>
+
+<strong>Before sleep</strong>
+
+<p>
+“Thank You for carrying me through today.”
+</p>
+
+</div>
+
+</section>
+
+
+<!-- SECTION 13 -->
+
+<section class="lesson-section">
+
+<h2>
+13. What Prayer Is Not
+</h2>
+
+<p>
+Understanding prayer also requires understanding what
+prayer is not.
+</p>
+
+<ul>
+
+<li>
+Prayer is not a way to manipulate God.
+</li>
+
+<li>
+Prayer is not a magic formula.
+</li>
+
+<li>
+Prayer is not a competition.
+</li>
+
+<li>
+Prayer is not a replacement for responsible action.
+</li>
+
+<li>
+Prayer is not simply asking for material possessions.
+</li>
+
+<li>
+Prayer is not about impressing other people.
+</li>
+
+</ul>
+
+<p>
+Jesus warned against praying merely to gain public
+attention in Matthew 6:5–6.
+</p>
+
+<p>
+The purpose of prayer is not to create an impressive
+religious image.
+</p>
+
+<p>
+It is to genuinely turn toward God.
+</p>
+
+</section>
+
+
+<!-- SECTION 14 -->
+
+<section class="lesson-section">
+
+<h2>
+14. A Simple Pattern for Prayer
+</h2>
+
+<p>
+A useful framework for developing prayer is:
+</p>
+
+<div class="key-idea">
+
+<strong>W — Worship</strong>
+
+Recognize who God is.
+
+<br><br>
+
+<strong>C — Confession</strong>
+
+Honestly acknowledge sin.
+
+<br><br>
+
+<strong>T — Thanksgiving</strong>
+
+Recognize what you are grateful for.
+
+<br><br>
+
+<strong>S — Supplication</strong>
+
+Bring your legitimate needs before God.
+
+<br><br>
+
+<strong>I — Intercession</strong>
+
+Pray for other people.
+
+<br><br>
+
+<strong>S — Surrender</strong>
+
+Submit your desires to God's wisdom and will.
+
+</div>
+
+<p>
+This is not a formula that God requires.
+It is simply a practical structure that can help organize
+your prayer life.
+</p>
+
+</section>
+
+
+<!-- SECTION 15 -->
+
+<section class="lesson-section">
+
+<h2>
+15. Building Your First Daily Prayer Habit
+</h2>
+
+<p>
+You do not need to begin with an extremely long prayer
+session.
+</p>
+
+<p>
+Start consistently.
+</p>
+
+<h3>
+Morning
+</h3>
+
+<p>
+Spend a few minutes thanking God, reading Scripture and
+committing your day to Him.
+</p>
+
+<h3>
+During the Day
+</h3>
+
+<p>
+Pause before important decisions and difficult
+situations.
+</p>
+
+<h3>
+Evening
+</h3>
+
+<p>
+Review your day.
+Ask yourself:
+</p>
+
+<ul>
+
+<li>Where did I honor God?</li>
+
+<li>Where did I fail?</li>
+
+<li>What am I thankful for?</li>
+
+<li>What do I need to change?</li>
+
+<li>What do I need to surrender?</li>
+
+</ul>
+
+</section>
+
+
+<!-- REFLECTION -->
+
+<section class="lesson-section">
+
+<h2>
+Reflection: What Is My Prayer Life Really Like?
+</h2>
+
+<div class="reflection">
+
+<ol>
+
+<li>
+Do I pray only when I have problems?
+</li>
+
+<li>
+Do I regularly thank God?
+</li>
+
+<li>
+Do I honestly confess my failures?
+</li>
+
+<li>
+Do I pray for other people?
+</li>
+
+<li>
+Do I seek God's wisdom before important decisions?
+</li>
+
+<li>
+Am I willing to say, “Your will be done”?
+</li>
+
+<li>
+Does prayer actually affect the way I live?
+</li>
+
+<li>
+What practical change can I make to my prayer life?
+</li>
+
+</ol>
+
+</div>
+
+</section>
+
+
+<!-- FINAL THOUGHT -->
+
+<section class="lesson-section">
+
+<h2>
+Final Thought
+</h2>
+
+<p>
+Prayer is not simply a religious activity that we perform
+because we are Christians.
+</p>
+
+<p>
+It is part of learning to walk with God.
+</p>
+
+<p>
+Through prayer we learn to worship, depend, confess,
+give thanks, ask, intercede, surrender and persevere.
+</p>
+
+<div class="key-idea">
+
+<strong>The Goal</strong>
+
+The goal is not simply to become someone who prays more.
+
+The deeper goal is to become someone who walks with God
+more consciously.
+
+</div>
+
+<p>
+When prayer becomes part of everyday life, it begins to
+affect how we handle money, temptation, relationships,
+decisions, failure, success and uncertainty.
+</p>
+
+<p>
+Prayer teaches us to bring our lives before God instead
+of trying to live our lives without Him.
+</p>
+
+</section>
+
+
+<!-- SCRIPTURES -->
+
+<section class="lesson-section">
+
+<h2>
+Key Scriptures
+</h2>
+
+<ul>
+
+<li>Matthew 6:5–13 — Jesus teaches about prayer</li>
+
+<li>Luke 5:16 — Jesus withdraws to pray</li>
+
+<li>Luke 18:1–8 — Persistence in prayer</li>
+
+<li>Philippians 4:6–7 — Prayer and thanksgiving</li>
+
+<li>James 1:5 — Asking God for wisdom</li>
+
+<li>1 Thessalonians 5:17 — Continual prayer</li>
+
+<li>1 John 1:9 — Confession and forgiveness</li>
+
+<li>Matthew 26:41 — Prayer and temptation</li>
+
+<li>Luke 22:42 — Surrendering to God's will</li>
+
+</ul>
+
+</section>
+
+
+<!-- NAVIGATION -->
+
+<div class="lesson-navigation">
+
+<a href="../prayer.html" class="prev">
+← Back to Prayer
+</a>
+
+<a href="why-pray.html" class="next">
+Next Lesson →
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+<strong>Kingdom Learning Hub</strong>
+</p>
+
+<p>
+By Richard
+</p>
+
+<p>
+Grow in Faith. Grow in Knowledge. Grow in Life.
+</p>
+
+<p>
+© 2026 Kingdom Learning Hub
+</p>
+
+</footer>
+
+
+</body>
+
+</html>

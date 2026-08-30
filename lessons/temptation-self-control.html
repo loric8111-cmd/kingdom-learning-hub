@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Temptation & Self-Control | Kingdom Learning Hub</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gold: #d4a017;
+    --gold-light: #f3c85b;
+    --dark: #070a10;
+    --card: rgba(255,255,255,0.055);
+    --border: rgba(255,255,255,0.12);
+    --text: #f4f5f7;
+    --muted: #a2a9b7;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    line-height: 1.8;
+}
+
+.container {
+    width: 90%;
+    max-width: 850px;
+    margin: auto;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(7,10,16,.95);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    min-height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--gold-light);
+}
+
+.logo small {
+    display: block;
+    color: #777;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.back {
+    color: var(--gold-light);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.lesson-header {
+    text-align: center;
+    padding: 80px 20px 55px;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(212,160,23,.13),
+            transparent 60%
+        );
+}
+
+.lesson-number {
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.lesson-header h1 {
+    font-size: clamp(34px,7vw,58px);
+    line-height: 1.1;
+    margin: 15px 0;
+}
+
+.lesson-header p {
+    color: var(--muted);
+    max-width: 650px;
+    margin: auto;
+}
+
+.lesson-content {
+    padding: 30px 0 80px;
+}
+
+.lesson-content h2 {
+    font-size: 27px;
+    margin: 40px 0 15px;
+    color: var(--gold-light);
+}
+
+.lesson-content p {
+    color: #c7cbd4;
+    margin-bottom: 18px;
+}
+
+.lesson-content ul {
+    margin: 15px 0 25px 25px;
+    color: #c7cbd4;
+}
+
+.lesson-content li {
+    margin-bottom: 10px;
+}
+
+.key-point {
+    margin: 30px 0;
+    padding: 25px;
+    background: rgba(212,160,23,.07);
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+}
+
+.key-point strong {
+    color: var(--gold-light);
+}
+
+.scripture {
+    margin: 25px 0;
+    padding: 24px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.scripture strong {
+    color: var(--gold-light);
+}
+
+.example {
+    margin: 30px 0;
+    padding: 25px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.example h3 {
+    color: var(--gold-light);
+    margin-bottom: 10px;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.step {
+    padding: 22px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.step-number {
+    color: var(--gold-light);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.step h3 {
+    margin: 7px 0;
+}
+
+.step p {
+    font-size: 13px;
+    margin: 0;
+}
+
+.reflection {
+    margin-top: 45px;
+    padding: 30px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
+
+.reflection h2 {
+    margin-top: 0;
+}
+
+.lesson-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 50px;
+}
+
+.nav-button {
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: var(--gold);
+    color: #111;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.nav-button:hover {
+    background: var(--gold-light);
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: #05070b;
+    border-top: 1px solid var(--border);
+}
+
+footer strong {
+    color: var(--gold-light);
+}
+
+footer p {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 6px;
+}
+
+@media(max-width:600px) {
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .lesson-navigation {
+        flex-direction: column;
+    }
+
+    .nav-button {
+        text-align: center;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">
+
+Kingdom <span>Learning Hub</span>
+
+<small>BY RICHARD</small>
+
+</div>
+
+<a href="../bible-study.html" class="back">
+← Bible Studies
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<section class="lesson-header">
+
+<div class="container">
+
+<div class="lesson-number">
+BIBLE STUDIES • LESSON 07
+</div>
+
+<h1>
+Temptation & Self-Control
+</h1>
+
+<p>
+Learn how to recognize temptation, strengthen
+self-control and respond to difficult moments
+through faith, wisdom, prayer and Scripture.
+</p>
+
+</div>
+
+</section>
+
+
+<main class="lesson-content">
+
+<div class="container">
+
+
+<h2>
+1. What Is Temptation?
+</h2>
+
+<p>
+Temptation is an invitation or pressure to choose
+something that goes against God's will or against
+the values we are trying to live by.
+</p>
+
+<p>
+Being tempted is not the same as choosing to sin.
+A person can experience temptation without
+giving in to it.
+</p>
+
+<div class="key-point">
+
+<strong>Remember:</strong>
+
+<p>
+Temptation may come, but you still have a choice
+about how you respond.
+</p>
+
+</div>
+
+
+<h2>
+2. Where Can Temptation Lead?
+</h2>
+
+<p>
+Temptation can appeal to desires that are difficult
+to control. If those desires are repeatedly
+entertained and acted upon, they can become
+destructive habits.
+</p>
+
+<p>
+Examples can include:
+</p>
+
+<ul>
+
+<li>
+Sexual temptation and lust
+</li>
+
+<li>
+Greed and love of money
+</li>
+
+<li>
+Anger and desire for revenge
+</li>
+
+<li>
+Pride
+</li>
+
+<li>
+Dishonesty
+</li>
+
+<li>
+Substance abuse
+</li>
+
+<li>
+Envy and jealousy
+</li>
+
+<li>
+Uncontrolled entertainment or other habits
+</li>
+
+</ul>
+
+
+<h2>
+3. Jesus Was Tempted
+</h2>
+
+<p>
+The Bible describes Jesus being tempted in the
+wilderness after fasting for forty days.
+</p>
+
+<div class="scripture">
+
+<strong>Matthew 4:1–11</strong>
+
+<p>
+Jesus responded to the devil's temptations by
+appealing to God's Word rather than surrendering
+to the temptation.
+</p>
+
+</div>
+
+<p>
+This account teaches an important lesson:
+knowing Scripture can help us recognize what is
+true and choose how to respond when we are
+tested.
+</p>
+
+
+<h2>
+4. Temptation Often Begins Before the Action
+</h2>
+
+<p>
+A destructive action can begin with what we allow
+our minds to repeatedly entertain.
+</p>
+
+<p>
+For this reason, learning to recognize thoughts,
+situations and influences that repeatedly lead us
+toward temptation is important.
+</p>
+
+<div class="example">
+
+<h3>
+Example</h3>
+
+<p>
+Someone repeatedly exposes themselves to
+content that stimulates a desire they are trying
+to control.
+</p>
+
+<p>
+Eventually the desire becomes stronger and the
+person finds it harder to resist.
+</p>
+
+<p>
+A wiser response may be to identify the trigger
+early and remove themselves from it.
+</p>
+
+</div>
+
+
+<h2>
+5. Self-Control
+</h2>
+
+<p>
+Self-control is the ability to govern your thoughts,
+words and actions rather than being controlled by
+every desire or emotion.
+</p>
+
+<div class="scripture">
+
+<strong>Galatians 5:22–23</strong>
+
+<p>
+Self-control is listed among the fruit associated
+with the work of the Holy Spirit.
+</p>
+
+</div>
+
+<p>
+Christian self-control is therefore not simply
+about human willpower. It is also about allowing
+God to shape our character and choices.
+</p>
+
+
+<h2>
+6. Recognize Your Triggers
+</h2>
+
+<p>
+A trigger is something that makes a particular
+temptation more likely to appear.
+</p>
+
+<p>
+Triggers can include:
+</p>
+
+<ul>
+
+<li>
+Certain environments
+</li>
+
+<li>
+Specific websites or social media content
+</li>
+
+<li>
+Certain friendships or influences
+</li>
+
+<li>
+Loneliness
+</li>
+
+<li>
+Boredom
+</li>
+
+<li>
+Anger
+</li>
+
+<li>
+Stress
+</li>
+
+<li>
+Unhealthy routines
+</li>
+
+</ul>
+
+
+<h2>
+7. A Practical Response to Temptation
+</h2>
+
+<div class="steps">
+
+<div class="step">
+
+<div class="step-number">
+STEP 01
+</div>
+
+<h3>
+Recognize
+</h3>
+
+<p>
+Identify what is happening instead of pretending
+the temptation does not exist.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+STEP 02
+</div>
+
+<h3>
+Pause
+</h3>
+
+<p>
+Create space between the temptation and your
+reaction.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+STEP 03
+</div>
+
+<h3>
+Pray
+</h3>
+
+<p>
+Turn your attention toward God and ask for
+strength and wisdom.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+STEP 04
+</div>
+
+<h3>
+Remove Yourself
+</h3>
+
+<p>
+If possible, leave the environment or situation
+that is encouraging the temptation.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+STEP 05
+</div>
+
+<h3>
+Replace
+</h3>
+
+<p>
+Replace the destructive activity with something
+healthy and constructive.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+STEP 06
+</div>
+
+<h3>
+Reflect
+</h3>
+
+<p>
+Afterward, consider what triggered the temptation
+and what you can change next time.
+</p>
+
+</div>
+
+</div>
+
+
+<h2>
+8. The Power of Prayer
+</h2>
+
+<p>
+Prayer gives us an opportunity to bring our
+struggles honestly before God and ask for strength,
+wisdom and guidance.
+</p>
+
+<div class="scripture">
+
+<strong>Matthew 26:41</strong>
+
+<p>
+Jesus taught His disciples to watch and pray so
+that they would not fall into temptation.
+</p>
+
+</div>
+
+
+<h2>
+9. The Importance of God's Word
+</h2>
+
+<p>
+Scripture can help shape the way we think,
+identify what is right and remind us of God's
+truth when emotions become strong.
+</p>
+
+<div class="scripture">
+
+<strong>Psalm 119:11</strong>
+
+<p>
+The psalmist describes storing God's Word in the
+heart as a way of guarding against sin.
+</p>
+
+</div>
+
+
+<h2>
+10. Choose Your Environment Wisely
+</h2>
+
+<p>
+Sometimes self-control becomes harder because we
+repeatedly place ourselves in environments that
+encourage the behavior we are trying to leave.
+</p>
+
+<p>
+Wisdom may require changing routines, avoiding
+certain influences or creating healthier boundaries.
+</p>
+
+<div class="key-point">
+
+<strong>Wisdom is preventive.</strong>
+
+<p>
+You do not always have to prove that you can
+resist a temptation by deliberately staying close
+to it.
+</p>
+
+</div>
+
+
+<h2>
+11. Choose Your Influences
+</h2>
+
+<p>
+The people, content and ideas around us can
+influence our attitudes and behavior.
+</p>
+
+<p>
+Ask yourself:
+</p>
+
+<ul>
+
+<li>
+What kind of content am I consuming?
+</li>
+
+<li>
+Who influences my decisions?
+</li>
+
+<li>
+Does my environment encourage the person I want
+to become?
+</li>
+
+<li>
+What influences should I reduce?
+</li>
+
+</ul>
+
+
+<h2>
+12. What If You Fall?
+</h2>
+
+<p>
+Christian growth does not mean pretending that
+you will never make mistakes.
+</p>
+
+<p>
+When someone falls into sin, the appropriate
+response is not to give up on God or decide that
+change is impossible.
+</p>
+
+<p>
+Instead, acknowledge the wrong, turn back to God,
+seek forgiveness and learn from what happened.
+</p>
+
+<div class="scripture">
+
+<strong>1 John 1:9</strong>
+
+<p>
+The verse teaches that God is faithful and just
+to forgive and cleanse those who confess their
+sins.
+</p>
+
+</div>
+
+<div class="key-point">
+
+<strong>Failure is not the end of the journey.</strong>
+
+<p>
+Use a fall as an opportunity to examine the trigger,
+strengthen your boundaries and continue growing.
+</p>
+
+</div>
+
+
+<h2>
+13. Building Better Habits
+</h2>
+
+<p>
+Removing a destructive habit is often easier when
+you deliberately replace it with a constructive
+one.
+</p>
+
+<p>
+For example:
+</p>
+
+<ul>
+
+<li>
+Replace excessive idle time with learning.
+</li>
+
+<li>
+Replace harmful content with useful content.
+</li>
+
+<li>
+Replace isolation with healthy community.
+</li>
+
+<li>
+Replace impulsive reactions with prayer and
+reflection.
+</li>
+
+<li>
+Replace destructive routines with disciplined
+daily habits.
+</li>
+
+</ul>
+
+
+<h2>
+14. Daily Self-Control Practice
+</h2>
+
+<div class="example">
+
+<h3>
+The Daily Reset</h3>
+
+<p>
+Each morning, identify one area where you want
+to practice greater self-control.
+</p>
+
+<p>
+During the day, pay attention to the situations
+that test you.
+</p>
+
+<p>
+At night, reflect honestly:
+</p>
+
+<ul>
+
+<li>
+What temptation did I face?
+</li>
+
+<li>
+What triggered it?
+</li>
+
+<li>
+How did I respond?
+</li>
+
+<li>
+What did I learn?
+</li>
+
+<li>
+What can I do differently tomorrow?
+</li>
+
+</ul>
+
+</div>
+
+
+<h2>
+15. Remember Your Purpose
+</h2>
+
+<p>
+When temptation becomes strong, remembering the
+person you want to become can help you make a
+better decision in the present moment.
+</p>
+
+<p>
+Christian growth involves becoming more mature
+in faith, character, wisdom and love.
+</p>
+
+<div class="key-point">
+
+<strong>Ask yourself:</strong>
+
+<p>
+"Does this choice move me closer to the person
+God is calling me to become, or further away?"
+</p>
+
+</div>
+
+
+<h2>
+16. Key Scriptures for Reflection
+</h2>
+
+<ul>
+
+<li>
+Matthew 4:1–11 — Jesus and temptation
+</li>
+
+<li>
+Matthew 26:41 — Watch and pray
+</li>
+
+<li>
+1 Corinthians 10:13 — God provides a way of
+escape from temptation
+</li>
+
+<li>
+Galatians 5:22–23 — Fruit of the Spirit
+</li>
+
+<li>
+Psalm 119:11 — God's Word and resisting sin
+</li>
+
+<li>
+James 1:12–15 — Understanding temptation
+</li>
+
+<li>
+1 John 1:9 — Confession and forgiveness
+</li>
+
+</ul>
+
+
+<div class="reflection">
+
+<h2>
+📖 Lesson 07 Reflection
+</h2>
+
+<ul>
+
+<li>
+What temptation do people commonly struggle
+with?
+</li>
+
+<li>
+What is the difference between temptation and
+sin?
+</li>
+
+<li>
+What can Jesus' response to temptation teach us?
+</li>
+
+<li>
+What triggers can make temptation stronger?
+</li>
+
+<li>
+How can prayer help when facing temptation?
+</li>
+
+<li>
+Why is Scripture important?
+</li>
+
+<li>
+What does self-control mean?
+</li>
+
+<li>
+What should you do after falling into sin?
+</li>
+
+<li>
+What healthy habit could replace a destructive
+habit?
+</li>
+
+<li>
+What is one area where you want to grow in
+self-control?
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="lesson-navigation">
+
+<a href="christian-character.html"
+class="nav-button">
+← Previous Lesson
+</a>
+
+<a href="../bible-study.html"
+class="nav-button">
+Bible Studies
+</a>
+
+<a href="wisdom-proverbs.html"
+class="nav-button">
+Next Lesson →
+</a>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer>
+
+<p>
+<strong>Kingdom Learning Hub</strong>
+</p>
+
+<p>
+By Richard
+</p>
+
+<p>
+Faith • Knowledge • Skills • Growth
+</p>
+
+<p>
+© 2026 Kingdom Learning Hub
+</p>
+
+</footer>
+
+
+</body>
+
+</html>

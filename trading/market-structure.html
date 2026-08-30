@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Market Structure | Kingdom Learning Hub</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gold: #d4a017;
+    --gold-light: #f3c85b;
+    --dark: #070a10;
+    --card: rgba(255,255,255,0.055);
+    --border: rgba(255,255,255,0.12);
+    --text: #f4f5f7;
+    --muted: #a2a9b7;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    line-height: 1.8;
+}
+
+.container {
+    width: 90%;
+    max-width: 850px;
+    margin: auto;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: rgba(7,10,16,.95);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    min-height: 72px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--gold-light);
+}
+
+.logo small {
+    display: block;
+    color: #777;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.back {
+    color: var(--gold-light);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.lesson-header {
+    text-align: center;
+
+    padding: 80px 20px 55px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(212,160,23,.13),
+            transparent 60%
+        );
+}
+
+.lesson-number {
+    color: var(--gold-light);
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.lesson-header h1 {
+    font-size: clamp(36px,7vw,58px);
+
+    line-height: 1.1;
+
+    margin: 15px 0;
+}
+
+.lesson-header p {
+    color: var(--muted);
+
+    max-width: 650px;
+
+    margin: auto;
+}
+
+.lesson-content {
+    padding: 30px 0 80px;
+}
+
+.lesson-content h2 {
+    font-size: 27px;
+
+    margin: 40px 0 15px;
+
+    color: var(--gold-light);
+}
+
+.lesson-content p {
+    color: #c7cbd4;
+
+    margin-bottom: 18px;
+}
+
+.lesson-content ul {
+    margin: 15px 0 25px 25px;
+
+    color: #c7cbd4;
+}
+
+.lesson-content li {
+    margin-bottom: 10px;
+}
+
+.key-point {
+    margin: 30px 0;
+
+    padding: 25px;
+
+    background: rgba(212,160,23,.07);
+
+    border-left: 4px solid var(--gold);
+
+    border-radius: 8px;
+}
+
+.key-point strong {
+    color: var(--gold-light);
+}
+
+.example {
+    margin: 30px 0;
+
+    padding: 25px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+}
+
+.example h3 {
+    color: var(--gold-light);
+
+    margin-bottom: 10px;
+}
+
+/* STRUCTURE CARDS */
+
+.structure-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+
+    margin: 30px 0;
+}
+
+.structure-card {
+    padding: 25px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    text-align: center;
+}
+
+.structure-card .symbol {
+    font-size: 32px;
+
+    font-weight: bold;
+
+    color: var(--gold-light);
+
+    margin-bottom: 8px;
+}
+
+.structure-card h3 {
+    margin-bottom: 5px;
+}
+
+.structure-card p {
+    font-size: 13px;
+
+    margin: 0;
+}
+
+/* FLOW */
+
+.structure-flow {
+    margin: 30px 0;
+
+    padding: 25px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    text-align: center;
+}
+
+.flow {
+    font-size: 18px;
+
+    font-weight: bold;
+
+    color: var(--gold-light);
+
+    word-spacing: 8px;
+
+    margin-top: 12px;
+}
+
+/* TABLE */
+
+.table-wrapper {
+    overflow-x: auto;
+
+    margin: 25px 0;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 500px;
+}
+
+th,
+td {
+    padding: 14px;
+
+    text-align: left;
+
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    color: var(--gold-light);
+
+    background: rgba(212,160,23,.07);
+}
+
+td {
+    color: #c7cbd4;
+}
+
+/* REFLECTION */
+
+.reflection {
+    margin-top: 45px;
+
+    padding: 30px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+}
+
+.reflection h2 {
+    margin-top: 0;
+}
+
+/* NAVIGATION */
+
+.lesson-navigation {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 50px;
+}
+
+.nav-button {
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    background: var(--gold);
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+.nav-button:hover {
+    background: var(--gold-light);
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+
+    padding: 40px 20px;
+
+    background: #05070b;
+
+    border-top: 1px solid var(--border);
+}
+
+footer strong {
+    color: var(--gold-light);
+}
+
+footer p {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin: 6px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+    .structure-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lesson-navigation {
+        flex-direction: column;
+    }
+
+    .nav-button {
+        text-align: center;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">
+
+Kingdom <span>Learning Hub</span>
+
+<small>BY RICHARD</small>
+
+</div>
+
+<a href="../trading.html" class="back">
+← Trading Academy
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<section class="lesson-header">
+
+<div class="container">
+
+<div class="lesson-number">
+TRADING ACADEMY • LESSON 05
+</div>
+
+<h1>
+Market Structure
+</h1>
+
+<p>
+Learn how traders describe the sequence of
+highs and lows to understand the current
+structure of a market.
+</p>
+
+</div>
+
+</section>
+
+
+<main class="lesson-content">
+
+<div class="container">
+
+
+<h2>
+1. What Is Market Structure?
+</h2>
+
+<p>
+Market structure describes how price forms
+successive highs and lows over time.
+</p>
+
+<p>
+Instead of looking at individual candles,
+we step back and observe the larger sequence
+of price swings.
+</p>
+
+<div class="key-point">
+
+<strong>Key idea:</strong>
+
+<p>
+Market structure helps organize price action
+into a framework. It does not guarantee where
+price will move next.
+</p>
+
+</div>
+
+
+<h2>
+2. The Four Basic Terms
+</h2>
+
+<p>
+Four abbreviations are especially important
+when learning basic market structure:
+</p>
+
+
+<div class="structure-grid">
+
+<div class="structure-card">
+
+<div class="symbol">
+HH
+</div>
+
+<h3>
+Higher High
+</h3>
+
+<p>
+A high that forms above a previous significant
+high.
+</p>
+
+</div>
+
+
+<div class="structure-card">
+
+<div class="symbol">
+HL
+</div>
+
+<h3>
+Higher Low
+</h3>
+
+<p>
+A low that forms above a previous significant
+low.
+</p>
+
+</div>
+
+
+<div class="structure-card">
+
+<div class="symbol">
+LH
+</div>
+
+<h3>
+Lower High
+</h3>
+
+<p>
+A high that forms below a previous significant
+high.
+</p>
+
+</div>
+
+
+<div class="structure-card">
+
+<div class="symbol">
+LL
+</div>
+
+<h3>
+Lower Low
+</h3>
+
+<p>
+A low that forms below a previous significant
+low.
+</p>
+
+</div>
+
+</div>
+
+
+<h2>
+3. Higher High — HH
+</h2>
+
+<p>
+A Higher High occurs when price creates a
+new significant high above a previous high.
+</p>
+
+<div class="example">
+
+<h3>
+Example</h3>
+
+<p>
+Previous high: 1.1050
+</p>
+
+<p>
+New high: 1.1100
+</p>
+
+<p>
+The new high is higher than the previous high,
+so it can be described as a Higher High.
+</p>
+
+</div>
+
+
+<h2>
+4. Higher Low — HL
+</h2>
+
+<p>
+A Higher Low occurs when price pulls back but
+forms a significant low above the previous
+significant low.
+</p>
+
+<div class="example">
+
+<h3>
+Example</h3>
+
+<p>
+Previous low: 1.0950
+</p>
+
+<p>
+New pullback low: 1.1000
+</p>
+
+<p>
+The new low is above the previous low.
+This can be described as a Higher Low.
+</p>
+
+</div>
+
+
+<h2>
+5. Lower High — LH
+</h2>
+
+<p>
+A Lower High occurs when price rises but fails
+to reach the previous significant high.
+</p>
+
+<div class="example">
+
+<h3>
+Example</h3>
+
+<p>
+Previous high: 1.1100
+</p>
+
+<p>
+New high: 1.1050
+</p>
+
+<p>
+The new high is below the previous high.
+This can be described as a Lower High.
+</p>
+
+</div>
+
+
+<h2>
+6. Lower Low — LL
+</h2>
+
+<p>
+A Lower Low occurs when price creates a new
+significant low below a previous significant
+low.
+</p>
+
+<div class="example">
+
+<h3>
+Example</h3>
+
+<p>
+Previous low: 1.1000
+</p>
+
+<p>
+New low: 1.0950
+</p>
+
+<p>
+The new low is below the previous low.
+This can be described as a Lower Low.
+</p>
+
+</div>
+
+
+<h2>
+7. Basic Uptrend Structure
+</h2>
+
+<p>
+A simple upward market structure is commonly
+described as a sequence of Higher Highs and
+Higher Lows.
+</p>
+
+<div class="structure-flow">
+
+<strong>
+Basic Uptrend
+</strong>
+
+<div class="flow">
+HH → HL → HH → HL → HH
+</div>
+
+</div>
+
+<p>
+This sequence indicates that successive swing
+highs and lows are generally progressing upward.
+</p>
+
+
+<h2>
+8. Basic Downtrend Structure
+</h2>
+
+<p>
+A simple downward market structure is commonly
+described as a sequence of Lower Highs and
+Lower Lows.
+</p>
+
+<div class="structure-flow">
+
+<strong>
+Basic Downtrend
+</strong>
+
+<div class="flow">
+LL → LH → LL → LH → LL
+</div>
+
+</div>
+
+<p>
+This sequence indicates that successive swing
+highs and lows are generally progressing downward.
+</p>
+
+
+<h2>
+9. What Is a Range?
+</h2>
+
+<p>
+Markets do not always trend strongly upward or
+downward.
+</p>
+
+<p>
+Sometimes price moves between relatively clear
+upper and lower boundaries without establishing
+a sustained sequence of higher highs and higher
+lows or lower highs and lower lows.
+</p>
+
+<p>
+This type of environment is commonly called a
+range or consolidation.
+</p>
+
+<div class="key-point">
+
+<strong>Important:</strong>
+
+<p>
+A ranging market can behave differently from a
+trending market. Do not force every chart into
+an uptrend or downtrend.
+</p>
+
+</div>
+
+
+<h2>
+10. Swing Highs and Swing Lows
+</h2>
+
+<p>
+Market structure is normally based on meaningful
+price swings rather than every tiny movement
+on a chart.
+</p>
+
+<p>
+A swing high is an area where price turns after
+moving upward. A swing low is an area where
+price turns after moving downward.
+</p>
+
+<p>
+The significance of a swing can depend on the
+timeframe and surrounding price action.
+</p>
+
+
+<h2>
+11. Multiple Timeframes
+</h2>
+
+<p>
+Market structure can be analyzed on different
+timeframes.
+</p>
+
+<p>
+A market may show an upward structure on a
+short-term chart while showing a downward
+structure on a higher timeframe.
+</p>
+
+<div class="example">
+
+<h3>
+Example</h3>
+
+<p>
+A 15-minute chart may show:
+</p>
+
+<p>
+HH → HL → HH
+</p>
+
+<p>
+while a 4-hour chart could still be showing
+a broader downward structure.
+</p>
+
+<p>
+This is why timeframe context matters.
+</p>
+
+</div>
+
+
+<h2>
+12. Break of Structure
+</h2>
+
+<p>
+Traders sometimes use the term "break of
+structure" when price moves beyond a previously
+important swing point.
+</p>
+
+<p>
+For example, if price has been forming a series
+of lower highs and lower lows and then moves
+above an important previous swing high, a trader
+may describe that movement as a break of structure.
+</p>
+
+<p>
+The interpretation depends on the timeframe,
+the significance of the swing and the broader
+market context.
+</p>
+
+
+<h2>
+13. Structure Does Not Predict the Future</h2>
+
+<p>
+One of the most important lessons is that market
+structure is descriptive, not a guarantee.
+</p>
+
+<p>
+A market can appear bullish and then reverse.
+A market can appear bearish and then recover.
+A breakout can fail.
+</p>
+
+<p>
+Good analysis therefore needs to be combined with
+risk management and a clearly defined trading plan.
+</p>
+
+
+<h2>
+14. A Simple Structure-Reading Process
+</h2>
+
+<ul>
+
+<li>
+Choose the timeframe you want to analyze.
+</li>
+
+<li>
+Identify the most meaningful recent swing highs.
+</li>
+
+<li>
+Identify the most meaningful recent swing lows.
+</li>
+
+<li>
+Compare the new highs with previous highs.
+</li>
+
+<li>
+Compare the new lows with previous lows.
+</li>
+
+<li>
+Look for HH, HL, LH and LL sequences.
+</li>
+
+<li>
+Determine whether the market appears to be
+trending or ranging.
+</li>
+
+<li>
+Do not make a trading decision from structure
+alone.
+</li>
+
+</ul>
+
+
+<h2>
+15. Common Beginner Mistakes
+</h2>
+
+<ul>
+
+<li>
+Marking every tiny price movement as a major
+swing.
+</li>
+
+<li>
+Ignoring the timeframe.
+</li>
+
+<li>
+Calling every price increase an uptrend.
+</li>
+
+<li>
+Calling every price decrease a downtrend.
+</li>
+
+<li>
+Assuming a break of structure guarantees a
+continuation.
+</li>
+
+<li>
+Entering a trade simply because HH or LL appears.
+</li>
+
+<li>
+Ignoring risk management.
+</li>
+
+</ul>
+
+
+<div class="reflection">
+
+<h2>
+🧠 Lesson 05 Checkpoint
+</h2>
+
+<ul>
+
+<li>
+What does market structure describe?
+</li>
+
+<li>
+What does HH mean?
+</li>
+
+<li>
+What does HL mean?
+</li>
+
+<li>
+What does LH mean?
+</li>
+
+<li>
+What does LL mean?
+</li>
+
+<li>
+What sequence commonly describes a basic
+uptrend?
+</li>
+
+<li>
+What sequence commonly describes a basic
+downtrend?
+</li>
+
+<li>
+What is a range?
+</li>
+
+<li>
+Why can market structure look different on
+different timeframes?
+</li>
+
+<li>
+Why should market structure not be treated
+as a guaranteed prediction?
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="lesson-navigation">
+
+<a href="candlesticks.html"
+class="nav-button">
+← Previous Lesson
+</a>
+
+<a href="../trading.html"
+class="nav-button">
+Trading Academy
+</a>
+
+<a href="support-resistance.html"
+class="nav-button">
+Next Lesson →
+</a>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer>
+
+<p>
+<strong>Kingdom Learning Hub</strong>
+</p>
+
+<p>
+By Richard
+</p>
+
+<p>
+Faith • Knowledge • Skills • Growth
+</p>
+
+<p>
+© 2026 Kingdom Learning Hub
+</p>
+
+</footer>
+
+
+</body>
+
+</html>

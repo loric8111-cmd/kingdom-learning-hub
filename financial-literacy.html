@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Financial Literacy | Kingdom Learning Hub</title>
+
+    <meta name="description"
+          content="Learn practical financial literacy including money management, budgeting, saving, investing and building wealth.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        header {
+            background: #151515;
+            color: white;
+            padding: 15px 7%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #d4a017;
+        }
+
+        .menu {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            color: #d4a017;
+        }
+
+        .menu-button {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            background:
+                linear-gradient(
+                    to bottom,
+                    #151515,
+                    #242424
+                );
+
+            color: white;
+            text-align: center;
+            padding: 90px 7%;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .hero-icon {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 7vw, 65px);
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #d4a017;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 10px auto;
+            color: #ddd;
+            font-size: 17px;
+        }
+
+        .hero .subtitle {
+            color: #d4a017;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+
+        /* =========================
+           BUTTONS
+        ========================== */
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            margin: 5px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #d4a017;
+            color: #111;
+        }
+
+        .primary:hover {
+            background: #f0bd27;
+            transform: translateY(-3px);
+        }
+
+        .secondary {
+            border: 1px solid white;
+            color: white;
+        }
+
+        .secondary:hover {
+            background: white;
+            color: #151515;
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================== */
+
+        section {
+            padding: 75px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+
+        /* =========================
+           INTRODUCTION
+        ========================== */
+
+        .introduction {
+            background: white;
+        }
+
+        .intro-box {
+            max-width: 900px;
+            margin: auto;
+            background: #f5f5f5;
+            padding: 35px;
+            border-left: 5px solid #d4a017;
+            border-radius: 8px;
+        }
+
+        .intro-box h3 {
+            margin-bottom: 15px;
+            color: #151515;
+        }
+
+        .intro-box p {
+            color: #555;
+            margin-bottom: 12px;
+        }
+
+
+        /* =========================
+           LESSONS
+        ========================== */
+
+        .lessons {
+            background: #eeeeee;
+        }
+
+        .lesson-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(260px, 1fr));
+
+            gap: 22px;
+        }
+
+        .lesson-card {
+            background: white;
+            padding: 28px 24px;
+            border-radius: 10px;
+
+            box-shadow:
+                0 4px 15px rgba(0,0,0,0.08);
+
+            transition: 0.3s;
+
+            position: relative;
+        }
+
+        .lesson-card:hover {
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .lesson-number {
+            color: #d4a017;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .lesson-card h3 {
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .lesson-card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .lesson-card a {
+            display: inline-block;
+
+            color: #a47700;
+
+            font-weight: bold;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+        .lesson-card a:hover {
+            color: #d4a017;
+        }
+
+
+        /* =========================
+           PRINCIPLES
+        ========================== */
+
+        .principles {
+            background: white;
+        }
+
+        .principle-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+
+            gap: 22px;
+        }
+
+        .principle {
+            text-align: center;
+            padding: 25px;
+        }
+
+        .principle-icon {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .principle h3 {
+            margin-bottom: 8px;
+        }
+
+        .principle p {
+            color: #666;
+        }
+
+
+        /* =========================
+           VERSE
+        ========================== */
+
+        .verse {
+            background: #171717;
+            color: white;
+            text-align: center;
+        }
+
+        .verse blockquote {
+            max-width: 750px;
+            margin: auto;
+            font-size: 24px;
+            font-style: italic;
+        }
+
+        .verse cite {
+            display: block;
+            margin-top: 15px;
+            color: #d4a017;
+            font-style: normal;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           CALL TO ACTION
+        ========================== */
+
+        .cta {
+            background: #eeeeee;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            color: #666;
+            max-width: 650px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: #111;
+            color: #bbb;
+            text-align: center;
+            padding: 30px 7%;
+        }
+
+        footer strong {
+            color: #d4a017;
+        }
+
+        .social {
+            margin: 15px 0;
+        }
+
+        .social a {
+            color: white;
+            text-decoration: none;
+            margin: 0 8px;
+            transition: 0.3s;
+        }
+
+        .social a:hover {
+            color: #d4a017;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 768px) {
+
+            .menu-button {
+                display: block;
+            }
+
+            .menu {
+                display: none;
+
+                position: absolute;
+
+                top: 65px;
+
+                left: 0;
+
+                width: 100%;
+
+                background: #151515;
+
+                flex-direction: column;
+
+                text-align: center;
+
+                padding: 20px;
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .hero {
+                padding: 70px 5%;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .intro-box {
+                padding: 25px;
+            }
+
+            .verse blockquote {
+                font-size: 20px;
+            }
+
+            .btn {
+                display: block;
+                max-width: 250px;
+                margin: 10px auto;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================== -->
+
+<header>
+
+    <nav>
+
+        <div class="logo">
+            Kingdom <span>Learning Hub</span>
+        </div>
+
+        <div
+            class="menu-button"
+            onclick="toggleMenu()"
+        >
+            ☰
+        </div>
+
+        <ul class="menu" id="menu">
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="bible-study.html">
+                    Bible Study
+                </a>
+            </li>
+
+            <li>
+                <a href="learning.html">
+                    Learning Center
+                </a>
+            </li>
+
+            <li>
+                <a href="trading.html">
+                    Trading Academy
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-icon">
+            💰
+        </div>
+
+        <h1>
+            Financial <span>Literacy</span>
+        </h1>
+
+        <p class="subtitle">
+            Build a Strong Financial Foundation
+        </p>
+
+        <p>
+            Learn practical principles of money management,
+            budgeting, saving, investing and responsible
+            financial decision-making.
+        </p>
+
+        <div class="buttons">
+
+            <a
+                href="#lessons"
+                class="btn primary"
+            >
+                Start Learning →
+            </a>
+
+            <a
+                href="learning.html"
+                class="btn secondary"
+            >
+                Back to Learning Center
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     INTRODUCTION
+========================== -->
+
+<section class="introduction">
+
+    <div class="section-title">
+
+        <h2>
+            Why Financial Literacy Matters
+        </h2>
+
+        <p>
+            Understanding money is an important life skill.
+        </p>
+
+    </div>
+
+
+    <div class="intro-box">
+
+        <h3>
+            Financial knowledge helps you make better decisions.
+        </h3>
+
+        <p>
+            Financial literacy is the ability to understand
+            and manage money responsibly.
+        </p>
+
+        <p>
+            It involves learning how to earn, spend, save,
+            borrow, invest and plan for the future.
+        </p>
+
+        <p>
+            The goal is not simply to have more money.
+            The goal is to develop the knowledge and discipline
+            needed to use money wisely.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     LESSONS
+========================== -->
+
+<section
+    class="lessons"
+    id="lessons"
+>
+
+    <div class="section-title">
+
+        <h2>
+            Financial Literacy Lessons
+        </h2>
+
+        <p>
+            Start with the fundamentals and progress step by step.
+        </p>
+
+    </div>
+
+
+    <div class="lesson-grid">
+
+
+        <!-- LESSON 01 -->
+
+        <div class="lesson-card">
+
+            <div class="lesson-number">
+                LESSON 01
+            </div>
+
+            <h3>
+                Understanding Money
+            </h3>
+
+            <p>
+                Learn what money is, how it functions and
+                why understanding money matters.
+            </p>
+
+            <a href="#">
+                Read Lesson →
+            </a>
+
+        </div>
+
+
+        <!-- LESSON 02 -->
+
+        <div class="lesson-card">
+
+            <div class="lesson-number">
+                LESSON 02
+            </div>
+
+            <h3>
+                Income & Expenses
+            </h3>
+
+            <p>
+                Understand where money comes from and
+                where it goes.
+            </p>
+
+            <a href="#">
+                Read Lesson →
+            </a>
+
+        </div>
+
+
+        <!-- LESSON 03 -->
+
+        <div class="lesson-card">
+
+            <div class="lesson-number">
+                LESSON 03
+            </div>
+
+            <h3>
+                Budgeting
+            </h3>
+
+            <p>
+                Learn how to create a realistic budget
+                and control your spending.
+            </p>
+
+            <a href="#">
+                Read Lesson →
+            </a>
+
+        </div>
+
+
+        <!-- LESSON 04 -->
+
+        <div class="lesson-card">
+
+            <div class="lesson-number">
+                LESSON 04
+            </div>
+
+            <h3>
+                Saving & Emergency Funds
+            </h3>
+
+            <p>
+                Discover why saving matters and how to
+                prepare for unexpected expenses.
+            </p>
+
+            <a href="#">
+                Read Lesson →
+            </a>
+
+        </div>
+
+
+        <!-- LESSON 05 -->
+
+        <div class="lesson-card">
+
+            <div class="lesson-number">
+                LESSON 05
+            </div>
+
+            <h3>
+                Needs vs. Wants
+            </h3>
+
+            <p>
+                Learn how to distinguish essential spending
+                from optional spending.
+            </p>
+
+            <a href="#">
+                Read Lesson →
+            </a>
+
+        </div>
+
+
+        <!-- LESSON 06 -->
+
+        <div class="lesson-card">
+
+            <div class="lesson-number">
+                LESSON 06
+            </div>
+
+            <h3>
+                Debt & Interest
+            </h3>
+
+            <p>
+                Understand borrowing, loans, interest and
+                responsible debt management.
+            </p>
+
+            <a href="#">
+                Read Lesson →
+            </a>
+
+        </div>
+
+
+        <!-- LESSON 07 -->
+
+        <div class="lesson-card">
+
+            <div class="lesson-number">
+                LESSON 07
+            </div>
+
+            <h3>
+                Investing Basics
+            </h3>
+
+            <p>
+                Learn the difference between saving and
+                investing and understand basic investment concepts.
+            </p>
+
+            <a href="#">
+                Read Lesson →
+            </a>
+
+        </div>
+
+
+        <!-- LESSON 08 -->
+
+        <div class="lesson-card">
+
+            <div class="lesson-number">
+                LESSON 08
+            </div>
+
+            <h3>
+                Assets & Liabilities
+            </h3>
+
+            <p>
+                Understand the difference between assets
+                and liabilities and how they affect wealth.
+            </p>
+
+            <a href="#">
+                Read Lesson →
+            </a>
+
+        </div>
+
+
+        <!-- LESSON 09 -->
+
+        <div class="lesson-card">
+
+            <div class="lesson-number">
+                LESSON 09
+            </div>
+
+            <h3>
+                Compound Growth
+            </h3>
+
+            <p>
+                Discover how consistent saving and investing
+                can grow over time.
+            </p>
+
+            <a href="#">
+                Read Lesson →
+            </a>
+
+        </div>
+
+
+        <!-- LESSON 10 -->
+
+        <div class="lesson-card">
+
+            <div class="lesson-number">
+                LESSON 10
+            </div>
+
+            <h3>
+                Building Wealth
+            </h3>
+
+            <p>
+                Learn long-term principles for increasing,
+                protecting and managing wealth.
+            </p>
+
+            <a href="#">
+                Read Lesson →
+            </a>
+
+        </div>
+
+
+        <!-- LESSON 11 -->
+
+        <div class="lesson-card">
+
+            <div class="lesson-number">
+                LESSON 11
+            </div>
+
+            <h3>
+                Financial Discipline
+            </h3>
+
+            <p>
+                Develop habits that can help you remain
+                consistent with your financial goals.
+            </p>
+
+            <a href="#">
+                Read Lesson →
+            </a>
+
+        </div>
+
+
+        <!-- LESSON 12 -->
+
+        <div class="lesson-card">
+
+            <div class="lesson-number">
+                LESSON 12
+            </div>
+
+            <h3>
+                Creating Your Financial Plan
+            </h3>
+
+            <p>
+                Bring everything together and create a
+                practical plan for your financial future.
+            </p>
+
+            <a href="#">
+                Read Lesson →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CORE PRINCIPLES
+========================== -->
+
+<section class="principles">
+
+    <div class="section-title">
+
+        <h2>
+            Core Financial Principles
+        </h2>
+
+        <p>
+            Principles to keep in mind as you learn.
+        </p>
+
+    </div>
+
+
+    <div class="principle-grid">
+
+
+        <div class="principle">
+
+            <div class="principle-icon">
+                📊
+            </div>
+
+            <h3>
+                Understand
+            </h3>
+
+            <p>
+                Learn how money works before making
+                major financial decisions.
+            </p>
+
+        </div>
+
+
+        <div class="principle">
+
+            <div class="principle-icon">
+                💵
+            </div>
+
+            <h3>
+                Manage
+            </h3>
+
+            <p>
+                Give your income a purpose and
+                understand your expenses.
+            </p>
+
+        </div>
+
+
+        <div class="principle">
+
+            <div class="principle-icon">
+                🛡️
+            </div>
+
+            <h3>
+                Protect
+            </h3>
+
+            <p>
+                Prepare for emergencies and understand
+                the risks surrounding your money.
+            </p>
+
+        </div>
+
+
+        <div class="principle">
+
+            <div class="principle-icon">
+                📈
+            </div>
+
+            <h3>
+                Grow
+            </h3>
+
+            <p>
+                Learn how long-term saving and investing
+                can contribute to financial growth.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     BIBLE VERSE
+========================== -->
+
+<section class="verse">
+
+    <blockquote>
+
+        "The plans of the diligent lead surely to abundance,
+        but everyone who is hasty comes only to poverty."
+
+    </blockquote>
+
+    <cite>
+        Proverbs 21:5
+    </cite>
+
+</section>
+
+
+<!-- =========================
+     CALL TO ACTION
+========================== -->
+
+<section class="cta">
+
+    <h2>
+        Build Your Financial Foundation
+    </h2>
+
+    <p>
+        Financial growth begins with knowledge,
+        discipline and consistent action.
+        Start with the first lesson and build
+        your understanding step by step.
+    </p>
+
+    <div class="buttons">
+
+        <a
+            href="#lessons"
+            class="btn primary"
+        >
+            Begin Lesson 1 →
+        </a>
+
+        <a
+            href="learning.html"
+            class="btn secondary"
+            style="border-color:#151515; color:#151515;"
+        >
+            Learning Center
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer>
+
+    <p>
+
+        ©
+        <span id="year"></span>
+
+        <strong>
+            Kingdom Learning Hub
+        </strong>
+
+        by Richard.
+
+    </p>
+
+
+    <div class="social">
+
+        <a href="#">
+            Facebook
+        </a>
+
+        <a href="#">
+            TikTok
+        </a>
+
+        <a href="#">
+            YouTube
+        </a>
+
+    </div>
+
+
+    <p>
+        Grow in Faith.
+        Grow in Knowledge.
+        Grow in Life.
+    </p>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================== -->
+
+<script>
+
+    /* MOBILE MENU */
+
+    function toggleMenu() {
+
+        const menu =
+            document.getElementById("menu");
+
+        menu.classList.toggle("active");
+
+    }
+
+
+    /* CURRENT YEAR */
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+
+    /* CLOSE MOBILE MENU */
+
+    const menuLinks =
+        document.querySelectorAll(".menu a");
+
+    menuLinks.forEach(function(link) {
+
+        link.addEventListener("click", function() {
+
+            document
+                .getElementById("menu")
+                .classList.remove("active");
+
+        });
+
+    });
+
+</script>
+
+
+</body>
+
+</html>
